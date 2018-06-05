@@ -1,0 +1,446 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ELIFE ARTICLE TEMPLATE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PREAMBLE 
+\documentclass[9pt,lineno]{elife}
+% Use the onehalfspacing option for 1.5 line spacing
+% Use the doublespacing option for 2.0 line spacing
+% Please note that these options may affect formatting.
+% Additionally, the use of the \newcommand function should be limited.
+
+
+\usepackage{lipsum} % Required to insert dummy text
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{grffile}
+\DeclareSIUnit\Molar{M}
+
+\newcommand{\pH}{\mathrm{pH}}
+\newcommand{\pKa}{\mathrm{pKa}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ARTICLE SETUP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{SAMPL6 pKa reference calculations using Epik and Jaguar}
+
+\author[1,2]{Ari\"{e}n S. Rustenburg}
+\author[1]{Mehtap Isik}
+\author[1,2]{Patrick B. Grinaway}
+\author[1,3]{Andrea Rizzi}
+\author[4]{Art Bochevarov}
+\author[4]{John Shelley}
+\author[5]{Marilyn R Gunner}
+\author[1*]{John D. Chodera}
+
+\affil[1]{Computational and Systems Biology Program, Sloan Kettering Institute, Memorial Sloan Kettering Cancer Center, New York, NY 10065}
+\affil[2]{Graduate Program in Physiology, Biophysics, and Systems Biology, Weill Cornell Medical College, New York, NY 10065}
+\affil[3]{Tri-Institutional Training Program in Computational Biology and Medicine, New York, NY 10065}
+\affil[4]{Schrödinger LLC, New York, NY 10036}
+\affil[5]{Department of Physics, City College of New York, New York, NY 10031}
+\corr{john.chodera@choderalab.org}{JDC}
+
+%\presentadd[\authfn{3}]{Schr\"{o}dinger, New York, NY 10036}
+
+%\contrib[\authfn{1}]{These authors contributed equally to this work}
+%\contrib[\authfn{2}]{These authors also contributed equally to this work}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ARTICLE START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\section{NOTES: Objectives for this manuscript}
+
+\begin{itemize}
+    \item Provide a baseline for the expectation of performance of empirical models (Epik) and DFT models (Jaguar) on kinase inhibitor-like molecules and molecular fragments; draw comparisons to earlier benchmarks for these tools
+\item Describe basic concepts, along with strengths and weaknesses of each approach (Epik and Jaguar)
+\item Lessons learned for participating in the challenge
+\begin{itemize}
+    \item How should we predict macroscopic pKas from microscopic pKas? Explain possibilities and justify choice
+    \begin{itemize}
+        \item Sequential titration (Epik)
+        \item <n protons>/charge vs pH inflection points: Matches electrochemical titration, but not UV-metric
+        \item Is there a way to predict what UV-metric would observe from populations vs pH?
+    \end{itemize}
+    \end{itemize}
+    \item For microscopic pKa prediction: Epik may enumerate a different set of microstates than other tools (we proposed these as newly labeled states)
+    \item Epik does not return state populations below a certain treshold, so we could not consider states proposed by SAMPL6 [Check this]
+    \item For worst predicted compounds, provide an explanation as to why the methods may perform poorly (descriptors?) [ may not have enough data points to draw conclusion]
+
+\end{itemize}
+
+\begin{abstract}
+The goal of the SAMPL6 pKa Challenge was to evaluate the performance of small molecule pKa prediction methods from challenge participants in a blinded fashion on a set of small, drug-like molecules resembling kinase inhibitor fragments.
+%
+To provide a useful point of comparison for blind participant predictions that may use experimental methods still under development, we performed reference benchmark calculations using a popular empirical model (Epik) and quantum chemical approach (Jaguar) from Schrödinger.
+%
+Epik predicts microstate populations and pKas using a Hammett-Taft type model, while Jaguar is a fast DFT quantum chemical method.
+%
+In this work, we discuss how these reference calculations were performed, provide a broad assessment of the performance of the method, and highlight challenges and considerations in predicting pKas to benchmark against experiment macroscopic pKa measurements.
+\end{abstract}
+
+
+\section{Introduction}
+
+Titratable sites are ubiquitous in druglike small molecules.
+\todo[inline]{JDC: It would be very useful if we could cite some sort of reference discussing how important protonation states are in small molecule drugs or druglike molecules, but I'm failing to find useful references right now. Alternatively, we could pull pKas from DrugBank \url{https://www.drugbank.ca/releases/latest} or use Epik to make our own plots, like the kinase inhibitor pKa plot we had previously generated.}
+%
+Large-scale computational surveys suggest that 60\% of all protein-ligand complexes undergo a change in ionization state upon binding~\cite{Aguilar:Biophys.J.:2010}, either due to protonation state changes of the small molecule or the protein (where roughly a third of all protein residues are ionizable~\cite{Jordan:Nature:2005}).
+%
+More generally, protonation state effects---in which the dominant protonation, charge, or tautomer state shifts upon binding, or a mixture of protonation states are significantly populated in complex or solution---has the potential to cause large modeling errors if these effects are neglected.
+%
+In the SAMPL5 distribution coefficient (logD) challenge, for example, protonation state effects were determined to be a major contributor to loss in accuracy for the otherwise mundane task of predicting a transfer free energy between aqueous and cyclohexane phases~\cite{Pickard:J.Comput.AidedMol.Des.:2016}.
+
+To isolate the question of how well pKa effects could be modeled---and therefore how accurately the community could address these effects---the SAMPL6 challenge featured a blind pKa prediction component, as an intermediate step to logD predictions in which we provide participants with pKas and later have them predict both pKa and logD~\cite{sampl6-pKa-measurements}.
+The SAMPL6 pKa challenge consisted of predicting macroscopic pKas measured by UV-metric titration for a set of small moelcules that resembled kinase inhibitors and their fragments~\cite{sampl6-pKa-measurements}.
+As participants in the SAMPL6 pKa challenge were expected to utilize a wide variety of methods still under development, we endeavored to provide a useful baseline reference set of predictions using well-established, widely-deployed, commercially available methods.
+We selected both an empirical method (Epik~\cite{Shelley:J.Comput.AidedMol.Des.:2007b}) and quantum chemical method (Jaguar~\cite{Bochevarov:Int.J.QuantumChem.:2013}) from the Schr\"{o}dinger Suite of computational chemistry software, version 20XX-X.
+
+Reference calculations---which were not fully blinded---were performed in a manner that attempted to mimic standard use, using recommended settings for each program, without significantly modifying the input parameters.
+As the computation of UV-metric macroscopic pKas from the microscopic pKas predicted by the tools is not necessarily completely straightforward, we considered several alternative possibilities, which we discuss in more detail.
+We provide an analysis and broad assessment of the performance of the two methods, and highlight challenges and considerations in predicting pKas to benchmark against experiment.
+All analysis tools used to perform this study are available via GitHub at
+\url{https://github.com/choderalab/SAMPL6-Reference-pKa-Calculations}
+
+\section{Methods}
+\subsection{Epik}
+Summary of how Epik works \todo[inline]{Could be filled in by John Shelley?}
+
+\subsection{Jaguar}
+
+Summary of how Jaguar computes pKas  \todo[inline]{Could be filled in by Art Bochevarov?}
+
+\subsection{Microstate predictions}
+
+\subsubsection{Epik: Fast empirical pKa predictions}
+\begin{itemize}
+    \item were performed between pH 2-12
+    \item Reported states with a minimum population of $e^{10 kT}$
+    \item States proposed by SAMPL6 but not predicted by Epik were not considered in analysis.
+
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics{invalid-lewis-SM03-SM18.png}
+    \caption{Epik generated protonation states with invalid Lewis structure for SM03 and SM18, with this 
+    molecular particular pattern. One of these was also present in the SAMPL6 set of microstates, titles SM03\textunderscore{}micro021. A valid lewis structure could not be figured out for this protonation state.}
+    \label{fig:lewis-structure-SM03-SM18}
+\end{figure}
+
+\subsubsection{Jaguar: Ab inition quantum chemical pKa predictions}
+\begin{itemize}
+    \item Ran using default settings (5 conformations) for each of the pre-enumerated specified microstate pairs.
+    \item Input structures were first minimized using MMFF.
+    \item Additional minimization was performed for structures for which scf/geopt did not converge
+\end{itemize}
+
+\subsection{Predicting macroscopic pKas}
+
+Epik and Jaguar predict microscopic pKas or microstate energies, which must be translated into macroscopic pKas for comparison to experiment.
+Several reasonable choices are possible for translating these microscopic properties into macroscopic pKas.
+
+\subsubsection{Sequential titration of dominant species} 
+
+\begin{itemize}
+    \item Sequential titration avoids the need to compute the energies of \emph{all} protonation states
+    \item Epik can automatically perform a sequential scan (which can also be used in Jaguar with some automation)
+    \item For this experiment, we started from the predicted highest-occupancy microstate at pH 7 and went in both directions, returning pKas between 2-12
+\end{itemize}
+
+\subsubsection{Virtual electrochemical titration}
+\begin{itemize}
+    \item Average charge vs pH to match electrochemical titrations, look at the mean signed deviation (MSD) to see whether the charge curve behavior matches
+\end{itemize}
+
+\subsubsection{Predicting UV-metric titration}
+\begin{itemize}
+    \item Actual experiments were UV-metric, where only UV-active transitions are observable
+    \item There is potentially a route to predicting UV-active transitions via identifying of microstates that would have different UV spectra, perhaps using SMARTS matches or simple QM absorption spectra calculations?
+\end{itemize}
+
+\section{Results \& Discussion}
+\begin{itemize}
+    \item How much conformation-dependence is there in Jaguar-derived pKas (or state energies)?
+    \item Does sequential scan or mean molecular charge provide better agreement with experimental macroscopic pKas? Would it be worthwhile to develop predictive UV-metric models?
+    \item Comparison of observed accuracies to previously reported/expected accuracies; expected accuracy on kinase inhibitors derived from this study
+    \item How does Epik compare to Jaguar in terms of accuracy and computational cost?
+    \item Discussion of outliers
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{titration_curve_example.png}
+    \caption{Example populations, free energies, and average charge as a function of pH for Epik and Jaguar. Titration curve for experimental compounds with 1, 2, 3 pKas, as examples, and some predictions, to illustrate macro vs micro. Color scheme denotes microstates.}
+    \label{fig:titrationcurve}
+\end{figure}
+
+\subsection{Overall performance}
+
+Overall performance of Epik and Jaguar based on various metrics (figures/tables)
+\subsubsection {Matching of experimental and calculated pKas}
+\begin{itemize}
+    \item Description of the closest pKa matching algorithm
+    \item Description of the hungarian pKa matching algorithm
+    \item Description of the population curve generation from pKa \\
+    $ \pi_i(\pH) = \frac{e^{-(n_i*\pH - \sum_j \pKa_j)}}{\sum_i e^{-(n_i*\pH - \sum_j \pKa_j)} }$
+    \item Description of the calculation of the mean charge curve \\
+    $ \langle q_\text{total} \rangle (\pH) = \sum_i q_i \times \pi_i(\pH) $
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Overall performance of each method using either the closest pKa matching, Hungarian pKa matching, of the mean signed deviation of the macroscopic charge curve}
+\label{tab:overview-performance}
+\begin{tabular}{c|ccc|ccc|c}
+                & \multicolumn{3}{c|}{Closest} & \multicolumn{3}{c|}{Hungarian} & Mean charge population \\ \cline{2-8} 
+          & RMSE     & MAE    & $R^2$    & RMSE     & MAE     & $R^2$     & $\Delta $                     \\ \hline
+Epik sequential &          &        &          &          &         &           &                        \\
+Epik micropka   &          &        &          &          &         &           &                        \\
+Jaguar micropKa &          &        &          &          &         &           &                       
+\end{tabular}
+\end{table}
+
+\subsection{Macroscopic titration curves}
+\begin{itemize}
+    \item Compare macroscopic titration results
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.31\linewidth]{Epik_macropKa_closest_pka.png} \\
+    \includegraphics[width=0.31\linewidth]{Epik_macropKa_sequential_aligned_pka.png}
+    \includegraphics[width=0.31\linewidth]{Epik_macropKa_hungarian_pka.png}
+    \caption{{\bf Comparison of predicted and computed macroscopic pKas.}}
+    The comparison of the Epik sequential scan with entire experimental data set is shown, matched using the [closest, sequential, or Hungarian] algorithm.
+    \label{fig:correlation-macro}
+\end{figure}
+
+
+\begin{table}
+\centering
+\caption{{\bf Macroscopic pKas computed via Epik's sequential scan procedure.}
+ Experimental and computed pKa values matched using the "closest" algorithm.
+ \todo[inline]{JDC: Can you point out where in the text this algorithm is described? Is it just called "Closest"?}
+ \todo[inline]{JDC: Your reporting of sig figs is messed up. Recall that we only report SEM to \emph{one} significant digit, and then truncate the corresponding measurement to the same number of decimal places.}}
+\small
+\label{tab:molecule-macro}
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{lrr}
+\toprule
+{\bf Molecule} & {\bf Experiment $\pm$ SEM} & {\bf Epik closest $\pm$ SEM} \\
+\midrule
+    SM01 &      9.530$\pm$0.010 &            9.1$\pm$1.1 \\
+    SM02 &      5.030$\pm$0.010 &            4.0$\pm$1.5 \\
+    SM03 &      7.020$\pm$0.010 &            7.1$\pm$2.2 \\
+    SM04 &      6.020$\pm$0.010 &            5.6$\pm$1.1 \\
+    SM05 &      4.590$\pm$0.010 &            5.3$\pm$2.2 \\
+    SM06 &        3.03$\pm$0.04 &            2.2$\pm$1.1 \\
+    SM06 &     11.740$\pm$0.010 &           10.3$\pm$2.2 \\
+    SM07 &      6.080$\pm$0.010 &            5.6$\pm$1.1 \\
+    SM08 &      4.220$\pm$0.010 &            4.1$\pm$2.2 \\
+    SM09 &      5.370$\pm$0.010 &            4.0$\pm$1.5 \\
+    SM10 &      9.020$\pm$0.010 &            8.7$\pm$2.2 \\
+    SM11 &      3.890$\pm$0.010 &            3.9$\pm$2.0 \\
+    SM12 &      5.280$\pm$0.010 &            4.0$\pm$1.5 \\
+    SM13 &      5.770$\pm$0.010 &            4.3$\pm$2.2 \\
+    SM14 &      2.580$\pm$0.010 &            3.4$\pm$2.2 \\
+    SM14 &      5.300$\pm$0.010 &            6.3$\pm$2.2 \\
+    SM15 &      8.940$\pm$0.010 &            8.7$\pm$1.5 \\
+    SM15 &      4.700$\pm$0.010 &            5.8$\pm$1.1 \\
+    SM16 &      5.370$\pm$0.010 &            4.7$\pm$0.9 \\
+    SM16 &     10.650$\pm$0.010 &            9.8$\pm$2.2 \\
+    SM17 &      3.160$\pm$0.010 &            4.9$\pm$0.7 \\
+    SM18 &      9.580$\pm$0.030 &            9.4$\pm$2.2 \\
+    SM18 &      2.150$\pm$0.020 &            2.5$\pm$2.2 \\
+    SM18 &       11.02$\pm$0.04 &           10.5$\pm$2.2 \\
+    SM19 &      9.560$\pm$0.020 &            9.2$\pm$2.2 \\
+    SM20 &      5.700$\pm$0.030 &            8.1$\pm$2.2 \\
+    SM21 &      4.100$\pm$0.010 &            3.9$\pm$2.2 \\
+    SM22 &      7.430$\pm$0.010 &            6.8$\pm$0.9 \\
+    SM22 &      2.400$\pm$0.020 &            3.6$\pm$1.4 \\
+    SM23 &      5.450$\pm$0.010 &            6.0$\pm$0.8 \\
+    SM24 &      2.600$\pm$0.010 &            4.0$\pm$2.2 \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{{\bf pKa per molecule for each method, compared to experiment.}}
+\label{tab:molecule-macro}
+\begin{tabular}{l|llllll}
+           & \multicolumn{1}{c}{Experimental pKa} & \multicolumn{1}{c}{Epik pKa} & \multicolumn{1}{c}{Epik pKa uncertainty} & \multicolumn{1}{c}{Epik error} & \multicolumn{1}{c}{Jaguar pKa} & \multicolumn{1}{c}{Jaguar error} \\ \hline
+SM01 pKa1  &                                      &                              &                                          &                                &                                &                                  \\
+SM01 pKa2  &                                      &                              &                                          &                                &                                &                                  \\
+SM02 pKa 1 &                                      &                              &                                          &                                &                                &                                  \\
+SM03 pKa 1 &                                      &                              &                                          &                                &                                &                                 
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \todo[inline]{Show one of these as an illustration, put the rest in the SI. Make table with mean signed deviations.}
+    \centering
+    \includegraphics[scale=0.45]{Charge Curves/SM12-charge.png}
+    \caption{{\bf Illustration of macroscopic pKas derived from mean molecular charge.}
+    Comparison of experimental (black) and predicted (green) titration curve for molecule SM12.}
+    \label{fig:charge-curves}
+\end{figure}
+
+\begin{table}[H]
+    \todo[inline]{Need to run calculations for edges that were missing from SAMPL6 set to resolve NaN.}
+    \centering
+    \caption{{\bf Difference in area between titration curves ($\Delta$ for each method.} }
+    \label{tab:titration_curves}
+    \rowcolors{2}{gray!25}{white}
+    \begin{tabular}{lrrrr}
+\toprule
+Molecule &  $\Delta$ Epik Type I &  $\Delta$ Epik Type II &  $\Delta$ Epik Type III &  $\Delta$ Jaguar Type I \\
+
+\midrule
+    SM01 &       0.43 &        0.44 &         0.46 &         0.15 \\
+    SM02 &       2.12 &        0.59 &         1.99 &         1.21 \\
+    SM03 &       0.10 &        0.29 &         0.09 &         0.57 \\
+    SM04 &       2.55 &        0.26 &         2.20 &         0.81 \\
+    SM05 &       1.93 &        0.74 &         1.08 &         0.51 \\
+    SM06 &       2.60 &        2.52 &         2.62 &         2.09 \\
+    SM07 &       2.61 &        0.32 &         2.25 &         0.84 \\
+    SM08 &       1.27 &        0.57 &         0.63 &         5.82 \\
+    SM09 &       2.53 &        0.78 &         2.32 &         1.09 \\
+    SM10 &       0.17 &        0.34 &         0.62 &         0.28 \\
+    SM11 &       1.84 &        0.06 &         0.14 &         1.68 \\
+    SM12 &       2.48 &        0.71 &         2.26 &         0.88 \\
+    SM13 &       2.64 &        0.88 &         2.80 &         0.30 \\
+    SM14 &       1.07 &        1.74 &         1.75 &         0.25 \\
+    SM15 &       1.07 &        1.32 &         1.31 &         0.85 \\
+    SM16 &       4.36 &        1.10 &         1.44 &         0.97 \\
+    SM17 &       1.71 &        1.71 &         1.71 &         0.07 \\
+    SM18 &       0.74 &        1.02 &         1.00 &          NaN \\
+    SM19 &       0.38 &        0.39 &         0.73 &         1.22 \\
+    SM20 &       2.34 &        2.34 &         2.34 &         1.60 \\
+    SM21 &       1.26 &        0.70 &         0.55 &         1.68 \\
+    SM22 &       0.94 &        1.62 &         1.64 &         0.23 \\
+    SM23 &       0.38 &        0.68 &         3.17 &         NaN \\
+    SM24 &       0.61 &        3.46 &         5.62 &         NaN \\
+    \midrule
+    Average &       1.59 &        1.03 &         1.70 &         1.10 \\
+\bottomrule\end{tabular}
+    
+\end{table}
+
+\subsection{Microscopic pKa values}
+\begin{itemize}
+    \item Compare microscopic pKa prediction results
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \todo[inline]{Make one of these for each matching algorithm, for each method}
+    \includegraphics[]{correlationplot.png}
+    \caption{Comparison of predicted and computed macroscopic pKas for Epik and Jaguar for the entire data set, matched using the [closest, hungarian] algorithm.}
+    \label{fig:correlation-micro}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{The pKa per molecule for each method, compared to experiment.}
+\label{tab:molecule-micro}
+\begin{tabular}{l|llllll}
+           & \multicolumn{1}{c}{Experimental pKa} & \multicolumn{1}{c}{Epik pKa} & \multicolumn{1}{c}{Epik pKa uncertainty} & \multicolumn{1}{c}{Epik error} & \multicolumn{1}{c}{Jaguar pKa} & \multicolumn{1}{c}{Jaguar error} \\ \hline
+SM01 pKa1  &                                      &                              &                                          &                                &                                &                                  \\
+SM01 pKa2  &                                      &                              &                                          &                                &                                &                                  \\
+SM02 pKa 1 &                                      &                              &                                          &                                &                                &                                  \\
+SM03 pKa 1 &                                      &                              &                                          &                                &                                &                                 
+\end{tabular}
+\end{table}
+
+
+\subsection{Descriptor analysis}
+\begin{itemize}
+    \item which moieties are harder to predict?
+    \item Do certain descriptors correlate with variance/absolute errors?
+    \item Do number of rotatable bonds affect epik/jaguar results (conformations missing from prediction)?
+\end{itemize}
+
+\subsection {Comparison with other methods}
+\todo[inline]{This subsection depends on how much information we already have in the overview paper}
+\begin{itemize}
+    \item Compared to other Hammet-Taft methods, does Epik stand out? [based on early overview results?]
+    \item Compared to other QM methods, does Jaguar stand out? [based on early overview results?]
+\end{itemize}
+
+\subsection{Suggestions for future challenges}
+\begin{itemize}
+    \item Future challenges could benefit from NMR experiments for microstates
+    \item Potentiometric titrations could capture states that may have been left out
+    \item Probabilistic models (i.e. bayesian hierarchical models) could be constructed for the analysis of experiments. 
+\end{itemize}
+
+\section{Conclusions}
+
+\begin{itemize}
+    \item Epik and Jaguar can be useful as baselines
+    \item We can use various ways of judging each method.
+    \item A conclusion about the accuracy
+    \item Some take away points about difficulties about comparing microscopic to macroscopic
+    \item How a future challenge could make this easier
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Code and Data Availability
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Code and data availability}
+
+\begin{itemize}
+\item Input files and analysis scripts are available at \href{https://github.com/choderalab/SAMPL6-reference-pka-calculations}{https://github.com/choderalab/SAMPL6-reference-pka-calculations}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author Contributions 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Author Contributions}
+
+\todo[inline]{(Follow the \href{http://www.cell.com/pb/assets/raw/shared/guidelines/CRediT-taxonomy.pdf}{CRediT Taxonomy})}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgments 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgments}
+
+ASR, MI, AR, PBG, and JDC acknowledge support from the Sloan Kettering Institute.
+JDC acknowledges support from NIH grant P30 CA008748.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Disclosures 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Disclosures}
+
+JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger, LLC.
+
+\nocite{*} % This command displays all refs in the bib file. PLEASE DELETE IT BEFORE YOU SUBMIT YOUR MANUSCRIPT!
+\bibliography{elife-sample,sampl6-pKa-prediction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\appendix
+
+\section{Supplementary Information}
+\begin{itemize}
+    \item Titration curves and free energy plots for each compound, by each method
+    \item The mean charge/deviation curves for each compound and each method
+    \item .mae and .sdf files with results
+    \item scripts and or jupyter notebooks for analysis
+    \item csv version of tables
+\end{itemize}
+
+\end{document}
