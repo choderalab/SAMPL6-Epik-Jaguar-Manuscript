@@ -16,6 +16,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{grffile}
+\usepackage{algorithm2e}
 \DeclareSIUnit\Molar{M}
 
 \newcommand{\pH}{\mathrm{pH}}
@@ -75,6 +76,8 @@
 
 \end{itemize}
 
+\todo[inline]{See Images folder for titration curves and free energy images for each category. Will be added to supplementary info later.}
+
 \begin{abstract}
 The goal of the SAMPL6 pKa Challenge was to evaluate the performance of small molecule pKa prediction methods from challenge participants in a blinded fashion on a set of small, drug-like molecules resembling kinase inhibitor fragments.
 %
@@ -121,7 +124,7 @@ Summary of how Jaguar computes pKas  \todo[inline]{Could be filled in by Art Boc
 \subsubsection{Epik: Fast empirical pKa predictions}
 \begin{itemize}
     \item were performed between pH 2-12
-    \item Reported states with a minimum population of $e^{10 kT}$
+    \item Reported states with a minimum population of $e^{-10/RT}$
     \item States proposed by SAMPL6 but not predicted by Epik were not considered in analysis.
 
 \end{itemize}
@@ -175,8 +178,9 @@ Several reasonable choices are possible for translating these microscopic proper
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{titration_curve_example.png}
-    \caption{Example populations, free energies, and average charge as a function of pH for Epik and Jaguar. Titration curve for experimental compounds with 1, 2, 3 pKas, as examples, and some predictions, to illustrate macro vs micro. Color scheme denotes microstates.}
+    \includegraphics[width=0.49\textwidth]{Images/Experiment/SM18/population-curve.png}
+    \includegraphics[width=0.49\textwidth]{Images/Experiment/SM18/free-energy-curve.png}
+    \caption{Experimental populations, free energies for SM18 from the SAMPL6 experimental dataset.}
     \label{fig:titrationcurve}
 \end{figure}
 
@@ -184,9 +188,71 @@ Several reasonable choices are possible for translating these microscopic proper
 
 Overall performance of Epik and Jaguar based on various metrics (figures/tables)
 \subsubsection {Matching of experimental and calculated pKas}
+
+The experiments do not provide any microscopic information on what atom, or microstate a pKa belongs to.
+%
+Therefore, it is necessary to perform a matching of pKa values between experiment and predicted pKa values.
+%
+There are several ways one could go about this, each strategy can prioritize a different aspect to match.
+%
+We consider three algorithms:
+\paragraph{Closest pKa matching}
+This algorithm matches experiment with prediction based on how close each value is, one pKa value at a time.
+%
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\caption{Closest pKa matching algorithm}
+\KwResult{Mapping of each experimental pKa $i$ to predicted pKa $j$}
+ 
+ $C$ is constructed, where every row  $i$ is an experiment, and every column $j$ a prediction\;
+ $C_{ij}$ = cost($\pKa_{\text{exp},i}$, $\pKa_{\text{pred},j}$), where cost is a cost function\;
+ \While{$C$.size > 0}{
+  $k, l$ = arg min($C_{ij}$)\;
+  assign experimental value $k$ to prediction $l$\;
+  remove row $k$, column $l$ from $C$;\
+ }
+ assign remaining values as unmatched\;
+\end{algorithm}
+
+%
+\paragraph{Hungarian pKa matching}
+This algorithm, also known as linear sum assignment.
+%
+It finds the combination of pKa that minimizes the overall cost by picking rows and columns in a matrix, also considering the cost of not mapping certain pKa values in the case of different numbers of predictions and experimental values.
+%
+\paragraph{Sequential pKa matching}
+This algorithm tries to find an alignment between the sorted experimental, and predicted sequence of pKa values that produces the minimum cost.
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\KwResult{Mapping of each experimental pKa $i$ to predicted pKa $j$}
+ Experimental values $I$ and predicted values $J$ are sorted\;
+ length = max($I$.size, $J$.size)\;
+ Append placeholders such that $I$.size = $J$.size\;
+ min = $\infty$\;
+ solution = J rolled 0 times\;
+ \For{n in 0..length}{
+  $S$ = J rolled n times \;
+  total = 0.0\;
+  \For{m in 0..max($I$.size, $J$.size)}{
+    \eIf{$I_m$ or $J_m$ is placeholder}{
+   }{
+   total = total + cost($I_m$, $J_m$)}
+  }
+  \eIf{total < min }{
+   min = total\;
+   solution = S \;
+   }{}
+ }
+ \caption{How to write algorithms}
+\end{algorithm}
+
+The cost of an unmatched pKa values at the lower end of the sequence is calculated by taking the difference 
+%
+Besides pKa values
+
 \begin{itemize}
-    \item Description of the closest pKa matching algorithm
-    \item Description of the hungarian pKa matching algorithm
     \item Description of the population curve generation from pKa \\
     $ \pi_i(\pH) = \frac{e^{-(n_i*\pH - \sum_j \pKa_j)}}{\sum_i e^{-(n_i*\pH - \sum_j \pKa_j)} }$
     \item Description of the calculation of the mean charge curve \\
@@ -287,21 +353,22 @@ SM03 pKa 1 &                                      &                             
 \begin{figure}[H]
     \todo[inline]{Show one of these as an illustration, put the rest in the SI. Make table with mean signed deviations.}
     \centering
-    \includegraphics[scale=0.45]{Charge Curves/SM12-charge.png}
+    \includegraphics[scale=0.45]{Images/Epik/TypeIII/SM01/charge-curve.png}
+    \includegraphics[scale=0.45]{Images/Epik/TypeIII/SM18/charge-curve.png}
     \caption{{\bf Illustration of macroscopic pKas derived from mean molecular charge.}
-    Comparison of experimental (black) and predicted (green) titration curve for molecule SM12.}
+    Comparison of experimental (black) and predicted by Epik scan (green) titration curve for molecule SM18. The area between curves $\Delta$ is highlighted in gray.}
     \label{fig:charge-curves}
 \end{figure}
 
 \begin{table}[H]
     \todo[inline]{Need to run calculations for edges that were missing from SAMPL6 set to resolve NaN.}
     \centering
-    \caption{{\bf Difference in area between titration curves ($\Delta$ for each method.} }
+    \caption{{\bf Difference in area between titration curves ($\Delta$) for each method.} }
     \label{tab:titration_curves}
     \rowcolors{2}{gray!25}{white}
     \begin{tabular}{lrrrr}
 \toprule
-Molecule &  $\Delta$ Epik Type I &  $\Delta$ Epik Type II &  $\Delta$ Epik Type III &  $\Delta$ Jaguar Type I \\
+Molecule &  $\Delta$ Epik microscopic pKa &  $\Delta$ Epik microscopic population  &  $\Delta$ Epik scan &  $\Delta$ Jaguar microscopic pKa \\
 
 \midrule
     SM01 &       0.43 &        0.44 &         0.46 &         0.15 \\
