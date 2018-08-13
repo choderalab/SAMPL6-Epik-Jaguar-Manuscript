@@ -1,28 +1,25 @@
-\documentclass[11pt,final]{article}
+\documentclass[9pt]{standalone}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage[showframe]{geometry}
-\geometry{letterpaper}
-\geometry{margin=1in}
 \usepackage{graphicx}
 
 \begin{document}
 \newcommand{\molid}{SM03}
-\newcommand{\methoda}{Epik-TypeI}
-\newcommand{\methodb}{Jaguar-TypeI}
-\newcommand{\methodc}{Epik-TypeII}
-\newcommand{\methodd}{Epik-TypeIII}
-
+\newcommand{\methoda}{Experiment}
+\newcommand{\methodb}{Epik-TypeI}
+\newcommand{\methodc}{Jaguar-TypeI}
+\newcommand{\methodd}{Epik-TypeII}
+\newcommand{\methode}{Epik-TypeIII}
+\section{\molid}
 \noindent 
 \begin{minipage}[s]{0.35\textwidth}\centering
-\includegraphics[width=\textwidth]{\molid-molecule.png}
+\includegraphics[width=\textwidth]{Reports/\molid-molecule.png}
 \end{minipage}
 \begin{minipage}[s]{0.35\textwidth}
-\includegraphics[width=\textwidth]{overview-virtual-titration-\molid.png}
+\includegraphics[width=\textwidth]{Reports/overview-virtual-titration-\molid.png}
 \end{minipage}
 \begin{minipage}[s]{0.23\textwidth}
-\includegraphics[width=\textwidth]{overview-legend-\molid.png}
+\includegraphics[width=\textwidth]{Reports/overview-legend-\molid.png}
 \end{minipage}
 
 \begin{minipage}[s]{\textwidth}\centering
@@ -30,14 +27,14 @@
 \end{minipage}
 
 \noindent
-\begin{minipage}[s]{0.32\textwidth}\centering
-\includegraphics[width=\textwidth]{\methoda-virtual-titration-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}\centering
+\includegraphics[scale=1]{Reports/\methoda-virtual-titration-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methoda-free-energy-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methoda-free-energy-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methoda-populations-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methoda-populations-\molid.png}
 \end{minipage}
 
 \begin{minipage}[s]{\textwidth}\centering
@@ -45,14 +42,14 @@
 \end{minipage}
 
 \noindent
-\begin{minipage}[s]{0.32\textwidth}\centering
-\includegraphics[width=\textwidth]{\methodb-virtual-titration-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}\centering
+\includegraphics[scale=1]{Reports/\methodb-virtual-titration-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methodb-free-energy-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methodb-free-energy-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methodb-populations-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methodb-populations-\molid.png}
 \end{minipage}
 
 \begin{minipage}[s]{\textwidth}\centering
@@ -60,14 +57,14 @@
 \end{minipage}
 
 \noindent
-\begin{minipage}[s]{0.32\textwidth}\centering
-\includegraphics[width=\textwidth]{\methodc-virtual-titration-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}\centering
+\includegraphics[scale=1]{Reports/\methodc-virtual-titration-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methodc-free-energy-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methodc-free-energy-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methodc-populations-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methodc-populations-\molid.png}
 \end{minipage}
 
 \begin{minipage}[s]{\textwidth}\centering
@@ -75,13 +72,28 @@
 \end{minipage}
 
 \noindent
-\begin{minipage}[s]{0.32\textwidth}\centering
-\includegraphics[width=\textwidth]{\methodd-virtual-titration-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}\centering
+\includegraphics[scale=1]{Reports/\methodd-virtual-titration-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methodd-free-energy-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methodd-free-energy-\molid.png}
 \end{minipage}
-\begin{minipage}[s]{0.32\textwidth}
-\includegraphics[width=\textwidth]{\methodd-populations-\molid.png}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methodd-populations-\molid.png}
+\end{minipage}
+
+\begin{minipage}[s]{\textwidth}\centering
+{\textbf \methode}
+\end{minipage}
+
+\noindent
+\begin{minipage}[s]{0.33\textwidth}\centering
+\includegraphics[scale=1]{Reports/\methode-virtual-titration-\molid.png}
+\end{minipage}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methode-free-energy-\molid.png}
+\end{minipage}
+\begin{minipage}[s]{0.33\textwidth}
+\includegraphics[scale=1]{Reports/\methode-populations-\molid.png}
 \end{minipage}
 \end{document}
