@@ -61,7 +61,7 @@
 \maketitle
 
 \section{NOTES: Objectives for this manuscript}
-
+\todo[inline]{track down type II artifacts, and dont use type I labels, use epik scan, sequential, et cetera}
 \begin{itemize}
 	\item Provide a baseline for the expectation of performance of empirical models (Epik) and DFT models (Jaguar) on kinase inhibitor-like molecules and molecular fragments; draw comparisons to earlier benchmarks for these tools
 	\item Describe basic concepts, along with strengths and weaknesses of each approach (Epik and Jaguar)
@@ -140,7 +140,7 @@
     
 
 \begin{figure}[H]
-	\todo[inline]{Jaguar ASR: need to find out why matplotlib title not showing up}
+	\todo[inline]{Jaguar ASR: need to find out why matplotlib title not showing up, tight layout, add confidence intervals instead of +-, smaller font (between 6-9pt)}
 \centering
 \includegraphics[]{closest_pka_jaguar_typeI.pdf}
 \caption{{\bf Comparison of microscopic Jaguar pKa values to experimental macroscopic pKa values.} Microscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. \label{correlation-closest-jaguar}}
@@ -241,7 +241,7 @@
     
 \begin{figure}[H]
 	\centering
-	\todo[inline]{ASR: Find a good place to put the legend, and regenerate figures with lines less thick, or more alpha, add molecules to these}
+	\todo[inline]{ASR: Find a good place to put the legend, and regenerate figures with lines less thick, or more alpha, add molecules to these. Plot experiment as dashed with each curve. }
 	\includegraphics[]{Reports/overview-legend-SM01.pdf}	\\
 	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM01.pdf}
 	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM02.pdf}
