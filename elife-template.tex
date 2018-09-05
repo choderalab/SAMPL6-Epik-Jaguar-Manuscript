@@ -140,17 +140,15 @@
     
 
 \begin{figure}[H]
-	\todo[inline]{Jaguar ASR: need to find out why matplotlib title not showing up, tight layout, add confidence intervals instead of +-, smaller font (between 6-9pt)}
 \centering
-\includegraphics[]{closest_pka_jaguar_typeI.pdf}
+\includegraphics[]{closest_pka_jaguar.pdf}
 \caption{{\bf Comparison of microscopic Jaguar pKa values to experimental macroscopic pKa values.} Microscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. \label{correlation-closest-jaguar}}
 
 \end{figure}
 
 \begin{figure}[H]
-	\todo[inline]{Epik type I ASR: need to find out why matplotlib title not showing up}
 \centering
-\includegraphics[]{closest_pka_epik_typeI.pdf}
+\includegraphics[]{closest_pka_epik_micropka.pdf}
 \caption{{\bf Comparison of microscopic Epik pKa values to experimental macroscopic pKa values.} Microscopic pKa values for Epik were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. \label{correlation-closest-epiki}}
 
 
@@ -158,9 +156,8 @@
     
 
 \begin{figure}[H]
-	\todo[inline]{Epik type III ASR: need to find out why matplotlib title not showing up}
 \centering
-\includegraphics[]{closest_pka_epik_typeIII.pdf}
+\includegraphics[]{closest_pka_epik_scan.pdf}
 \caption{{\bf Comparison of macroscopic Epik pKa values to experimental macroscopic pKa values.} Macroscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. \label{correlation-closest-epikiii}}
 
 
@@ -168,9 +165,8 @@
     
 
 \begin{figure}[H]
-	\todo[inline]{Epik type III , sequential pKa mapping ASR: need to find out why matplotlib title not showing up}
 	\centering
-	\includegraphics[scale=1.0]{aligned_pka_epik_typeIII.pdf}	
+	\includegraphics[scale=1.0]{aligned_pka_epik_scan.pdf}	
 	\caption{{\bf Epik macroscopic pKa values compared to macroscopic experimental pKa values, sequentially matching pKa values}
 		Comparison of the Epik sequential scan with entire experimental data set is shown, allowing only sequential pKa values to match experiment.\label{fig:correlation-sequential}}
 \end{figure}
@@ -597,12 +593,6 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger, LLC.
 \section{Supplementary Information}
 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\linewidth]{pKa-comparison-simulated.png}
-\caption{{\bf Comparison of the entire set of experimental pKa values to all predictions using Hungarian pKa matching.} Microscopic pKa values for Jaguar (diamonds) and Epik (squares), as well as macroscopic Epik pKa values (triangles) are compared to the experimental dataset. The pKa values were matched using \cref{alg:closest}. RMSE and r-squared values can be found in \cref{tab:overview-performance}. An alternative alignment of pKa values using \cref{alg:hungarian} is available as a supplementary figure. \label{correlation-hungarian}}
-
-\end{figure}
 
 \input{Reports/report-SM01}
 
