@@ -87,8 +87,8 @@
                 %marginparwidth=4cm,% eLife
                 %marginparsep=0.5cm,% eLife
                 %right=1.3cm,% eLife
-                left=3cm,% JDC
-                right=3cm,% JDC
+                left=1.5cm,% JDC
+                right=1.5cm,% JDC
                 top=2cm,%
                 bottom=2.5cm,%
                 headheight=21pt,%

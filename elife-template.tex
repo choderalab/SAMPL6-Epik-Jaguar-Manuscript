@@ -27,7 +27,7 @@
 \newcommand{\pH}{\mathrm{pH}}
 \newcommand{\pKa}{\mathrm{pKa}}
 
-# Hidden table column
+% Hidden table column
 \newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% ARTICLE SETUP
@@ -87,84 +87,47 @@
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/Experiment-populations-SM03-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Jaguar-pKa-populations-SM03-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Jaguar-pKa-virtual-titration-SM03.pdf}\\
-	Charge \\
-	\includegraphics[width=0.66\textwidth, trim={2cm 0 2cm 0},clip]{Reports/overview-charge-legend-SM03.pdf}
-		\caption{{\bf Comparing UV experiments for SM03 to microscopic pKa Jaguar predictions}. This example shows how the UV experimental populations (left) for macrostates molecule SM03 as a function of the pH can be compared to Jaguar predictions. Jaguar was used to predict microscopic pKas (denoted as Type I predictions in SAMPL6), which can be used to derive relative microstate populations (middle). In the UV experiment, charge reflects the number of protonations, since absolute charge information is unknown. The charge combined with populations produces a macroscopic titration curve (right), with the prediction as a solid, and the experiment as a dashed line. The area between the curves (gray) is calculated after correcting for an integer offset in charges.
+	
+	\includegraphics[width=0.49\textwidth]{SM07_state.pdf}
+	\includegraphics[width=0.49\textwidth]{fig1_charge_sm07.pdf} \\
+    \includegraphics[width=0.49\textwidth]{fig1_free_energy_sm07.pdf}
+	\includegraphics[width=0.49\textwidth]{fig1_population_sm07.pdf}\\
+	\includegraphics[width=0.49\textwidth]{fig1_legend}
+	
+		\caption{{\bf Epik and Jaguar microscopic populations and free energy can be used to recapitulate the experimental titration curve.}. Molecule SM07 pKa values were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the identity of . We used Epik and Jaguar to predict microscopic pKas (denoted as Type I predictions in SAMPL6). The macrostate populatons from experiment, and microstate populations from predictions (right) can be used to generate an overall titration curve (top). 
 	\label{fig:jaguar-prediction}}
 	\todo[inline]{ASR: Add number of area to plot, set axis font sizes to size 9}
 \end{figure}
-\todo[inline]{add legend for titration curve. Remove charge label for experiment, mae egend thicker and remove charge labels. Add picture of compound}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/Experiment-populations-SM04-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Epik-micropka-populations-SM04-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Epik-micropka-virtual-titration-SM04.pdf}\\
-	Charge \\
-	\includegraphics[width=0.66\textwidth, trim={2cm 0 2cm 0},clip]{Reports/overview-charge-legend-SM03.pdf}
-		\caption{{\bf Comparing UV experiments for SM04 to Epik microscopic pKa predictions} .This example shows how the UV experimental populations (left) for macrostates molecule SM04 as a function of the pH can be used to compare to microscopic pKa Epik predictions. Epik was used to predict microscopic pKas (denoted as Type I predictions in SAMPL6), which can be used to derive relative microstate populations (middle). In the UV experiment, charge reflects the number of protonations, since absolute charge information is unknown. The charge combined with populations produces a macroscopic titration curve (right), with the prediction as a solid, and the experiment as a dashed line. The area between the curves (gray) is calculated after correcting for an integer offset in charges.  
-	\label{fig:epiki-prediction}}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/Experiment-free-energy-SM20-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Epik-free-energy-free-energy-SM20-titled}
-	\includegraphics[width=0.33\textwidth]{Reports/Epik-free-energy-virtual-titration-SM20.pdf}\\
-	Charge \\
-	\includegraphics[width=0.66\textwidth, trim={2cm 0 2cm 0},clip]{Reports/overview-charge-legend-SM03.pdf}
-		\caption{{\bf Comparing UV experiments for SM20 to Epik microscopic free energy predictions} .This example shows how the UV experimental free energy (left) for macrostates molecule SM20 as a function of the pH can be compared to microscopic free energy Epik predictions. Epik was used to predict microscopic free energy (denoted as Type II predictions in SAMPL6) (middle). In the UV experiment, charge reflects the number of protonations, since absolute charge information is unknown. The charge combined with free energies produces a macroscopic titration curve (right), with the prediction as a solid, and the experiment as a dashed line. The area between the curves (gray) is calculated after correcting for an integer offset in charges.  
-	\label{fig:epikii-prediction}}
-\end{figure}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/Experiment-populations-SM13-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Epik-scan-populations-SM13-titled.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/Epik-scan-virtual-titration-SM13.pdf}\\
-	Charge \\
-	\includegraphics[width=0.66\textwidth, trim={2cm 0 2cm 0},clip]{Reports/overview-charge-legend-SM03.pdf}
-		\caption{{\bf Comparing UV experiments for SM13 to Epik macroscopic pKa predictions} .This example shows how the UV experimental populations (left) for macrostates molecule SM13 as a function of the pH can be compared to sequential pKa Epik predictions. Epik scan mode was used to predict macroscopic pKa values (denoted as Type III predictions in SAMPL6), which can be translated into relative macrostate populations (middle). In the UV experiment, charge reflects the number of protonations, since absolute charge information is unknown. The charge combined with populations produces a macroscopic titration curve (right), with the prediction as a solid, and the experiment as a dashed line. The area between the curves (gray) is calculated after correcting for an integer offset in charges.    
-	\label{fig:epikiii-prediction}}
-\end{figure}
-
-
 
 \begin{table}[H]
 \centering
-	\caption{Overall performance of each method using either the closest pKa matching, Hungarian pKa matching,  and the area between the experimental and predicted macroscopic charge titration curve}
+	\caption{{\bf Overall performance of each method} using either the closest pKa matching, Hungarian pKa matching, or sequentially aligned pKas, and the area between the experimental and predicted macroscopic charge titration curve}
 	\label{tab:overview-performance}
-\small
-\begin{tabular}{ccccHHHHHHcc}
+\footnotesize
+\begin{tabular}{@{}cccccc@{}}
 \toprule
- & closest &  &  & hungarian &  &  & align &  &  & Titration curve & \\
- & RMSE & MAE & pearson $\rho$ & RMSE & MAE & pearson $\rho$ & RMSE & MAE & pearson $\rho$ & area & rmsd\\
- \midrule
-Epik-micropka & 0.5; [0.3, 0.7] & 0.7; [0.5, 1.0] & 0.96; [0.92, 0.99] & 0.5; [0.3, 0.7] & 0.7; [0.5, 1.0] & 0.96; [0.92, 0.99] &  \textemdash  &  \textemdash  &  \textemdash  & 3.9; [3.4, 4.5] & 0.53; [0.48, 0.59]\\
-Epik-free-energy &  \textemdash  &  \textemdash  &  \textemdash  &  \textemdash  &  \textemdash  &  \textemdash  &  \textemdash  &  \textemdash  &  \textemdash  & 1.0; [0.7, 1.4] & 0.18; [0.13, 0.22]\\
-Epik-scan & 0.8; [0.6, 1.0] & 0.9; [0.7, 1.1] & 0.94; [0.87, 0.97] & 0.8; [0.6, 1.0] & 0.9; [0.7, 1.2] & 0.94; [0.87, 0.97] & 0.8; [0.6, 1.0] & 0.9; [0.7, 1.2] & 0.94; [0.87, 0.97] & 1.7; [1.2, 2.2] & 0.27; [0.21, 0.34]\\
-Jaguar-pKa & 0.3; [0.2, 0.4] & 0.5; [0.3, 0.6] & 0.986; [0.967, 0.995] & 0.3; [0.2, 0.5] & 0.5; [0.3, 0.7] & 0.986; [0.966, 0.995] &  \textemdash  &  \textemdash  &  \textemdash  & 4.8; [3.7, 6.2] & 0.6; [0.5, 0.7]\\
-\bottomrule
+              & \multicolumn{5}{c}{pKa}                                                  \\ \midrule
+              & \multicolumn{5}{c}{RMSE}                                                 \\ \cmidrule(l){2-6} 
+              & closest               &  & hungarian             &  & align              \\ \cmidrule(lr){2-2} \cmidrule(lr){4-4} \cmidrule(l){6-6} 
+Epik micropka & 0.5; [0.3, 0.7]       &  & 0.5; [0.3, 0.7]       &  & \textemdash        \\
+Epik scan     & 0.8; [0.6, 1.0]       &  & 0.8; [0.6, 1.0]       &  & 0.8; [0.6, 1.0]    \\
+Jaguar        & 0.3; [0.2, 0.5]       &  & 0.3; [0.2, 0.5]       &  & \textemdash        \\
+              &                       &  &                       &  &                    \\
+              & \multicolumn{5}{c}{Pearson $\rho$}                                       \\ \cmidrule(l){2-6} 
+              & closest               &  & hungarian             &  & align              \\ \cmidrule(lr){2-2} \cmidrule(lr){4-4} \cmidrule(l){6-6} 
+Epik micropka & 0.96; [0.93, 0.99]    &  & 0.96; [0.92, 0.99]    &  & \textemdash        \\
+Epik scan     & 0.94; [0.88, 0.97]    &  & 0.94; [0.87, 0.97]    &  & 0.94; [0.87, 0.97] \\
+Jaguar        & 0.986; [0.966, 0.995] &  & 0.986; [0.969, 0.995] &  & \textemdash        \\ \midrule
+              &                       &  &                       &  &                    \\
+              & Charge vs pH          &  &                       &  &                    \\ \cmidrule(lr){2-2}
+              & $\Delta$ area         &  &                       &  &                    \\ \cmidrule(lr){2-2}
+Epik micropka & 1.8; [1.5, 2.1]       &  &                       &  &                    \\
+Epik scan     & 1.7; [1.2, 2.2]       &  &                       &  &                    \\
+Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &                    \\ \bottomrule
 \end{tabular}
 \end{table}
 
-% \begin{table}[H]
-% 	\centering
 
-	
-% 	\begin{tabular}{c|ccc|ccc|c}
-% 		& \multicolumn{3}{c|}{Closest} & \multicolumn{3}{c|}{Hungarian} & Titration curve \\ \cline{2-8} 
-% 		                & RMSE & MAE & $R^2$ & RMSE & MAE & $R^2$ & $\Delta $ area \\ \hline
-% 		Epik sequential &      &     &       &      &     &       &           \\
-% 		Epik micropka   &      &     &       &      &     &       &           \\
-% 		Jaguar micropKa &      &     &       &      &     &       &           
-% 	\end{tabular}
-% \end{table}
-    
 
 \begin{figure}[H]
 \centering
@@ -242,7 +205,7 @@ Jaguar-pKa & 0.3; [0.2, 0.4] & 0.5; [0.3, 0.6] & 0.986; [0.967, 0.995] & 0.3; [0
 \rowcolors{2}{gray!25}{white}
 
 \begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
-{Molecule} &  {Experimental} & {Epik-micropka} &  {Jaguar-pKa} &  {Epik-scan} \\
+{Molecule} &  {Experimental} & {Epik-micropka} &      {Jaguar} &  {Epik-scan} \\
 \midrule
       SM01 &   9.53 \pm 0.01 &        10 \pm 1 &   9.7 \pm 0.8 &      9 \pm 1 \\
       SM02 &   5.03 \pm 0.01 &         5 \pm 1 &       5 \pm 2 &      4 \pm 1 \\
@@ -335,37 +298,41 @@ Jaguar-pKa & 0.3; [0.2, 0.4] & 0.5; [0.3, 0.6] & 0.986; [0.967, 0.995] & 0.3; [0
 \end{figure}
 
 
-\begin{tabular}{lllll}
+\begin{table}[H]
+ \caption{{\bf Mean charge titration curve comparison with respect to experiment ($\Delta$ area) with confidence intervals.} Confidence intervals were obtained by gaussian bootstrapping over pKa values from the standard errors reported by the software.}
+ \begin{tabular}{lccc}
 \toprule
-Method &     Epik-micropka &          Jaguar-pKa & Epik-free-energy &           Epik-scan \\
-Molecule &                   &                     &                  &                     \\
+ &    Epik micropka &           Jaguar &        Epik scan \\
+Molecule &                  &                  &                  \\
 \midrule
-SM01     &   0.5; [0.2, 4.6] &     1.1; [0.0, 4.3] &              0.4 &     0.5; [0.1, 3.5] \\
-SM02     &   2.1; [0.1, 3.1] &     1.6; [0.4, 4.5] &              0.6 &     1.9; [0.9, 2.9] \\
-SM03     &   1.5; [0.5, 4.9] &     0.5; [0.8, 4.9] &              0.3 &  0.10; [0.15, 4.25] \\
-SM04     &   2.6; [0.1, 4.0] &     1.1; [0.1, 3.9] &              0.3 &     2.2; [0.3, 4.9] \\
-SM05     &   2.2; [0.7, 4.4] &     0.2; [0.1, 4.1] &              0.7 &     1.1; [0.2, 4.6] \\
-SM06     &  2.2; [0.8, 11.2] &     1.3; [0.5, 4.8] &              2.5 &     2.6; [0.8, 7.4] \\
-SM07     &   2.6; [0.1, 4.1] &     0.8; [0.1, 4.1] &              0.3 &     2.2; [0.4, 4.8] \\
-SM08     &   1.2; [0.5, 6.7] &     7.1; [3.3, 9.2] &              0.5 &     0.6; [0.3, 6.9] \\
-SM09     &   2.5; [0.3, 3.6] &     1.0; [0.4, 4.4] &              0.8 &     2.3; [0.7, 3.8] \\
-SM10     &   0.6; [0.1, 5.8] &     0.3; [0.1, 4.7] &              0.3 &     0.6; [0.2, 5.6] \\
-SM11     &   1.9; [0.2, 3.9] &     3.9; [0.2, 6.9] &              0.1 &  0.13; [0.11, 4.97] \\
-SM12     &   2.5; [0.5, 3.6] &     0.9; [0.3, 5.4] &              0.7 &     2.2; [0.9, 4.7] \\
-SM13     &   2.6; [0.2, 3.9] &     0.5; [0.2, 3.8] &              0.9 &     2.8; [0.5, 5.0] \\
-SM14     &   1.0; [0.9, 6.0] &     1.2; [0.1, 3.5] &              1.7 &     1.8; [0.6, 5.2] \\
-SM15     &   1.1; [0.6, 4.6] &     0.3; [0.2, 2.1] &              1.3 &     1.3; [0.5, 4.4] \\
-SM16     &   2.9; [0.5, 4.7] &     1.5; [0.5, 4.6] &              1.1 &     1.4; [0.5, 4.6] \\
-SM17     &   1.7; [0.3, 3.2] &  0.08; [0.06, 1.38] &              1.7 &     1.7; [0.4, 3.2] \\
-SM18     &   0.8; [1.2, 9.0] &     2.2; [1.5, 6.7] &                1 &  0.99; [0.98, 8.61] \\
-SM19     &   0.7; [0.1, 4.5] &     1.8; [0.3, 6.6] &              0.4 &     0.7; [0.3, 5.5] \\
-SM20     &   2.3; [0.1, 4.7] &     1.6; [0.0, 3.0] &              2.3 &     2.3; [0.1, 4.8] \\
-SM21     &   2.2; [0.6, 6.7] &     1.6; [0.7, 6.9] &              0.7 &     0.5; [0.3, 6.1] \\
-SM22     &   1.6; [0.3, 4.5] &     0.2; [0.1, 1.9] &              1.6 &     1.6; [0.3, 3.8] \\
-SM23     &   0.4; [0.1, 3.4] &     2.1; [1.2, 5.3] &              0.7 &     3.1; [1.5, 4.9] \\
-SM24     &   3.6; [0.2, 5.0] &     2.3; [0.2, 5.4] &              3.4 &     5.6; [3.4, 8.9] \\
+SM01     &  0.5; [0.2, 4.9] &  1.1; [0.0, 3.5] &  0.5; [0.1, 4.0] \\
+SM02     &  2.1; [0.2, 3.1] &  1.6; [0.3, 5.3] &  1.9; [0.7, 4.2] \\
+SM03     &  1.5; [1.0, 4.9] &  0.5; [0.8, 4.8] &  0.1; [0.2, 4.7] \\
+SM04     &  2.6; [0.2, 4.0] &  1.1; [0.1, 4.0] &  2.2; [0.3, 5.0] \\
+SM05     &  2.2; [0.6, 4.7] &  0.2; [0.1, 4.5] &  1.1; [0.5, 4.6] \\
+SM06     &  2.2; [0.7, 9.5] &  1.3; [0.6, 4.7] &  2.6; [0.6, 6.8] \\
+SM07     &  2.6; [0.1, 4.1] &  0.8; [0.1, 4.1] &  2.2; [0.7, 4.8] \\
+SM08     &  1.2; [0.5, 6.2] &  7.1; [3.3, 9.2] &  0.6; [0.1, 5.8] \\
+SM09     &  2.5; [0.3, 3.4] &  1.0; [0.1, 4.3] &  2.3; [0.6, 3.3] \\
+SM10     &  0.6; [0.2, 5.1] &  0.3; [0.2, 5.3] &  0.6; [0.1, 5.6] \\
+SM11     &  1.9; [0.2, 4.1] &  3.9; [0.5, 6.8] &  0.1; [0.2, 5.0] \\
+SM12     &  2.5; [0.2, 3.4] &  0.9; [0.4, 4.7] &  2.2; [1.1, 3.6] \\
+SM13     &  2.6; [0.2, 3.8] &  0.5; [0.1, 4.0] &  2.8; [0.3, 5.0] \\
+SM14     &  1.0; [0.8, 5.4] &  1.2; [0.1, 4.1] &  1.8; [0.6, 5.2] \\
+SM15     &  1.1; [0.4, 4.6] &  0.3; [0.2, 2.4] &  1.3; [0.4, 4.2] \\
+SM16     &  2.9; [0.7, 4.7] &  1.5; [0.5, 4.4] &  1.4; [0.6, 4.7] \\
+SM17     &  1.7; [0.1, 3.2] &  0.1; [0.0, 1.6] &  1.7; [0.2, 3.1] \\
+SM18     &  0.8; [1.2, 9.7] &  2.2; [1.5, 7.9] &  1.0; [1.1, 8.2] \\
+SM19     &  0.7; [0.2, 5.2] &  1.8; [0.6, 6.7] &  0.7; [0.2, 5.9] \\
+SM20     &  2.3; [0.1, 4.7] &  1.6; [0.2, 3.4] &  2.3; [0.1, 4.8] \\
+SM21     &  2.2; [0.8, 5.5] &  1.6; [0.5, 7.0] &  0.5; [0.4, 6.7] \\
+SM22     &  1.6; [0.5, 4.8] &  0.2; [0.1, 3.4] &  1.6; [0.3, 3.9] \\
+SM23     &  0.4; [0.2, 3.5] &  2.1; [0.7, 5.7] &  3.1; [1.9, 4.8] \\
+SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 \bottomrule
 \end{tabular}
+ 
+\end{table}
 
 		
 		
@@ -630,7 +597,7 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger, LLC.
 
 
 
-\input{Reports/report-SM01}
+% \input{Reports/report-SM01}
 
 \begin{figure}
 
