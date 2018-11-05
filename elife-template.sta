@@ -1,5 +1,2 @@
 \standalonepreambles
-\subpreamble{Reports/report-SM01.tex}
-\renewcommand {\familydefault }{\sfdefault }\usepackage [utf8]{inputenc}\usepackage {graphicx}
-\endsubpreamble
 \endstandalonepreambles

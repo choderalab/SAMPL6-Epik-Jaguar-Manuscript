@@ -85,18 +85,33 @@
 
 \section{Figures and Tables}
 
+
 \begin{figure}[H]
 	\centering
 	
-	\includegraphics[width=0.49\textwidth]{SM07_state.pdf}
-	\includegraphics[width=0.49\textwidth]{fig1_charge_sm07.pdf} \\
-    \includegraphics[width=0.49\textwidth]{fig1_free_energy_sm07.pdf}
-	\includegraphics[width=0.49\textwidth]{fig1_population_sm07.pdf}\\
-	\includegraphics[width=0.49\textwidth]{fig1_legend}
+	\includegraphics[]{Images/Molecules/SM14-pka.pdf}
+	\includegraphics[]{fig1_charge_sm14.pdf} \\
+    \includegraphics[width=0.49\textwidth]{fig1_free_energy_sm14.pdf}
+	\includegraphics[width=0.49\textwidth]{fig1_population_sm14.pdf}\\
+	\includegraphics[width=0.4\textwidth]{fig1_legend.pdf}
 	
-		\caption{{\bf Epik and Jaguar microscopic populations and free energy can be used to recapitulate the experimental titration curve.}. Molecule SM07 pKa values were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the identity of . We used Epik and Jaguar to predict microscopic pKas (denoted as Type I predictions in SAMPL6). The macrostate populatons from experiment, and microstate populations from predictions (right) can be used to generate an overall titration curve (top). 
+		\caption{{\bf Epik and Jaguar microscopic pKas can be used to generate free energies (bottom left) or, populations (bottom right), and recapitulate the binding curve (top right) when the charge of each species is added up.} Molecule SM14 pKa values (top left) were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the most likely sites of titration were established. We used Epik and Jaguar to predict microscopic pKas (denoted as Type I predictions in SAMPL6). The macrostate populatons from experiment, and microstate populations from predictions can be compared directly to an experimental titration curve derived from UV. Since NMR data was available for this molecule, the charge state in the experiment is also known.
+	\label{fig:sm14-prediction}}
+	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	
+	\includegraphics[]{Images/Molecules/SM07-pka.pdf}
+	\includegraphics[]{fig2_charge_sm07.pdf} \\
+    \includegraphics[width=0.49\textwidth]{fig2_free_energy_sm07.pdf}
+	\includegraphics[width=0.49\textwidth]{fig2_population_sm07.pdf}\\
+ 	\includegraphics[width=0.4\textwidth]{fig2_legend}
+	
+		\caption{{\bf Epik scan provides sequential pKa values for adding single protons, which can approximate a macroscopic titration curve.} Molecule SM07 pKa values were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the identity of the microstates were identified. We used Epik scan mode to predict most prevalent microstates from sequential pKas, which can approximate macroscopic pKas. The macrostate populatons from experiment, and microstate populations from predictions can be compared directly to an experimental titration curve derived from UV pKa values. Since NMR data was available for this molecule, the charge identity in the experiment is also known. 
 	\label{fig:jaguar-prediction}}
-	\todo[inline]{ASR: Add number of area to plot, set axis font sizes to size 9}
+	
 \end{figure}
 
 \begin{table}[H]
@@ -245,18 +260,17 @@ Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &           
 
     
 \begin{figure}[H]
-	\centering
-	\todo[inline, color=red!30]{ASR: Find a good place to put the legen, find source of free energy/ state penalty discrepancy artifacts}
-	\includegraphics[]{Reports/overview-legend-SM01.pdf}	\\
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM01.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM02.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM03.pdf}	 \\
-		\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM04.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM05.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM06.pdf}	 \\
-		\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM07.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM08.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM09.pdf}	 \\
+	\centering	
+	\includegraphics[width=0.33\textwidth]{Reports/SM01-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM02-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM03-titrationcurve-views.pdf}	 \\
+    \includegraphics[width=0.33\textwidth]{Reports/SM04-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM05-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM06-titrationcurve-views.pdf}	 \\
+		\includegraphics[width=0.33\textwidth]{Reports/SM07-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM08-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM09-titrationcurve-views.pdf}	 \\
+	\includegraphics[]{Reports/overview-legend.pdf}
 	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM01-SM09.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. A numerical comparison to experiment is presented in \cref{tab:titration-curves}.
 	\label{fig:charge-curves1}}
 	\end{figure}
@@ -264,21 +278,17 @@ Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &           
 	
 \begin{figure}[H]	
 	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM10.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM11.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM12.pdf}	 \\
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM13.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM14.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM15.pdf}	 \\
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM16.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM17.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM18.pdf}	 \\
-%		\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM19.pdf}
-%	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM20.pdf}
-%	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM21.pdf}	 \\
-%		\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM22.pdf}
-%	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM23.pdf}
-%	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM24.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/SM10-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM11-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM12-titrationcurve-views.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/SM13-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM14-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM15-titrationcurve-views.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/SM16-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM17-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM18-titrationcurve-views.pdf}	 \\
+	\includegraphics[]{Reports/overview-legend.pdf}
+
 	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM10-SM18.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. A numerical comparison to experiment is presented in \cref{tab:titration-curves}.
 	\label{fig:charge-curves2}}
 
@@ -286,19 +296,23 @@ Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &           
     
  \begin{figure}[H]	
 	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM19.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM20.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM21.pdf}	 \\
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM22.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM23.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/overview-virtual-titration-SM24.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/SM19-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM20-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM21-titrationcurve-views.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/SM22-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM23-titrationcurve-views.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/SM24-titrationcurve-views.pdf}	 \\
+    \includegraphics[]{Reports/overview-legend.pdf}
+
 	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM19-SM24.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. A numerical comparison to experiment is presented in \cref{tab:titration-curves}.
 	\label{fig:charge-curves3}}
+	
 
 \end{figure}
 
 
 \begin{table}[H]
+\centering
  \caption{{\bf Mean charge titration curve comparison with respect to experiment ($\Delta$ area) with confidence intervals.} Confidence intervals were obtained by gaussian bootstrapping over pKa values from the standard errors reported by the software.}
  \begin{tabular}{lccc}
 \toprule
