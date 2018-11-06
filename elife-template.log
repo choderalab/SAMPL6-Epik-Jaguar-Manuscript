@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.9)  5 NOV 2018 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.9)  5 NOV 2018 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2075,43 +2075,43 @@ LaTeX Warning: Label `alg:closest@cref' multiply defined.
 )
 \openout1 = `elife-template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 61.
  (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for LS1+stix on input line 62.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 61.
+LaTeX Font Info:    Try loading font information for LS1+stix on input line 61.
 
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for LS2+stix on input line 62.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 61.
+LaTeX Font Info:    Try loading font information for LS2+stix on input line 61.
 
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Try loading font information for T1+fos on input line 62.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Try loading font information for T1+fos on input line 61.
 
 (c:/texlive/2018/texmf-dist/tex/latex/opensans/t1fos.fd
 File: t1fos.fd 2011/11/11 Fontinst v1.927 font definitions for T1/fos.
@@ -2148,7 +2148,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 62.
+LaTeX Info: Redefining \microtypecontext on input line 61.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2204,8 +2204,8 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 62.
-Package hyperref Info: Link coloring ON on input line 62.
+(lastpage)             ! on input line 61.
+Package hyperref Info: Link coloring ON on input line 61.
 (c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -2214,9 +2214,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count383
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
 
 (./elife-template.out) (./elife-template.out)
 \@outlinefile=\write6
@@ -2225,7 +2225,7 @@ LaTeX Info: Redefining \nameref on input line 62.
 .................................................
 . chemgreek info: "mapping-activated"
 . 
-. Activating mapping `default' on line 62.
+. Activating mapping `default' on line 61.
 .................................................
 
 (c:/texlive/2018/texmf-dist/tex/latex/translator/translator-basic-dictionary-En
@@ -2239,67 +2239,67 @@ ABD: EveryShipout initializing macros (./elife-template.sta)
 \openout5 = `elife-template.sta'.
 
 LaTeX Font Info:    Try loading font information for LS1+stixscr on input line 
-62.
+61.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Try loading font information for LS2+stixex on input line 6
-2.
+1.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
 LaTeX Font Info:    Try loading font information for LS1+stixfrak on input line
- 62.
+ 61.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Try loading font information for LS1+stixbb on input line 6
-2.
+1.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Try loading font information for LS2+stixcal on input line 
-62.
+61.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Try loading font information for LS1+stixsf on input line 6
-2.
+1.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Try loading font information for LS2+stixtt on input line 6
-2.
+1.
 
 (c:/texlive/2018/texmf-dist/tex/latex/stix/ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <9> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <22> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <10> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <7.5> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <8> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 65.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 66.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 65.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 67.
-LaTeX Font Info:    Try loading font information for TS1+fos on input line 69.
+ine 66.
+LaTeX Font Info:    Try loading font information for TS1+fos on input line 68.
 
 (c:/texlive/2018/texmf-dist/tex/latex/opensans/ts1fos.fd
 File: ts1fos.fd 2011/11/11 Fontinst v1.927 font definitions for TS1/fos.
@@ -2308,31 +2308,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fos' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<Images/Molecules/SM14-pka.pdf, id=120, 198.7425pt x 137.7647pt>
-File: Images/Molecules/SM14-pka.pdf Graphic file (type pdf)
-<use Images/Molecules/SM14-pka.pdf>
-Package pdftex.def Info: Images/Molecules/SM14-pka.pdf  used on input line 92.
-(pdftex.def)             Requested size: 198.742pt x 137.76434pt.
-<fig1_charge_sm14.pdf, id=121, 231.26399pt x 160.43939pt>
-File: fig1_charge_sm14.pdf Graphic file (type pdf)
-<use fig1_charge_sm14.pdf>
-Package pdftex.def Info: fig1_charge_sm14.pdf  used on input line 93.
-(pdftex.def)             Requested size: 231.26341pt x 160.439pt.
-<fig1_free_energy_sm14.pdf, id=122, 231.26399pt x 160.43939pt>
-File: fig1_free_energy_sm14.pdf Graphic file (type pdf)
-<use fig1_free_energy_sm14.pdf>
-Package pdftex.def Info: fig1_free_energy_sm14.pdf  used on input line 94.
-(pdftex.def)             Requested size: 259.1819pt x 179.81573pt.
-<fig1_population_sm14.pdf, id=123, 231.26399pt x 160.43939pt>
-File: fig1_population_sm14.pdf Graphic file (type pdf)
-<use fig1_population_sm14.pdf>
-Package pdftex.def Info: fig1_population_sm14.pdf  used on input line 95.
-(pdftex.def)             Requested size: 259.1819pt x 179.81573pt.
-<fig1_legend.pdf, id=124, 170.7922pt x 47.32776pt>
-File: fig1_legend.pdf Graphic file (type pdf)
-<use fig1_legend.pdf>
-Package pdftex.def Info: fig1_legend.pdf  used on input line 96.
-(pdftex.def)             Requested size: 211.57147pt x 58.63089pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
@@ -2341,38 +2316,66 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [1{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-<Images/Molecules/SM07-pka.pdf, id=139, 198.7425pt x 137.7647pt>
-File: Images/Molecules/SM07-pka.pdf Graphic file (type pdf)
-<use Images/Molecules/SM07-pka.pdf>
-Package pdftex.def Info: Images/Molecules/SM07-pka.pdf  used on input line 106.
 
-(pdftex.def)             Requested size: 198.742pt x 137.76434pt.
-<fig2_charge_sm07.pdf, id=140, 231.26399pt x 160.43939pt>
-File: fig2_charge_sm07.pdf Graphic file (type pdf)
-<use fig2_charge_sm07.pdf>
-Package pdftex.def Info: fig2_charge_sm07.pdf  used on input line 107.
-(pdftex.def)             Requested size: 231.26341pt x 160.439pt.
-<fig2_free_energy_sm07.pdf, id=141, 231.26399pt x 160.43939pt>
-File: fig2_free_energy_sm07.pdf Graphic file (type pdf)
-<use fig2_free_energy_sm07.pdf>
-Package pdftex.def Info: fig2_free_energy_sm07.pdf  used on input line 108.
-(pdftex.def)             Requested size: 259.1819pt x 179.81573pt.
-<fig2_population_sm07.pdf, id=142, 231.26399pt x 160.43939pt>
-File: fig2_population_sm07.pdf Graphic file (type pdf)
-<use fig2_population_sm07.pdf>
-Package pdftex.def Info: fig2_population_sm07.pdf  used on input line 109.
-(pdftex.def)             Requested size: 259.1819pt x 179.81573pt.
-<fig2_legend.pdf, id=143, 166.20955pt x 34.44336pt>
-File: fig2_legend.pdf Graphic file (type pdf)
-<use fig2_legend.pdf>
-Package pdftex.def Info: fig2_legend.pdf  used on input line 110.
-(pdftex.def)             Requested size: 211.57147pt x 43.84505pt.
+Package natbib Warning: Citation `sampl6-pKa-measurements' on page 2 undefined 
+on input line 110.
+
+
+Package natbib Warning: Citation `sampl6-pKa-measurements' on page 2 undefined 
+on input line 111.
+
+
+! Package inputenc Error: Unicode character ρ (U+3C1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 ...nce $pK_{a_i}^0$ value, how sensitive (ρ
+                                                  i) the group is to substit...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[2 <./Images/Molecules/SM14-pka.pdf> <./fig1_charge_SM14.pdf
+[2]
+<Images/Molecules/SM14-pka.pdf, id=178, 198.7425pt x 137.7647pt>
+File: Images/Molecules/SM14-pka.pdf Graphic file (type pdf)
+<use Images/Molecules/SM14-pka.pdf>
+Package pdftex.def Info: Images/Molecules/SM14-pka.pdf  used on input line 155.
+
+(pdftex.def)             Requested size: 248.6009pt x 172.33154pt.
+<fig1_charge_SM14.pdf, id=179, 231.26399pt x 160.43939pt>
+File: fig1_charge_SM14.pdf Graphic file (type pdf)
+<use fig1_charge_SM14.pdf>
+Package pdftex.def Info: fig1_charge_SM14.pdf  used on input line 156.
+(pdftex.def)             Requested size: 248.6009pt x 172.47632pt.
+<fig1_free_energy_SM14.pdf, id=180, 231.26399pt x 160.43939pt>
+File: fig1_free_energy_SM14.pdf Graphic file (type pdf)
+<use fig1_free_energy_SM14.pdf>
+Package pdftex.def Info: fig1_free_energy_SM14.pdf  used on input line 157.
+(pdftex.def)             Requested size: 248.6009pt x 172.47632pt.
+<fig1_population_SM14.pdf, id=181, 231.26399pt x 160.43939pt>
+File: fig1_population_SM14.pdf Graphic file (type pdf)
+<use fig1_population_SM14.pdf>
+Package pdftex.def Info: fig1_population_SM14.pdf  used on input line 158.
+(pdftex.def)             Requested size: 248.6009pt x 172.47632pt.
+<fig1_legend.pdf, id=182, 170.7922pt x 47.32776pt>
+File: fig1_legend.pdf Graphic file (type pdf)
+<use fig1_legend.pdf>
+Package pdftex.def Info: fig1_legend.pdf  used on input line 159.
+(pdftex.def)             Requested size: 211.57147pt x 58.63089pt.
+
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[3 <./Images/Molecules/SM14-pka.pdf> <./fig1_charge_SM14.pdf
 
 pdfTeX warning: pdflatex.exe (file ./fig1_charge_SM14.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
@@ -2389,11 +2392,52 @@ multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./fig1_legend.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
 >]
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+<Images/Molecules/SM07-pka.pdf, id=301, 198.7425pt x 137.7647pt>
+File: Images/Molecules/SM07-pka.pdf Graphic file (type pdf)
+<use Images/Molecules/SM07-pka.pdf>
+Package pdftex.def Info: Images/Molecules/SM07-pka.pdf  used on input line 227.
+
+(pdftex.def)             Requested size: 248.6009pt x 172.33154pt.
+<fig2_charge_sm07.pdf, id=302, 231.26399pt x 160.43939pt>
+File: fig2_charge_sm07.pdf Graphic file (type pdf)
+<use fig2_charge_sm07.pdf>
+Package pdftex.def Info: fig2_charge_sm07.pdf  used on input line 228.
+(pdftex.def)             Requested size: 248.6009pt x 172.47632pt.
+<fig2_free_energy_sm07.pdf, id=303, 231.26399pt x 160.43939pt>
+File: fig2_free_energy_sm07.pdf Graphic file (type pdf)
+<use fig2_free_energy_sm07.pdf>
+Package pdftex.def Info: fig2_free_energy_sm07.pdf  used on input line 230.
+(pdftex.def)             Requested size: 248.6009pt x 172.47632pt.
+<fig2_population_sm07.pdf, id=304, 231.26399pt x 160.43939pt>
+File: fig2_population_sm07.pdf Graphic file (type pdf)
+<use fig2_population_sm07.pdf>
+Package pdftex.def Info: fig2_population_sm07.pdf  used on input line 232.
+(pdftex.def)             Requested size: 248.6009pt x 172.47632pt.
+<fig2_legend.pdf, id=305, 166.20955pt x 34.44336pt>
+File: fig2_legend.pdf Graphic file (type pdf)
+<use fig2_legend.pdf>
+Package pdftex.def Info: fig2_legend.pdf  used on input line 233.
+(pdftex.def)             Requested size: 211.57147pt x 43.84505pt.
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[3 <./Images/Molecules/SM07-pka.pdf> <./fig2_charge_sm07.pdf
+[4]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[5 <./Images/Molecules/SM07-pka.pdf> <./fig2_charge_sm07.pdf
 
 pdfTeX warning: pdflatex.exe (file ./fig2_charge_sm07.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
@@ -2410,46 +2454,56 @@ multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./fig2_legend.pdf): PDF inclusion: multiple 
 pdfs with page group included in a single page
 >]
-<closest_pka_jaguar.pdf, id=374, 144.54pt x 144.54pt>
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[6]
+<closest_pka_jaguar.pdf, id=441, 144.54pt x 144.54pt>
 File: closest_pka_jaguar.pdf Graphic file (type pdf)
 <use closest_pka_jaguar.pdf>
-Package pdftex.def Info: closest_pka_jaguar.pdf  used on input line 149.
-(pdftex.def)             Requested size: 144.53963pt x 144.53963pt.
-<closest_pka_epik_micropka.pdf, id=375, 144.54pt x 144.54pt>
+Package pdftex.def Info: closest_pka_jaguar.pdf  used on input line 364.
+(pdftex.def)             Requested size: 173.4471pt x 173.4471pt.
+<closest_pka_epik_micropka.pdf, id=442, 144.54pt x 144.54pt>
 File: closest_pka_epik_micropka.pdf Graphic file (type pdf)
 <use closest_pka_epik_micropka.pdf>
-Package pdftex.def Info: closest_pka_epik_micropka.pdf  used on input line 150.
+Package pdftex.def Info: closest_pka_epik_micropka.pdf  used on input line 365.
 
-(pdftex.def)             Requested size: 144.53963pt x 144.53963pt.
-<closest_pka_epik_scan.pdf, id=376, 144.54pt x 144.54pt>
+(pdftex.def)             Requested size: 173.4471pt x 173.4471pt.
+<closest_pka_epik_scan.pdf, id=443, 144.54pt x 144.54pt>
 File: closest_pka_epik_scan.pdf Graphic file (type pdf)
 <use closest_pka_epik_scan.pdf>
-Package pdftex.def Info: closest_pka_epik_scan.pdf  used on input line 151.
-(pdftex.def)             Requested size: 144.53963pt x 144.53963pt.
+Package pdftex.def Info: closest_pka_epik_scan.pdf  used on input line 366.
+(pdftex.def)             Requested size: 173.4471pt x 173.4471pt.
 
 
-LaTeX Warning: Reference `alg:hungarian' on page 1 undefined on input line 154.
-
-
-
-LaTeX Warning: Reference `alg:hungarian' on page 1 undefined on input line 154.
+LaTeX Warning: Reference `alg:hungarian' on page 1 undefined on input line 369.
 
 
 
-LaTeX Warning: Reference `alg:hungarian' on page 1 undefined on input line 154.
+LaTeX Warning: Reference `alg:hungarian' on page 1 undefined on input line 369.
 
 
-<aligned_pka_epik_scan.pdf, id=380, 144.54pt x 144.54pt>
+
+LaTeX Warning: Reference `alg:hungarian' on page 1 undefined on input line 369.
+
+
+<aligned_pka_epik_scan.pdf, id=448, 144.54pt x 144.54pt>
 File: aligned_pka_epik_scan.pdf Graphic file (type pdf)
 <use aligned_pka_epik_scan.pdf>
-Package pdftex.def Info: aligned_pka_epik_scan.pdf  used on input line 162.
-(pdftex.def)             Requested size: 144.53963pt x 144.53963pt.
+Package pdftex.def Info: aligned_pka_epik_scan.pdf  used on input line 389.
+(pdftex.def)             Requested size: 173.4471pt x 173.4471pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[4 <./closest_pka_jaguar.pdf> <./closest_pka_epik_micropka.pdf
+[7]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[8 <./closest_pka_jaguar.pdf> <./closest_pka_epik_micropka.pdf
 
 pdfTeX warning: pdflatex.exe (file ./closest_pka_epik_micropka.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
@@ -2457,152 +2511,216 @@ ion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./closest_pka_epik_scan.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
+> <./aligned_pka_epik_scan.pdf
+
+pdfTeX warning: pdflatex.exe (file ./aligned_pka_epik_scan.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
 >]
-<Reports/SM01-titrationcurve-views.pdf, id=559, 195.129pt x 195.129pt>
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[9]
+<Reports/SM01-titrationcurve-views.pdf, id=698, 195.129pt x 195.129pt>
 File: Reports/SM01-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM01-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM01-titrationcurve-views.pdf  used on input l
-ine 264.
+ine 501.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM02-titrationcurve-views.pdf, id=560, 195.129pt x 195.129pt>
+<Reports/SM02-titrationcurve-views.pdf, id=699, 195.129pt x 195.129pt>
 File: Reports/SM02-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM02-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM02-titrationcurve-views.pdf  used on input l
-ine 265.
+ine 502.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM03-titrationcurve-views.pdf, id=561, 195.129pt x 195.129pt>
+<Reports/SM03-titrationcurve-views.pdf, id=700, 195.129pt x 195.129pt>
 File: Reports/SM03-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM03-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM03-titrationcurve-views.pdf  used on input l
-ine 266.
+ine 503.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM04-titrationcurve-views.pdf, id=562, 195.129pt x 195.129pt>
+<Reports/SM04-titrationcurve-views.pdf, id=701, 195.129pt x 195.129pt>
 File: Reports/SM04-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM04-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM04-titrationcurve-views.pdf  used on input l
-ine 267.
+ine 504.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM05-titrationcurve-views.pdf, id=563, 195.129pt x 195.129pt>
+<Reports/SM05-titrationcurve-views.pdf, id=702, 195.129pt x 195.129pt>
 File: Reports/SM05-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM05-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM05-titrationcurve-views.pdf  used on input l
-ine 268.
+ine 505.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM06-titrationcurve-views.pdf, id=564, 195.129pt x 195.129pt>
+<Reports/SM06-titrationcurve-views.pdf, id=703, 195.129pt x 195.129pt>
 File: Reports/SM06-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM06-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM06-titrationcurve-views.pdf  used on input l
-ine 269.
+ine 506.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM07-titrationcurve-views.pdf, id=565, 195.129pt x 195.129pt>
+<Reports/SM07-titrationcurve-views.pdf, id=704, 195.129pt x 195.129pt>
 File: Reports/SM07-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM07-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM07-titrationcurve-views.pdf  used on input l
-ine 270.
+ine 507.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM08-titrationcurve-views.pdf, id=566, 195.129pt x 195.129pt>
+<Reports/SM08-titrationcurve-views.pdf, id=705, 195.129pt x 195.129pt>
 File: Reports/SM08-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM08-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM08-titrationcurve-views.pdf  used on input l
-ine 271.
+ine 508.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM09-titrationcurve-views.pdf, id=567, 195.129pt x 195.129pt>
+<Reports/SM09-titrationcurve-views.pdf, id=706, 195.129pt x 195.129pt>
 File: Reports/SM09-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM09-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM09-titrationcurve-views.pdf  used on input l
-ine 272.
+ine 509.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/overview-legend.pdf, id=568, 342.15846pt x 25.97455pt>
+<Reports/overview-legend.pdf, id=707, 342.15846pt x 25.97455pt>
 File: Reports/overview-legend.pdf Graphic file (type pdf)
 <use Reports/overview-legend.pdf>
-Package pdftex.def Info: Reports/overview-legend.pdf  used on input line 273.
+Package pdftex.def Info: Reports/overview-legend.pdf  used on input line 510.
 (pdftex.def)             Requested size: 342.15762pt x 25.97447pt.
 
 
 LaTeX Warning: Reference `tab:titration-curves' on page 1 undefined on input li
-ne 275.
+ne 512.
 
-
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[5 <./aligned_pka_epik_scan.pdf>]
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[6]
-<Reports/SM10-titrationcurve-views.pdf, id=639, 195.129pt x 195.129pt>
+<Reports/SM10-titrationcurve-views.pdf, id=708, 195.129pt x 195.129pt>
 File: Reports/SM10-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM10-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM10-titrationcurve-views.pdf  used on input l
-ine 281.
+ine 518.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM11-titrationcurve-views.pdf, id=640, 195.129pt x 195.129pt>
+<Reports/SM11-titrationcurve-views.pdf, id=709, 195.129pt x 195.129pt>
 File: Reports/SM11-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM11-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM11-titrationcurve-views.pdf  used on input l
-ine 282.
+ine 519.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM12-titrationcurve-views.pdf, id=641, 195.129pt x 195.129pt>
+<Reports/SM12-titrationcurve-views.pdf, id=710, 195.129pt x 195.129pt>
 File: Reports/SM12-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM12-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM12-titrationcurve-views.pdf  used on input l
-ine 283.
+ine 520.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM13-titrationcurve-views.pdf, id=642, 195.129pt x 195.129pt>
+<Reports/SM13-titrationcurve-views.pdf, id=711, 195.129pt x 195.129pt>
 File: Reports/SM13-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM13-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM13-titrationcurve-views.pdf  used on input l
-ine 284.
+ine 521.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM14-titrationcurve-views.pdf, id=643, 195.129pt x 195.129pt>
+<Reports/SM14-titrationcurve-views.pdf, id=712, 195.129pt x 195.129pt>
 File: Reports/SM14-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM14-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM14-titrationcurve-views.pdf  used on input l
-ine 285.
+ine 522.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM15-titrationcurve-views.pdf, id=644, 195.129pt x 195.129pt>
+<Reports/SM15-titrationcurve-views.pdf, id=713, 195.129pt x 195.129pt>
 File: Reports/SM15-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM15-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM15-titrationcurve-views.pdf  used on input l
-ine 286.
+ine 523.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM16-titrationcurve-views.pdf, id=645, 195.129pt x 195.129pt>
+<Reports/SM16-titrationcurve-views.pdf, id=714, 195.129pt x 195.129pt>
 File: Reports/SM16-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM16-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM16-titrationcurve-views.pdf  used on input l
-ine 287.
+ine 524.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM17-titrationcurve-views.pdf, id=646, 195.129pt x 195.129pt>
+<Reports/SM17-titrationcurve-views.pdf, id=715, 195.129pt x 195.129pt>
 File: Reports/SM17-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM17-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM17-titrationcurve-views.pdf  used on input l
-ine 288.
+ine 525.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM18-titrationcurve-views.pdf, id=647, 195.129pt x 195.129pt>
+<Reports/SM18-titrationcurve-views.pdf, id=716, 195.129pt x 195.129pt>
 File: Reports/SM18-titrationcurve-views.pdf Graphic file (type pdf)
 <use Reports/SM18-titrationcurve-views.pdf>
 Package pdftex.def Info: Reports/SM18-titrationcurve-views.pdf  used on input l
-ine 289.
+ine 526.
 (pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
 File: Reports/overview-legend.pdf Graphic file (type pdf)
 <use Reports/overview-legend.pdf>
-Package pdftex.def Info: Reports/overview-legend.pdf  used on input line 290.
+Package pdftex.def Info: Reports/overview-legend.pdf  used on input line 527.
 (pdftex.def)             Requested size: 342.15762pt x 25.97447pt.
 
+LaTeX Warning: Reference `tab:titration-curves' on page 1 undefined on input li
+ne 530.
+
+<Reports/SM19-titrationcurve-views.pdf, id=717, 195.129pt x 195.129pt>
+File: Reports/SM19-titrationcurve-views.pdf Graphic file (type pdf)
+<use Reports/SM19-titrationcurve-views.pdf>
+Package pdftex.def Info: Reports/SM19-titrationcurve-views.pdf  used on input l
+ine 536.
+(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
+<Reports/SM20-titrationcurve-views.pdf, id=718, 195.129pt x 195.129pt>
+File: Reports/SM20-titrationcurve-views.pdf Graphic file (type pdf)
+<use Reports/SM20-titrationcurve-views.pdf>
+Package pdftex.def Info: Reports/SM20-titrationcurve-views.pdf  used on input l
+ine 537.
+(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
+<Reports/SM21-titrationcurve-views.pdf, id=719, 195.129pt x 195.129pt>
+File: Reports/SM21-titrationcurve-views.pdf Graphic file (type pdf)
+<use Reports/SM21-titrationcurve-views.pdf>
+Package pdftex.def Info: Reports/SM21-titrationcurve-views.pdf  used on input l
+ine 538.
+(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
+<Reports/SM22-titrationcurve-views.pdf, id=720, 195.129pt x 195.129pt>
+File: Reports/SM22-titrationcurve-views.pdf Graphic file (type pdf)
+<use Reports/SM22-titrationcurve-views.pdf>
+Package pdftex.def Info: Reports/SM22-titrationcurve-views.pdf  used on input l
+ine 539.
+(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
+<Reports/SM23-titrationcurve-views.pdf, id=721, 195.129pt x 195.129pt>
+File: Reports/SM23-titrationcurve-views.pdf Graphic file (type pdf)
+<use Reports/SM23-titrationcurve-views.pdf>
+Package pdftex.def Info: Reports/SM23-titrationcurve-views.pdf  used on input l
+ine 540.
+(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
+<Reports/SM24-titrationcurve-views.pdf, id=722, 195.129pt x 195.129pt>
+File: Reports/SM24-titrationcurve-views.pdf Graphic file (type pdf)
+<use Reports/SM24-titrationcurve-views.pdf>
+Package pdftex.def Info: Reports/SM24-titrationcurve-views.pdf  used on input l
+ine 541.
+(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
+File: Reports/overview-legend.pdf Graphic file (type pdf)
+<use Reports/overview-legend.pdf>
+Package pdftex.def Info: Reports/overview-legend.pdf  used on input line 542.
+(pdftex.def)             Requested size: 342.15762pt x 25.97447pt.
 
 LaTeX Warning: Reference `tab:titration-curves' on page 1 undefined on input li
-ne 293.
+ne 545.
 
+<Images/Molecules/SM03-smarts.pdf, id=723, 264.99pt x 183.68625pt>
+File: Images/Molecules/SM03-smarts.pdf Graphic file (type pdf)
+<use Images/Molecules/SM03-smarts.pdf>
+Package pdftex.def Info: Images/Molecules/SM03-smarts.pdf  used on input line 5
+56.
+(pdftex.def)             Requested size: 174.5501pt x 120.99504pt.
+<Images/Molecules/SM18-smarts.pdf, id=724, 264.99pt x 183.68625pt>
+File: Images/Molecules/SM18-smarts.pdf Graphic file (type pdf)
+<use Images/Molecules/SM18-smarts.pdf>
+Package pdftex.def Info: Images/Molecules/SM18-smarts.pdf  used on input line 5
+57.
+(pdftex.def)             Requested size: 174.5501pt x 120.99504pt.
+<Images/Molecules/lewis-problem.pdf, id=725, 264.99pt x 183.68625pt>
+File: Images/Molecules/lewis-problem.pdf Graphic file (type pdf)
+<use Images/Molecules/lewis-problem.pdf>
+Package pdftex.def Info: Images/Molecules/lewis-problem.pdf  used on input line
+ 558.
+(pdftex.def)             Requested size: 174.5501pt x 120.99504pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[7 <./Reports/SM01-titrationcurve-views.pdf> <./Reports/SM02-titrationcurve-vie
-ws.pdf
+[10]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[11 <./Reports/SM01-titrationcurve-views.pdf> <./Reports/SM02-titrationcurve-vi
+ews.pdf
 
 pdfTeX warning: pdflatex.exe (file ./Reports/SM02-titrationcurve-views.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
@@ -2639,58 +2757,12 @@ F inclusion: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./Reports/overview-legend.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
 >]
-<Reports/SM19-titrationcurve-views.pdf, id=1219, 195.129pt x 195.129pt>
-File: Reports/SM19-titrationcurve-views.pdf Graphic file (type pdf)
-<use Reports/SM19-titrationcurve-views.pdf>
-Package pdftex.def Info: Reports/SM19-titrationcurve-views.pdf  used on input l
-ine 299.
-(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM20-titrationcurve-views.pdf, id=1220, 195.129pt x 195.129pt>
-File: Reports/SM20-titrationcurve-views.pdf Graphic file (type pdf)
-<use Reports/SM20-titrationcurve-views.pdf>
-Package pdftex.def Info: Reports/SM20-titrationcurve-views.pdf  used on input l
-ine 300.
-(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM21-titrationcurve-views.pdf, id=1221, 195.129pt x 195.129pt>
-File: Reports/SM21-titrationcurve-views.pdf Graphic file (type pdf)
-<use Reports/SM21-titrationcurve-views.pdf>
-Package pdftex.def Info: Reports/SM21-titrationcurve-views.pdf  used on input l
-ine 301.
-(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM22-titrationcurve-views.pdf, id=1222, 195.129pt x 195.129pt>
-File: Reports/SM22-titrationcurve-views.pdf Graphic file (type pdf)
-<use Reports/SM22-titrationcurve-views.pdf>
-Package pdftex.def Info: Reports/SM22-titrationcurve-views.pdf  used on input l
-ine 302.
-(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM23-titrationcurve-views.pdf, id=1223, 195.129pt x 195.129pt>
-File: Reports/SM23-titrationcurve-views.pdf Graphic file (type pdf)
-<use Reports/SM23-titrationcurve-views.pdf>
-Package pdftex.def Info: Reports/SM23-titrationcurve-views.pdf  used on input l
-ine 303.
-(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-<Reports/SM24-titrationcurve-views.pdf, id=1224, 195.129pt x 195.129pt>
-File: Reports/SM24-titrationcurve-views.pdf Graphic file (type pdf)
-<use Reports/SM24-titrationcurve-views.pdf>
-Package pdftex.def Info: Reports/SM24-titrationcurve-views.pdf  used on input l
-ine 304.
-(pdftex.def)             Requested size: 174.5501pt x 174.55151pt.
-File: Reports/overview-legend.pdf Graphic file (type pdf)
-<use Reports/overview-legend.pdf>
-Package pdftex.def Info: Reports/overview-legend.pdf  used on input line 305.
-(pdftex.def)             Requested size: 342.15762pt x 25.97447pt.
-
-
-LaTeX Warning: Reference `tab:titration-curves' on page 1 undefined on input li
-ne 308.
-
-
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[8 <./Reports/SM10-titrationcurve-views.pdf> <./Reports/SM11-titrationcurve-vie
-ws.pdf
+[12 <./Reports/SM10-titrationcurve-views.pdf> <./Reports/SM11-titrationcurve-vi
+ews.pdf
 
 pdfTeX warning: pdflatex.exe (file ./Reports/SM11-titrationcurve-views.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
@@ -2727,8 +2799,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[9 <./Reports/SM19-titrationcurve-views.pdf> <./Reports/SM20-titrationcurve-vie
-ws.pdf
+[13 <./Reports/SM19-titrationcurve-views.pdf> <./Reports/SM20-titrationcurve-vi
+ews.pdf
 
 pdfTeX warning: pdflatex.exe (file ./Reports/SM20-titrationcurve-views.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
@@ -2748,72 +2820,8 @@ F inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./Reports/SM24-titrationcurve-views.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
->]
-<Images/Molecules/SM03-smarts.png, id=2160, 198.7425pt x 137.7647pt>
-File: Images/Molecules/SM03-smarts.png Graphic file (type png)
-<use Images/Molecules/SM03-smarts.png>
-Package pdftex.def Info: Images/Molecules/SM03-smarts.png  used on input line 3
-55.
-(pdftex.def)             Requested size: 174.5501pt x 120.99785pt.
-<Images/Molecules/SM18-smarts.png, id=2162, 198.7425pt x 137.7647pt>
-File: Images/Molecules/SM18-smarts.png Graphic file (type png)
-<use Images/Molecules/SM18-smarts.png>
-Package pdftex.def Info: Images/Molecules/SM18-smarts.png  used on input line 3
-56.
-(pdftex.def)             Requested size: 174.5501pt x 120.99785pt.
-<Images/Molecules/lewis-problem.png, id=2163, 198.7425pt x 137.7647pt>
-File: Images/Molecules/lewis-problem.png Graphic file (type png)
-<use Images/Molecules/lewis-problem.png>
-Package pdftex.def Info: Images/Molecules/lewis-problem.png  used on input line
- 357.
-(pdftex.def)             Requested size: 174.5501pt x 120.99785pt.
-
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[10 <./Images/Molecules/SM03-smarts.png> <./Images/Molecules/SM18-smarts.png> <
-./Images/Molecules/lewis-problem.png>]
-
-Package natbib Warning: Citation `sampl6-pKa-measurements' on page 11 undefined
- on input line 391.
-
-
-Package natbib Warning: Citation `sampl6-pKa-measurements' on page 11 undefined
- on input line 392.
-
-
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[11]
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 506--507
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
-
- []
-
-
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[13] (./elife-template.bbl
-Underfull \hbox (badness 6461) in paragraph at lines 92--100
-[][]\T1/fos/b/n/8 Brettar I[]\T1/fos/m/n/8 (+20) , Chris-ten R, H�fle MG.  Aqui
--flexum balticum gen. nov., sp. nov., a novel ma-rine bac-terium of the Cy-
- []
-
-)
+> <./Images/Molecules/SM03-smarts.pdf> <./Images/Molecules/SM18-smarts.pdf> <./
+Images/Molecules/lewis-problem.pdf>] (./elife-template.bbl)
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
@@ -2835,11 +2843,11 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [16] (./elife-template.suppinfo)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 678.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 678.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
  (./elife-template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 678.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 678.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
 
 
 Package rerunfilecheck Warning: File `elife-template.out' has changed.
@@ -2847,8 +2855,8 @@ Package rerunfilecheck Warning: File `elife-template.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `elife-template.out':
-(rerunfilecheck)             Before: 2252B6C2CBCFCAC2A5D24F8E730D6977;1954
-(rerunfilecheck)             After:  4F1F2CD156316E7E0575E2F2E86F4970;1954.
+(rerunfilecheck)             Before: 12B2799E394A00DF8BDF2466D6F3E035;2228
+(rerunfilecheck)             After:  0B8D25C6FE8406573A6F15813996CFEA;2219.
 
 LaTeX Warning: There were undefined references.
 
@@ -2857,61 +2865,55 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 42516 strings out of 492639
- 813176 string characters out of 6133088
- 1076369 words of memory out of 5000000
- 45229 multiletter control sequences out of 15000+600000
- 686314 words of font info for 444 fonts, out of 8000000 for 9000
+ 42415 strings out of 492639
+ 810231 string characters out of 6133088
+ 1087369 words of memory out of 5000000
+ 45189 multiletter control sequences out of 15000+600000
+ 670874 words of font info for 392 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,80p,2627b,921s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.caption.16} has been referenced but does n
-ot exist, replaced by a fixed one
+pdfTeX warning (dest): name{section*.43} has been referenced but does not exi
+st, replaced by a fixed one
 
-pdfTeX warning (dest): name{section*.53} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.41} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection*.46} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection*.38} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection*.44} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection*.37} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection*.39} has been referenced but does not ex
+pdfTeX warning (dest): name{subsection*.36} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsubsection*.35} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection*.34} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.33} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection*.31} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection*.28} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection*.27} has been referenced but does not
+pdfTeX warning (dest): name{subsubsection*.26} has been referenced but does not
  exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{subsection*.25} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection*.23} has been referenced but does not ex
+pdfTeX warning (dest): name{subsubsection*.21} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection*.20} has been referenced but does not ex
 ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection*.21} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.20} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.18} has been referenced but does not exist
 , replaced by a fixed one
 
-{c:/texlive/2018/texmf-dist/fonts/enc/dvips/opensans/opensans-02.enc}{c:/texliv
-e/2018/texmf-dist/fonts/enc/dvips/opensans/opensans-03.enc}{c:/texlive/2018/tex
-mf-dist/fonts/enc/dvips/opensans/opensans-01.enc}{c:/texlive/2018/texmf-dist/fo
+pdfTeX warning (dest): name{subsubsection*.16} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection*.9} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.8} has been referenced but does not exist,
+ replaced by a fixed one
+
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/opensans/opensans-03.enc}{c:/texliv
+e/2018/texmf-dist/fonts/enc/dvips/opensans/opensans-01.enc}{c:/texlive/2018/tex
+mf-dist/fonts/enc/dvips/opensans/opensans-02.enc}{c:/texlive/2018/texmf-dist/fo
 nts/enc/dvips/opensans/opensans-04.enc}<c:/texlive/2018/texmf-dist/fonts/type1/
 public/opensans/OpenSans-Bold.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
 c/opensans/OpenSans-Italic.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/o
@@ -2919,10 +2921,10 @@ pensans/OpenSans-Regular.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/sti
 x/stix-mathex.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/stix/stix-math
 it.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb><c:/
 texlive/2018/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on elife-template.pdf (16 pages, 1189200 bytes).
+Output written on elife-template.pdf (16 pages, 1181866 bytes).
 PDF statistics:
- 2342 PDF objects out of 2487 (max. 8388607)
- 1459 compressed objects within 15 object streams
- 107 named destinations out of 1000 (max. 500000)
- 68031 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 2343 PDF objects out of 2487 (max. 8388607)
+ 1463 compressed objects within 15 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 57815 words of extra memory for PDF output out of 61914 (max. 10000000)
 

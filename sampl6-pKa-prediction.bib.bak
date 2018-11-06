@@ -1,0 +1,138 @@
+% Encoding: UTF-8
+
+@Article{Pickard2016,
+  author  = {Pickard, Frank C. and K{\"o}nig, Gerhard and Tofoleanu, Florentina and Lee, Juyong and Simmonett, Andrew C. and Shao, Yihan and Ponder, Jay W. and Brooks, Bernard R.},
+  title   = {Blind Prediction of Distribution in the {{SAMPL5}} Challenge with {{QM}} Based Protomer and {{pK}} a Corrections},
+  journal = {J. Comput. Aided Mol. Des.},
+  year    = {2016},
+  volume  = {30},
+  number  = {11},
+  pages   = {1087-1100},
+  month   = nov,
+  issn    = {0920-654X, 1573-4951},
+  doi     = {10.1007/s10822-016-9955-7},
+}
+
+@Article{VanKreel1985,
+  author  = {Van Kreel, B. K.},
+  title   = {The Estimation of the Apparent Standard Free Energy Change {{$\Delta$GopH}} of a Biochemical Reaction from the Standard Free Energy of Formation and Apparent Free Energy of Ionization of the Participating Molecules and Its Application to the Reactions of the Purine Metabolism},
+  journal = {Biochem. Mol. Biol. Educ.},
+  year    = {1985},
+  volume  = {13},
+  number  = {3},
+  pages   = {125--130},
+}
+
+@Article{Krol2006,
+  author  = {Kr{\'o}l, Marcin and Wrona, Marta and Page, Christopher S. and Bates, Paul A.},
+  title   = {Macroscopic p {{{\emph{K}}}} {\textsubscript{a}} {{Calculations}} for {{Fluorescein}} and {{Its Derivatives}}},
+  journal = {J. Chem. Theory Comput.},
+  year    = {2006},
+  volume  = {2},
+  number  = {6},
+  pages   = {1520-1529},
+  month   = nov,
+  issn    = {1549-9618, 1549-9626},
+  doi     = {10.1021/ct600235y},
+}
+
+@Article{Aguilar2010,
+  author  = {Aguilar, Boris and Anandakrishnan, Ramu and Ruscio, Jory Z. and Onufriev, Alexey V.},
+  title   = {Statistics and {{Physical Origins}} of {{pK}} and {{Ionization State Changes}} upon {{Protein}}-{{Ligand Binding}}},
+  journal = {Biophys. J.},
+  year    = {2010},
+  volume  = {98},
+  number  = {5},
+  pages   = {872-880},
+  month   = mar,
+  issn    = {00063495},
+  doi     = {10.1016/j.bpj.2009.11.016},
+}
+
+@Article{Jordan2005,
+  author  = {Jordan, I. King and Kondrashov, Fyodor A. and Adzhubei, Ivan A. and Wolf, Yuri I. and Koonin, Eugene V. and Kondrashov, Alexey S. and Sunyaev, Shamil},
+  title   = {A Universal Trend of Amino Acid Gain and Loss in Protein Evolution},
+  journal = {Nature},
+  year    = {2005},
+  volume  = {433},
+  number  = {7026},
+  pages   = {633-638},
+  month   = feb,
+  issn    = {0028-0836, 1476-4679},
+  doi     = {10.1038/nature03306},
+}
+
+@Article{Bochevarov2013,
+  author  = {Bochevarov, Art D. and Harder, Edward and Hughes, Thomas F. and Greenwood, Jeremy R. and Braden, Dale A. and Philipp, Dean M. and Rinaldo, David and Halls, Mathew D. and Zhang, Jing and Friesner, Richard A.},
+  title   = {Jaguar: {{A}} High-Performance Quantum Chemistry Software Program with Strengths in Life and Materials Sciences},
+  journal = {Int. J. Quantum Chem.},
+  year    = {2013},
+  volume  = {113},
+  number  = {18},
+  pages   = {2110-2142},
+  month   = sep,
+  issn    = {00207608},
+  doi     = {10.1002/qua.24481},
+}
+
+@Article{tenBrink2010,
+  author  = {{ten Brink}, Tim and Exner, Thomas E.},
+  title   = {{{pKa}} Based Protonation States and Microspecies for Protein\textendash{}ligand Docking},
+  journal = {J. Comput. Aided Mol. Des.},
+  year    = {2010},
+  volume  = {24},
+  number  = {11},
+  pages   = {935-942},
+  month   = nov,
+  issn    = {0920-654X, 1573-4951},
+  doi     = {10.1007/s10822-010-9385-x},
+}
+
+@Article{Manchester2010,
+  author  = {Manchester, John and Walkup, Grant and Rivin, Olga and You, Zhiping},
+  title   = {Evaluation of p {{{\emph{K}}}} {\textsubscript{a}} {{Estimation Methods}} on 211 {{Druglike Compounds}}},
+  journal = {J. Chem. Inf. Model.},
+  year    = {2010},
+  volume  = {50},
+  number  = {4},
+  pages   = {565-571},
+  month   = apr,
+  issn    = {1549-9596, 1549-960X},
+  doi     = {10.1021/ci100019p},
+}
+
+@Article{Shelley2007Epik,
+  author  = {Shelley, John C. and Cholleti, Anuradha and Frye, Leah L. and Greenwood, Jeremy R. and Timlin, Mathew R. and Uchimaya, Makoto},
+  title   = {Epik: A Software Program for {{pK}} a Prediction and Protonation State Generation for Drug-like Molecules},
+  journal = {J. Comput. Aided Mol. Des.},
+  year    = {2007},
+  volume  = {21},
+  number  = {12},
+  pages   = {681-691},
+  month   = dec,
+  issn    = {0920-654X, 1573-4951},
+  comment = {Epik},
+  doi     = {10.1007/s10822-007-9133-z},
+}
+
+@Misc{SchroedingerLLC,
+  author = {Schr\"{o}dinger{, }LLC},
+  title  = {Epik 4.5},
+}
+
+@Book{Perrin1981HammettTaft,
+  title         = {pKa prediction for organic acids and bases},
+  publisher     = {Springer},
+  year          = {1981},
+  author        = {Perrin, Douglas Dalzell and Dempsey, Boyd and Serjeant, Eldon P},
+  volume        = {1},
+  __markedentry = {[Bas:6]},
+  comment       = {HammettTaft},
+}
+
+@Misc{SMARTSDaylight,
+  title   = {SMARTS, SMiles ARbitrary Target Specification, is a registered trademark of Daylight Chemical Information Systems},
+  comment = {SMARTS Daylight},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

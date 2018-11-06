@@ -1,28 +1,31 @@
 \BOOKMARK [1][-]{section*.1}{NOTES: Objectives for this manuscript}{}% 1
-\BOOKMARK [1][-]{section*.3}{Figures and Tables}{}% 2
-\BOOKMARK [1][-]{section*.17}{Introduction}{}% 3
-\BOOKMARK [1][-]{section*.19}{Methods}{}% 4
-\BOOKMARK [2][-]{subsection*.20}{Epik}{section*.19}% 5
-\BOOKMARK [2][-]{subsection*.22}{Jaguar}{section*.19}% 6
-\BOOKMARK [2][-]{subsection*.24}{Microstate predictions}{section*.19}% 7
-\BOOKMARK [3][-]{subsubsection*.25}{Epik: Fast empirical pKa predictions}{subsection*.24}% 8
-\BOOKMARK [3][-]{subsubsection*.26}{Jaguar: Ab initio quantum chemical pKa predictions}{subsection*.24}% 9
-\BOOKMARK [2][-]{subsection*.27}{Predicting macroscopic pKas}{section*.19}% 10
-\BOOKMARK [3][-]{subsubsection*.28}{Sequential titration of dominant species}{subsection*.27}% 11
-\BOOKMARK [3][-]{subsubsection*.29}{Virtual electrochemical titration}{subsection*.27}% 12
-\BOOKMARK [3][-]{subsubsection*.30}{Predicting UV-metric titration}{subsection*.27}% 13
-\BOOKMARK [1][-]{section*.31}{Results}{}% 14
-\BOOKMARK [1][-]{section*.32}{Discussion}{}% 15
-\BOOKMARK [2][-]{subsection*.33}{Overall performance}{section*.32}% 16
-\BOOKMARK [3][-]{subsubsection*.34}{Matching of experimental and calculated pKas}{subsection*.33}% 17
-\BOOKMARK [2][-]{subsection*.38}{Macroscopic titration curves}{section*.32}% 18
-\BOOKMARK [2][-]{subsection*.41}{Microscopic pKa values}{section*.32}% 19
-\BOOKMARK [2][-]{subsection*.42}{Descriptor analysis}{section*.32}% 20
-\BOOKMARK [2][-]{subsection*.43}{Comparison with other methods}{section*.32}% 21
-\BOOKMARK [2][-]{subsection*.45}{Suggestions for future challenges}{section*.32}% 22
-\BOOKMARK [1][-]{section*.46}{Conclusions}{}% 23
-\BOOKMARK [1][-]{section*.47}{Code and data availability}{}% 24
-\BOOKMARK [1][-]{section*.48}{Author Contributions}{}% 25
-\BOOKMARK [1][-]{section*.50}{Acknowledgments}{}% 26
-\BOOKMARK [1][-]{section*.51}{Disclosures}{}% 27
-\BOOKMARK [1][-]{section*.52}{Supplementary Information}{}% 28
+\BOOKMARK [1][-]{section*.3}{Introduction}{}% 2
+\BOOKMARK [1][-]{section*.4}{Technology}{}% 3
+\BOOKMARK [2][-]{subsection*.5}{Epik}{section*.4}% 4
+\BOOKMARK [2][-]{subsection*.6}{Jaguar}{section*.4}% 5
+\BOOKMARK [1][-]{section*.7}{Methods}{}% 6
+\BOOKMARK [2][-]{subsection*.8}{Microstate predictions}{section*.7}% 7
+\BOOKMARK [3][-]{subsubsection*.10}{Epik: Fast empirical pKa predictions}{subsection*.8}% 8
+\BOOKMARK [3][-]{subsubsection*.11}{Jaguar: Ab initio quantum chemical pKa predictions}{subsection*.8}% 9
+\BOOKMARK [2][-]{subsection*.12}{Predicting macroscopic pKa values}{section*.7}% 10
+\BOOKMARK [3][-]{subsubsection*.13}{Epik scan: Sequential titration of dominant species}{subsection*.12}% 11
+\BOOKMARK [3][-]{subsubsection*.14}{Population curves from pKa}{subsection*.12}% 12
+\BOOKMARK [3][-]{subsubsection*.15}{Virtual electrochemical titration}{subsection*.12}% 13
+\BOOKMARK [3][-]{subsubsection*.17}{Virtual electrochemical titration}{subsection*.12}% 14
+\BOOKMARK [3][-]{subsubsection*.18}{Predicting UV-metric titration}{subsection*.12}% 15
+\BOOKMARK [1][-]{section*.19}{Results}{}% 16
+\BOOKMARK [1][-]{section*.21}{Discussion}{}% 17
+\BOOKMARK [2][-]{subsection*.22}{Overall performance}{section*.21}% 18
+\BOOKMARK [3][-]{subsubsection*.23}{Matching of experimental and calculated pKa values}{subsection*.22}% 19
+\BOOKMARK [2][-]{subsection*.32}{Macroscopic titration curves}{section*.21}% 20
+\BOOKMARK [3][-]{subsubsection*.37}{Problematic Lewis structures}{subsection*.32}% 21
+\BOOKMARK [2][-]{subsection*.39}{Microscopic pKa values}{section*.21}% 22
+\BOOKMARK [2][-]{subsection*.40}{Descriptor analysis}{section*.21}% 23
+\BOOKMARK [2][-]{subsection*.41}{Comparison with other methods}{section*.21}% 24
+\BOOKMARK [2][-]{subsection*.43}{Suggestions for future challenges}{section*.21}% 25
+\BOOKMARK [1][-]{section*.44}{Conclusions}{}% 26
+\BOOKMARK [1][-]{section*.45}{Code and data availability}{}% 27
+\BOOKMARK [1][-]{section*.46}{Author Contributions}{}% 28
+\BOOKMARK [1][-]{section*.48}{Acknowledgments}{}% 29
+\BOOKMARK [1][-]{section*.49}{Disclosures}{}% 30
+\BOOKMARK [1][-]{section*.50}{Supplementary Information}{}% 31

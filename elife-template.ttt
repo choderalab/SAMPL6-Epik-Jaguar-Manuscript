@@ -1,0 +1,155 @@
+\begin{table}[H]
+\centering
+\caption{{\bf Overall performance of each method} using either the closest pKa matching, Hungarian pKa matching, or sequentially aligned pKa values, and the area between the experimental and predicted macroscopic charge titration curve}
+\label{tab:overview-performance}
+
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+              & \multicolumn{5}{c}{pKa}                                                  \\ \midrule
+              & \multicolumn{5}{c}{RMSE}                                                 \\ \cmidrule(l){2-6}
+              & closest               &  & hungarian             &  & align              \\ \cmidrule(lr){2-2} \cmidrule(lr){4-4} \cmidrule(l){6-6}
+Epik micropka & 0.5; [0.3, 0.7]       &  & 0.5; [0.3, 0.7]       &  & \textemdash        \\
+Epik scan     & 0.8; [0.6, 1.0]       &  & 0.8; [0.6, 1.0]       &  & 0.8; [0.6, 1.0]    \\
+Jaguar        & 0.3; [0.2, 0.5]       &  & 0.3; [0.2, 0.5]       &  & \textemdash        \\
+              &                       &  &                       &  &                    \\
+              & \multicolumn{5}{c}{Pearson $\rho$}                                       \\ \cmidrule(l){2-6}
+              & closest               &  & hungarian             &  & align              \\ \cmidrule(lr){2-2} \cmidrule(lr){4-4} \cmidrule(l){6-6}
+Epik micropka & 0.96; [0.93, 0.99]    &  & 0.96; [0.92, 0.99]    &  & \textemdash        \\
+Epik scan     & 0.94; [0.88, 0.97]    &  & 0.94; [0.87, 0.97]    &  & 0.94; [0.87, 0.97] \\
+Jaguar        & 0.986; [0.966, 0.995] &  & 0.986; [0.969, 0.995] &  & \textemdash        \\ \midrule
+              &                       &  &                       &  &                    \\
+              & Charge vs pH          &  &                       &  &                    \\ \cmidrule(lr){2-2}
+              & $\Delta$ area         &  &                       &  &                    \\ \cmidrule(lr){2-2}
+Epik micropka & 1.8; [1.5, 2.1]       &  &                       &  &                    \\
+Epik scan     & 1.7; [1.2, 2.2]       &  &                       &  &                    \\
+Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &                    \\ \bottomrule
+\end{tabular}
+\end{table}
+\efloatseparator
+ 
+\begin{table}[H]
+\centering
+ \caption{{\bf Mean charge titration curve comparison with respect to experiment ($\Delta$ area) with confidence intervals.} Confidence intervals were obtained by gaussian bootstrapping over pKa values from the standard errors reported by the software.}
+ \begin{tabular}{lccc}
+\toprule
+ &    Epik micropka &           Jaguar &        Epik scan \\
+Molecule &                  &                  &                  \\
+\midrule
+SM01     &  0.5; [0.2, 4.9] &  1.1; [0.0, 3.5] &  0.5; [0.1, 4.0] \\
+SM02     &  2.1; [0.2, 3.1] &  1.6; [0.3, 5.3] &  1.9; [0.7, 4.2] \\
+SM03     &  1.5; [1.0, 4.9] &  0.5; [0.8, 4.8] &  0.1; [0.2, 4.7] \\
+SM04     &  2.6; [0.2, 4.0] &  1.1; [0.1, 4.0] &  2.2; [0.3, 5.0] \\
+SM05     &  2.2; [0.6, 4.7] &  0.2; [0.1, 4.5] &  1.1; [0.5, 4.6] \\
+SM06     &  2.2; [0.7, 9.5] &  1.3; [0.6, 4.7] &  2.6; [0.6, 6.8] \\
+SM07     &  2.6; [0.1, 4.1] &  0.8; [0.1, 4.1] &  2.2; [0.7, 4.8] \\
+SM08     &  1.2; [0.5, 6.2] &  7.1; [3.3, 9.2] &  0.6; [0.1, 5.8] \\
+SM09     &  2.5; [0.3, 3.4] &  1.0; [0.1, 4.3] &  2.3; [0.6, 3.3] \\
+SM10     &  0.6; [0.2, 5.1] &  0.3; [0.2, 5.3] &  0.6; [0.1, 5.6] \\
+SM11     &  1.9; [0.2, 4.1] &  3.9; [0.5, 6.8] &  0.1; [0.2, 5.0] \\
+SM12     &  2.5; [0.2, 3.4] &  0.9; [0.4, 4.7] &  2.2; [1.1, 3.6] \\
+SM13     &  2.6; [0.2, 3.8] &  0.5; [0.1, 4.0] &  2.8; [0.3, 5.0] \\
+SM14     &  1.0; [0.8, 5.4] &  1.2; [0.1, 4.1] &  1.8; [0.6, 5.2] \\
+SM15     &  1.1; [0.4, 4.6] &  0.3; [0.2, 2.4] &  1.3; [0.4, 4.2] \\
+SM16     &  2.9; [0.7, 4.7] &  1.5; [0.5, 4.4] &  1.4; [0.6, 4.7] \\
+SM17     &  1.7; [0.1, 3.2] &  0.1; [0.0, 1.6] &  1.7; [0.2, 3.1] \\
+SM18     &  0.8; [1.2, 9.7] &  2.2; [1.5, 7.9] &  1.0; [1.1, 8.2] \\
+SM19     &  0.7; [0.2, 5.2] &  1.8; [0.6, 6.7] &  0.7; [0.2, 5.9] \\
+SM20     &  2.3; [0.1, 4.7] &  1.6; [0.2, 3.4] &  2.3; [0.1, 4.8] \\
+SM21     &  2.2; [0.8, 5.5] &  1.6; [0.5, 7.0] &  0.5; [0.4, 6.7] \\
+SM22     &  1.6; [0.5, 4.8] &  0.2; [0.1, 3.4] &  1.6; [0.3, 3.9] \\
+SM23     &  0.4; [0.2, 3.5] &  2.1; [0.7, 5.7] &  3.1; [1.9, 4.8] \\
+SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\centering
+\caption{{\bf Macroscopic pKa values computed via Epik's sequential scan procedure.}
+Experimental and computed pKa values matched using sequential alignment of pKa values.}
+\label{tab:molecule-macro}
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
+{Molecule} &  {Experimental} &  {Epik-scan} \\
+\midrule
+      SM01 &   9.53 \pm 0.01 &      9 \pm 1 \\
+      SM02 &   5.03 \pm 0.01 &      4 \pm 1 \\
+      SM03 &   7.02 \pm 0.01 &      7 \pm 2 \\
+      SM04 &   6.02 \pm 0.01 &      6 \pm 1 \\
+      SM05 &   4.59 \pm 0.01 &      5 \pm 2 \\
+      SM06 &   3.03 \pm 0.04 &      4 \pm 1 \\
+      SM06 &  11.74 \pm 0.01 &     10 \pm 2 \\
+      SM07 &   6.08 \pm 0.01 &      6 \pm 2 \\
+      SM08 &   4.22 \pm 0.01 &      4 \pm 2 \\
+      SM09 &   5.37 \pm 0.01 &  4.0 \pm 0.9 \\
+      SM10 &   9.02 \pm 0.01 &      9 \pm 1 \\
+      SM11 &   3.89 \pm 0.01 &      4 \pm 2 \\
+      SM12 &   5.28 \pm 0.01 &      4 \pm 1 \\
+      SM13 &   5.77 \pm 0.01 &      4 \pm 2 \\
+      SM14 &   2.58 \pm 0.01 &      3 \pm 2 \\
+      SM14 &   5.30 \pm 0.01 &      6 \pm 2 \\
+      SM15 &   4.70 \pm 0.01 &      6 \pm 1 \\
+      SM15 &   8.94 \pm 0.01 &      9 \pm 1 \\
+      SM16 &   5.37 \pm 0.01 &  4.7 \pm 0.9 \\
+      SM16 &  10.65 \pm 0.01 &     10 \pm 2 \\
+      SM17 &   3.16 \pm 0.01 &  4.9 \pm 0.7 \\
+      SM18 &   2.15 \pm 0.02 &      2 \pm 2 \\
+      SM18 &   9.58 \pm 0.03 &      9 \pm 2 \\
+      SM18 &  11.02 \pm 0.04 &     10 \pm 2 \\
+      SM19 &   9.56 \pm 0.02 &      9 \pm 2 \\
+      SM20 &   5.70 \pm 0.03 &      8 \pm 2 \\
+      SM21 &   4.10 \pm 0.01 &      4 \pm 2 \\
+      SM22 &   2.40 \pm 0.02 &      4 \pm 1 \\
+      SM22 &   7.43 \pm 0.01 &  6.8 \pm 0.9 \\
+      SM23 &   5.45 \pm 0.01 &  6.0 \pm 0.8 \\
+      SM24 &   2.60 \pm 0.01 &      4 \pm 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\efloatseparator
+ 
+\begin{table}[H]
+\centering
+\caption{{\bf Microscopic pKa per molecule for each method as matched by the "closest" algorithm (\cref{alg:closest}), compared to experiment.} The uncertainty indicated is the standard error from the experiment, and the reported standard error by the prediction method.}
+\label{tab:molecule-micro-closest}
+\rowcolors{2}{gray!25}{white}
+
+\begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
+{Molecule} &  {Experimental} & {Epik-micropka} &      {Jaguar} &  {Epik-scan} \\
+\midrule
+      SM01 &   9.53 \pm 0.01 &        10 \pm 1 &   9.7 \pm 0.8 &      9 \pm 1 \\
+      SM02 &   5.03 \pm 0.01 &         5 \pm 1 &       5 \pm 2 &      4 \pm 1 \\
+      SM03 &   7.02 \pm 0.01 &         7 \pm 2 &       7 \pm 2 &      7 \pm 2 \\
+      SM04 &   6.02 \pm 0.01 &     6.1 \pm 0.9 &       5 \pm 2 &      6 \pm 1 \\
+      SM05 &   4.59 \pm 0.01 &         5 \pm 2 &   4.4 \pm 0.5 &      5 \pm 2 \\
+      SM06 &   3.03 \pm 0.04 &         3 \pm 2 &   3.5 \pm 0.5 &  2.2 \pm 0.9 \\
+      SM06 &  11.74 \pm 0.01 &        10 \pm 2 &      11 \pm 2 &     10 \pm 2 \\
+      SM07 &   6.08 \pm 0.01 &     6.1 \pm 0.9 &       5 \pm 2 &      6 \pm 2 \\
+      SM08 &   4.22 \pm 0.01 &         4 \pm 2 &   4.1 \pm 0.8 &      4 \pm 2 \\
+      SM09 &   5.37 \pm 0.01 &         5 \pm 1 &       6 \pm 2 &  4.0 \pm 0.9 \\
+      SM10 &   9.02 \pm 0.01 &         9 \pm 2 &       9 \pm 2 &      9 \pm 1 \\
+      SM11 &   3.89 \pm 0.01 &         4 \pm 2 &   3.0 \pm 0.4 &      4 \pm 2 \\
+      SM12 &   5.28 \pm 0.01 &         5 \pm 1 &       5 \pm 2 &      4 \pm 1 \\
+      SM13 &   5.77 \pm 0.01 &         5 \pm 2 &       5 \pm 2 &      4 \pm 2 \\
+      SM14 &   5.30 \pm 0.01 &         5 \pm 2 &   5.3 \pm 0.7 &      6 \pm 2 \\
+      SM14 &   2.58 \pm 0.01 &         3 \pm 2 &   2.8 \pm 0.1 &      3 \pm 2 \\
+      SM15 &   8.94 \pm 0.01 &         9 \pm 1 &   8.7 \pm 0.8 &      9 \pm 1 \\
+      SM15 &   4.70 \pm 0.01 &         6 \pm 1 &   4.8 \pm 0.7 &      6 \pm 1 \\
+      SM16 &   5.37 \pm 0.01 &         5 \pm 2 &       6 \pm 2 &  4.7 \pm 0.9 \\
+      SM16 &  10.65 \pm 0.01 &        10 \pm 2 &  11.2 \pm 0.9 &     10 \pm 2 \\
+      SM17 &   3.16 \pm 0.01 &     4.9 \pm 0.8 &   3.2 \pm 0.6 &  4.9 \pm 0.7 \\
+      SM18 &   9.58 \pm 0.03 &        10 \pm 2 &      10 \pm 2 &      9 \pm 2 \\
+      SM18 &   2.15 \pm 0.02 &         2 \pm 2 &       2 \pm 2 &      2 \pm 2 \\
+      SM18 &  11.02 \pm 0.04 &        11 \pm 2 &      11 \pm 2 &     10 \pm 2 \\
+      SM19 &   9.56 \pm 0.02 &         9 \pm 2 &  10.1 \pm 0.7 &      9 \pm 2 \\
+      SM20 &   5.70 \pm 0.03 &         8 \pm 2 &   7.3 \pm 0.9 &      8 \pm 2 \\
+      SM21 &   4.10 \pm 0.01 &         4 \pm 2 &       4 \pm 2 &      4 \pm 2 \\
+      SM22 &   7.43 \pm 0.01 &     6.8 \pm 0.9 &   7.6 \pm 0.5 &  6.8 \pm 0.9 \\
+      SM22 &   2.40 \pm 0.02 &         4 \pm 2 &   2.4 \pm 0.5 &      4 \pm 1 \\
+      SM23 &   5.45 \pm 0.01 &         5 \pm 2 &       6 \pm 2 &  6.0 \pm 0.8 \\
+      SM24 &   2.60 \pm 0.01 &         4 \pm 2 &   2.5 \pm 0.3 &      4 \pm 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
