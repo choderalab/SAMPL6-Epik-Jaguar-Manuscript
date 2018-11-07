@@ -259,6 +259,18 @@ It is also possible to translate the micropKas into macropKas
 
 \section{Results}
 
+\subsection{Overall performance}
+- Jaguar performs best of all methods.It has the strongest pKa correlations, and the titration curves are most likely to be correct.
+- It did not perform well for a few outliers (SM18), perhaps due to the many different microstates, the accumulation of errors is large.
+
+
+- Epik performs similarly to Jaguar, but doesn't return as many protonation states/pKas. This might be a blessing and a curse. Sometimes, Epik might miss relevant microstates, while sometimes,
+it avoids states it has not been parametrized for. That said,
+when Epik is told to return low-probability structures, it can return
+problematic configurations of the molecule (see also Discussion).
+
+- Epik scan performs surprisingly well. In the initial overview, it was shown to be in the top 5 of predictors of the entire SAMPL6 challenge.
+
 
 \begin{table}[H]
 \centering
@@ -301,9 +313,6 @@ Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &           
 
 
 \subsection{Overall performance}
-
-Some low probability structures produced by Epik included questionable protonation states of a heterycyclic moiety, present in SM03 and SM18 ( \Cref{fig:lewis-structure-SM03-SM18}). 
-
 
 
 Overall performance of Epik and Jaguar based on various metrics (figures/tables)
@@ -558,8 +567,10 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 
 
 \subsection{Problematic Lewis structures}
-Epik generates some structures that seem to have invalid lewis structures.
-\cref{fig:lewis-structure-SM03-SM18}.
+
+Some low probability structures produced by Epik included questionable protonation states of a heterycyclic moiety, present in SM03 and SM18 ( \Cref{fig:lewis-structure-SM03-SM18}).  The issue leads to a pentavalent nitrogen.
+
+
 
 \begin{figure}[H]	
 \centering
