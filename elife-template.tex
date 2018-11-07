@@ -61,28 +61,6 @@
 \begin{document}
 
 \maketitle
-
-\section{NOTES: Objectives for this manuscript}
-\todo[inline]{track down artifacts that seem to be present in free energy values}
-\begin{itemize}
-	\item Provide a baseline for the expectation of performance of empirical models (Epik) and DFT models (Jaguar) on kinase inhibitor-like molecules and molecular fragments; draw comparisons to earlier benchmarks for these tools
-	\item Describe basic concepts, along with strengths and weaknesses of each approach (Epik and Jaguar)
-	\item Lessons learned for participating in the challenge
-	      \begin{itemize}
-	      	\item How should we predict macroscopic pKa values from microscopic pKa values? Explain possibilities and justify choice
-	      	      \begin{itemize}
-	      	      	\item Sequential titration (Epik)
-	      	      	\item <n protons>/charge vs pH inflection points: Matches electrochemical titration, but not UV-metric
-	      	      	\item Is there a way to predict what UV-metric would observe from populations vs pH?
-	      	      \end{itemize}
-	      \end{itemize}
-	\item For microscopic pKa prediction: Epik may enumerate a different set of microstates than other tools (we proposed these as newly labeled states)
-	\item Epik does not return state populations below a certain threshold, so we could not consider states proposed by SAMPL6 [Check this]
-	\item For worst predicted compounds, provide an explanation as to why the methods may perform poorly (descriptors?) [ may not have enough data points to draw conclusion]
-	      
-\end{itemize}
-
-
 %\tableofcontents
 %\listoffigures
 %\listoftables
@@ -135,21 +113,66 @@ Given a target pH and pH tolerance, the molecule can be appropriately protonated
 
 \subsection{Jaguar}
 
-Summary of how Jaguar computes pKa values 
+Jaguar uses an \textit{ab initio} DFT method for calculating pKa values. 
 
-- DFT/LMP2 
+It attempts to estimate the pKa using the free energy of deprotonation  
 
-- thermodynamic cycle
+\begin{align}
+ pK_a = \frac{\Delta G_\textrm{(aq)}}{RT \ln 10}  
+\end{align}
 
-- multiple conformations 
+The value of $ \Delta G_\textrm{(aq)}$ can be obtained using the following thermodynamic cycle:
+%
+\begin{figure}[H]
+\centering
+ \includegraphics{jaguar-reaction}
+\end{figure}
+%
+, which leads to the following equation.
+%
+\begin{equation}
+ \Delta G_\textrm{(aq)} = \Delta G_\textrm{(g)} - \Delta G^\textrm{\ce{BH+}}_\textrm{sol} + \Delta G^\textrm{\ce{B}}_\textrm{sol}  +  \Delta G^\textrm{\ce{H+}}_\textrm{sol} \quad .
+\end{equation}
+
+From this equation, it follows that when the other 4 terms are known,
+the pKa value can be estimated.
+
+$\Delta G^\textrm{\ce{H+}}_\textrm{sol}$ has previously been established to be -259.5 kcal per mol\cite{Lim1991protonsolvation}.
 
 
-\section{Methods}
+Gas phase term $\Delta G_\textrm{(g)}$ is calculated using
+%
+\begin{equation}
+ \Delta G_\textrm{(g)} = E_\textrm{\ce{B_{(g)}}} - E_\textrm{\ce{BH+ _{(g)}}} + \frac{5RT}{2 } - T \Delta S \quad .
+\end{equation}
+
+
+The energy terms require first a geometry optimization, which is performed using B3LYP/6-31G*. 
+%
+Afterwards, B3LYP/cc-pVTZ+ is used for atoms involved in the deprotonation reaction, and the remainder are treated using the cc-pVTZ basis set.
+%
+\todo[inline]{ASR: Describe solvation calculation and need for empirical correction}
+
+\todo[inline]{ASR: Describe how multiple conformations are incorporated}
+\todo[inline]{ASR:Explain the individual terms in the equations above, citations for method}
+
+\section{Analysis}
 
 \subsection{Microstate predictions}
 
+Methods like Epik and Jaguar provide microstate pKa predictions.
+%
+This means that rather than macroscopic pKas observed in the average charge state (potentiometric titration) or number of titration events (UV titration curve), it produces a microequilibrium constant between a single pair of configurations (protonation states or tautomers) is predicted. 
+%
+One way to compare experiment and prediction is by directly comparing 
+pKa values.
+%
+However, there are likely many microstates, and only a few macrostates.
+%
+Therefore, we also look at the predicted titration curve, which can incorporate information from every microstate into a macrostate.
 
-\begin{figure}[hbtp]
+
+\begin{figure}[H]
 	\centering
 	
 	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM14-pka.pdf} \hfill
@@ -165,34 +188,24 @@ Summary of how Jaguar computes pKa values
 
 
 
-\subsubsection{Epik: Fast empirical pKa predictions}
-\begin{itemize}
-	\item were performed between pH 2-12
-	\item Reported states with a minimum population of $e^{-10/RT}$
-	\item States proposed by SAMPL6 but not predicted by Epik were not considered in analysis.
-	      
-\end{itemize}
-
-
-\subsubsection{Jaguar: Ab initio quantum chemical pKa predictions}
-\begin{itemize}
-	\item Ran using default settings (5 conformations) for each of the pre-enumerated specified microstate pairs.
-	\item Input structures were first minimized using MMFF.
-	\item Additional minimization was performed for structures for which scf/geopt did not converge
-\end{itemize}
 
 
 \subsection{Predicting macroscopic pKa values}
 
 Epik and Jaguar predict microscopic pKa values or microstate energies, which must be translated into macroscopic pKa values for comparison to experiment.
-Several reasonable choices are possible for translating these microscopic properties into macroscopic pKa values.
+Several choices are possible for comparing these microscopic properties into macroscopic pKa values.
+%
+It is also possible to translate the micropKas into macropKas
+\cite{Philipp2018macropka}
 
+\begin{align}
+ K_a^\text{macro} = \sum_{j=1}^{N_\text{deprot}} \frac{1}{\sum_{i=1}^{N_\text{prot}}\frac{1}{ K_{ij^\text{micro}}}}
+ \end{align}
 
-\subsubsection{Epik scan: Sequential titration of dominant species} 
-pass
+\todo[inline]{See if I can perform those conversions for my data.}
+ 
 
-
-\subsubsection{Population curves from pKa}
+\subsection{Population curves from pKa}
 
 \begin{itemize}
 	\item Description of the population curve generation from pKa \\
@@ -206,7 +219,7 @@ pass
 	\pi_i(\pH) &=& \frac{e^{-g_i(\pH)}}{\sum_i e^{-g_i(\pH)} }
 \end{eqnarray}
 
-\subsubsection{Virtual electrochemical titration}
+\subsection{Virtual electrochemical titration}
 
 
 \begin{itemize}
@@ -219,9 +232,7 @@ pass
 
 
 
-
-
-\begin{figure}[hbtp]
+\begin{figure}[H]
 	\centering
 	
 	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM07-pka.pdf} \hfill
@@ -242,18 +253,9 @@ pass
 	\item Sequential titration avoids the need to compute the energies of \emph{all} protonation states
 	\item Epik can automatically perform a sequential scan (which can also be used in Jaguar with some automation)
 	\item For this experiment, we started from the predicted highest-occupancy microstate at pH 7 and went in both directions, returning pKa values between 2-12
+	\item Average charge vs pH to match electrochemical titrations, look at the mean signed deviation (MSD) or area between curves to see whether the charge curve behavior matches
 \end{itemize}
 
-\subsubsection{Virtual electrochemical titration}
-\begin{itemize}
-	\item Average charge vs pH to match electrochemical titrations, look at the mean signed deviation (MSD) to see whether the charge curve behavior matches
-\end{itemize}
-
-\subsubsection{Predicting UV-metric titration}
-\begin{itemize}
-	\item Actual experiments were UV-metric, where only UV-active transitions are observable
-	\item There is potentially a route to predicting UV-active transitions via identifying of microstates that would have different UV spectra, perhaps using SMARTS matches or simple QM absorption spectra calculations?
-\end{itemize}
 
 \section{Results}
 
@@ -295,7 +297,6 @@ Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &           
 	\item Discussion of outliers
 \end{itemize}
 
-\section{Discussion}
 
 
 
@@ -321,7 +322,7 @@ We consider three algorithms:
 
 \begin{table}[H]
 \centering
- \caption{{\bf Mean charge titration curve comparison with respect to experiment ($\Delta$ area) with confidence intervals.} Confidence intervals were obtained by gaussian bootstrapping over pKa values from the standard errors reported by the software.}
+ \caption{{\bf Mean charge titration curve comparison with respect to experiment ($\Delta$ area) with confidence intervals.} Confidence intervals were obtained by gaussian bootstrapping over pKa values from the standard errors reported by the software.}\label{tab:titrationcurves}
  \begin{tabular}{lccc}
 \toprule
  &    Epik micropka &           Jaguar &        Epik scan \\
@@ -442,6 +443,12 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 \subsection{Macroscopic titration curves}
 \begin{itemize}
 	\item Compare macroscopic titration results
+	\item different types of mistakes
+	\begin{enumerate}
+	 \item wrong pKa value 
+	 \item too many pKa values (wrong total charges)
+	\end{enumerate}
+
 \end{itemize}
 
 
@@ -453,7 +460,7 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 \caption{{\bf Microscopic pKa per molecule for each method as matched by the "closest" algorithm (\cref{alg:closest}), compared to experiment.} The uncertainty indicated is the standard error from the experiment, and the reported standard error by the prediction method.}
 	\label{tab:molecule-micro-closest}
 \rowcolors{2}{gray!25}{white}
-
+\todo[inline]{Add deviation from experiment columns}
 \begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
 {Molecule} &  {Experimental} & {Epik-micropka} &      {Jaguar} &  {Epik-scan} \\
 \midrule
@@ -508,7 +515,7 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 	\includegraphics[width=0.33\textwidth]{Reports/SM08-titrationcurve-views.pdf}
 	\includegraphics[width=0.33\textwidth]{Reports/SM09-titrationcurve-views.pdf}	 \\
 	\includegraphics[]{Reports/overview-legend.pdf}
-	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM01-SM09.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. A numerical comparison to experiment is presented in \cref{tab:titration-curves}.
+	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM01-SM09.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. Since the absolute experimental charge is not available in general, experimental curves (dashed) were aligned to each prediction independently using an integer offset that minimizes the area between curves. A numerical comparison to experiment is presented in \cref{tab:titrationcurves}.
 	\label{fig:charge-curves1}}
 	\end{figure}
 	
@@ -526,7 +533,7 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 	\includegraphics[width=0.33\textwidth]{Reports/SM18-titrationcurve-views.pdf}	 \\
 	\includegraphics[]{Reports/overview-legend.pdf}
 
-	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM10-SM18.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. A numerical comparison to experiment is presented in \cref{tab:titration-curves}.
+	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM10-SM18.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. Since the absolute experimental charge is not available in general, experimental curves (dashed) were aligned to each prediction independently using an integer offset that minimizes the area between curves. A numerical comparison to experiment is presented in \cref{tab:titrationcurves}.
 	\label{fig:charge-curves2}}
 
 \end{figure}
@@ -541,17 +548,20 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 	\includegraphics[width=0.33\textwidth]{Reports/SM24-titrationcurve-views.pdf}	 \\
     \includegraphics[]{Reports/overview-legend.pdf}
 
-	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM19-SM24.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. A numerical comparison to experiment is presented in \cref{tab:titration-curves}.
+	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM19-SM24.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. Since the absolute experimental charge is not available in general, experimental curves (dashed) were aligned to each prediction independently using an integer offset that minimizes the area between curves. A numerical comparison to experiment is presented in \cref{tab:titrationcurves}.
 	\label{fig:charge-curves3}}
 	
 
 \end{figure}
 
+\section{Discussion}
 
 
-\subsubsection{Problematic Lewis structures}
-	
-\begin{figure}[hbtp]	
+\subsection{Problematic Lewis structures}
+Epik generates some structures that seem to have invalid lewis structures.
+\cref{fig:lewis-structure-SM03-SM18}.
+
+\begin{figure}[H]	
 \centering
 \includegraphics[width=0.33\textwidth]{Images/Molecules/SM03-smarts.pdf}
 \includegraphics[width=0.33\textwidth]{Images/Molecules/SM18-smarts.pdf}
@@ -561,13 +571,6 @@ Epik generated protonation states with invalid Lewis structure for SM03 and SM18
 \label{fig:lewis-structure-SM03-SM18}
 \end{figure}		
 
-		
-\subsection{Microscopic pKa values}
-\begin{itemize}
-	\item Compare microscopic pKa prediction results
-\end{itemize}
-
-
 \subsection{Descriptor analysis}
 \begin{itemize}
 	\item which moieties are harder to predict?
@@ -575,12 +578,6 @@ Epik generated protonation states with invalid Lewis structure for SM03 and SM18
 	\item Do number of rotatable bonds affect epik/jaguar results (conformations missing from prediction)?
 \end{itemize}
 
-\subsection {Comparison with other methods}
-\todo[inline]{This subsection depends on how much information we already have in the overview paper}
-\begin{itemize}
-	\item Compared to other Hammet-Taft methods, does Epik stand out? [based on early overview results?]
-	\item Compared to other QM methods, does Jaguar stand out? [based on early overview results?]
-\end{itemize}
 
 \subsection{Suggestions for future challenges}
 \begin{itemize}
@@ -592,12 +589,42 @@ Epik generated protonation states with invalid Lewis structure for SM03 and SM18
 \section{Conclusions}
 
 \begin{itemize}
-	\item Epik and Jaguar can be useful as baselines
-	\item We can use various ways of judging each method.
-	\item A conclusion about the accuracy
-	\item Some take away points about difficulties about comparing microscopic to macroscopic
+	\item Epik and Jaguar perform well when matching both pKa and curves
+	\item Microscopic pKa comparison directly to macroscopic may be deceiving, so the titration curve pose an alternative interpretation that can help assess
+	\item Epik has a few artifacts (weird states, state penalties)
+	\item future challenges could benefit from more NMR experiments and potentiometric titration data
 	\item How a future challenge could make this easier
 \end{itemize}
+
+
+\section{Methods}
+
+
+\subsection{Epik micropKa predictions}
+\begin{itemize}
+	\item were performed between pH 2-12
+	\item Reported states with a minimum population of $e^{-10/RT}$
+	\item States proposed by SAMPL6 but not predicted by Epik were not considered in analysis.
+	      
+\end{itemize}
+
+\subsection{Epik scan: Sequential titration of dominant species} 
+
+
+Started at pH 7.0, add protons sequentially. 
+%
+Produces the dominant microspecies as a way to mimic the likely macrostate.
+%
+
+
+\subsection{Jaguar: Ab initio quantum chemical pKa predictions}
+\begin{itemize}
+	\item Ran using default settings (5 conformations) for each of the pre-enumerated specified microstate pairs.
+	\item Input structures were first minimized using MMFF.
+	\item Additional minimization was performed for structures for which scf/geopt did not converge
+\end{itemize}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
