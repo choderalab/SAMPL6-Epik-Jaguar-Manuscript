@@ -107,7 +107,7 @@ Epik\cite{Shelley2007Epik} is a program for predicting the pKa values of ionizab
  pK_{a_i} = pK_{a_i}^0 - \rho_i  \sum_j \sigma_i \quad ,
 \end{equation}
 
-between an ionizable functional group reference $pK_{a_i}^0$ value, how sensitive (ρi) the group is to substituent perturbation, and how strongly ($\sigma_j$) each substituent, j, perturbs the pKa value. Epik’s internal $pK_{a_i}^0$, $\rho$ , and $\sigma$  parameters are fit to experimental data, or, rarely, to high-quality Jaguar calculations when experiments are unavailable.
+between an ionizable functional group reference $pK_{a_i}^0$ value, how sensitive ($\rho_i$) the group is to substituent perturbation, and how strongly ($\sigma_j$) each substituent, j, perturbs the pKa value. Epik’s internal $pK_{a_i}^0$, $\rho$ , and $\sigma$  parameters are fit to experimental data, or, rarely, to high-quality Jaguar calculations when experiments are unavailable.
 
 Given a target pH and pH tolerance, the molecule can be appropriately protonated or deprotonated based on the estimated pKa values of its ionizable groups to generate the probable protonation states. The estimated pKa value of each functional group in a molecule is often exclusive to a specific tautomeric, protonation, and ionization state. Each (de)protonation can give rise to a set of tautomers and subsequent ionization states, all of which are iteratively generated and estimated until either exhausted or the predicted pKa values of the ionizable sites fall outside the tolerance range. Finally, the microscopic populations and corresponding free energy penalties are calculated and reported. Please note that Epik reports only microscopic pKa values, not macroscopic, or apparent pKa values.
 
@@ -300,14 +300,6 @@ Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &           
 \end{tabular}
 \end{table}
 
-
-\begin{itemize}
-	\item How much conformation-dependence is there in Jaguar-derived pKa values (or state energies)?
-	\item Does sequential scan or mean molecular charge provide better agreement with experimental macroscopic pKa values? Would it be worthwhile to develop predictive UV-metric models?
-	\item Comparison of observed accuracies to previously reported/expected accuracies; expected accuracy on kinase inhibitors derived from this study
-	\item How does Epik compare to Jaguar in terms of accuracy and computational cost?
-	\item Discussion of outliers
-\end{itemize}
 
 
 
@@ -512,7 +504,7 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 
 
     
-\begin{figure}[hbtp]
+\begin{figure}[H]
 	\centering	
 	\includegraphics[width=0.33\textwidth]{Reports/SM01-titrationcurve-views.pdf}
 	\includegraphics[width=0.33\textwidth]{Reports/SM02-titrationcurve-views.pdf}
@@ -529,7 +521,7 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 	\end{figure}
 	
 	
-\begin{figure}[hbtp]	
+\begin{figure}[H]	
 	\centering
 	\includegraphics[width=0.33\textwidth]{Reports/SM10-titrationcurve-views.pdf}
 	\includegraphics[width=0.33\textwidth]{Reports/SM11-titrationcurve-views.pdf}
@@ -547,7 +539,7 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 
 \end{figure}
     
- \begin{figure}[hbtp]	
+ \begin{figure}[H]	
 	\centering
 	\includegraphics[width=0.33\textwidth]{Reports/SM19-titrationcurve-views.pdf}
 	\includegraphics[width=0.33\textwidth]{Reports/SM20-titrationcurve-views.pdf}
@@ -565,6 +557,37 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 
 \section{Discussion}
 
+
+\begin{itemize}
+	\item How much conformation-dependence is there in Jaguar-derived pKa values (or state energies)?
+	\item Does sequential scan or mean molecular charge provide better agreement with experimental macroscopic pKa values? Would it be worthwhile to develop predictive UV-metric models?
+	\item Comparison of observed accuracies to previously reported/expected accuracies; expected accuracy on kinase inhibitors derived from this study
+	\item How does Epik compare to Jaguar in terms of accuracy and computational cost?
+	\item Discussion of outliers
+\end{itemize}
+
+
+
+\subsection{SM08 and SM11 outliers in Jaguar}
+
+Jaguar titration curve looks completely off. What is the most likely cause?
+
+Perhaps SM08 has a non-UV titratable moiety?
+
+\todo[inline]{Highlight titratable moieties, or make graph of microequilibria and jaguar pKa?}
+\begin{figure}[H]
+    \centering
+    \includegraphics{Images/Molecules/SM08.pdf}
+    \caption{Jaguar titration states predicted for molecule SM08}
+    \label{fig:my_label}
+\end{figure}
+
+
+\subsection{SM24 outliers in Epik and Epik scan}
+
+SM24 is a molecule with a lot of potential microstates. Epik seems to perform poorly on it. Perhaps because Jaguar considered all states, it doesn't seem to do as badly as Epik.
+
+\subsection{When Epik and Epik scan disagree}
 
 \subsection{Problematic Lewis structures}
 
@@ -700,7 +723,7 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger, LLC.
 		remove row $k$, column $l$ from $C$;\
 	}
 	remaining values are unmatched\;
-\label{alg:closest}
+
 \end{algorithm}
 \end{figure}
 
