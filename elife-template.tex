@@ -113,39 +113,36 @@ Given a target pH and pH tolerance, the molecule can be appropriately protonated
 
 \subsection{Jaguar}
 
-Jaguar uses an \textit{ab initio} DFT method for calculating pKa values. 
-
-It attempts to estimate the pKa using the free energy of deprotonation  
+Jaguar uses an \textit{ab initio} DFT method for calculating pKa values from 3 dimensional structures. It requires specification of pairs of protonated and deprotonated states and performs a free energy calculation between them. Specifically, it attempts to estimate the pKa using the free energy of deprotonation in solvent
 
 \begin{align}
  pK_a = \frac{\Delta G_\textrm{(aq)}}{RT \ln 10}  
 \end{align}
 
-The value of $ \Delta G_\textrm{(aq)}$ can be obtained using the following thermodynamic cycle:
+To estimate $ \Delta G_\textrm{(aq)}$, Jaguar depends on the following thermodynamic cycle:
 %
 \begin{figure}[H]
 \centering
  \includegraphics{jaguar-reaction}
 \end{figure}
 %
-, which leads to the following equation.
+. From this thermydynamic cycle, the equation that produces the pKa can be derived:
 %
 \begin{equation}
  \Delta G_\textrm{(aq)} = \Delta G_\textrm{(g)} - \Delta G^\textrm{\ce{BH+}}_\textrm{sol} + \Delta G^\textrm{\ce{B}}_\textrm{sol}  +  \Delta G^\textrm{\ce{H+}}_\textrm{sol} \quad .
 \end{equation}
 
-From this equation, it follows that when the other 4 terms are known,
-the pKa value can be estimated.
-
+It follows that when the 4 terms on the right are known, the pKa value can be estimated.
+%
 $\Delta G^\textrm{\ce{H+}}_\textrm{sol}$ has previously been established to be -259.5 kcal per mol\cite{Lim1991protonsolvation}.
-
-
+%
 Gas phase term $\Delta G_\textrm{(g)}$ is calculated using
 %
 \begin{equation}
  \Delta G_\textrm{(g)} = E_\textrm{\ce{B_{(g)}}} - E_\textrm{\ce{BH+ _{(g)}}} + \frac{5RT}{2 } - T \Delta S \quad .
 \end{equation}
 
+The values for $\frac{5RT}{2}$ and  - $T \Delta S$ are approximated to be 1.48 kcal per mol and 7.76 kcal per mol, assuming room temperature and 1 atm pressure.~\cite{Bochevarov2016macropKa}
 
 The energy terms require first a geometry optimization, which is performed using B3LYP/6-31G*. 
 %
@@ -251,15 +248,15 @@ We can combine this with the charge of the individual microstates to generate a 
 	\langle q_\text{total} \rangle (\pH) = \sum_i q_i \times \pi_i(\pH) 
 \end{eqnarray}
 
-We can take a slight shortcut if we use vector notation.
-
-We define $\mathbf{q}$ as a vector of charges $N$, $q_i$ for each state $i$.
+An alternative way to express this is using matrix multiplication.
 %
-Then, if we take $\mathbf{pi}$ to be a matrix of $N$ states by $M$ pH values,
+We define $\mathbf{q}$ as a column vector of $N$ charges, $q_i$ for each state $i$.
+%
+Then, if we take $\boldsymbol{\Pi}$ to be a matrix of $M$ pH values by $N$ states,
 %
 We can simply take the matrix product to achieve the same.
 \begin{align}
-    \langle q_\text{total} \rangle (\pH) = \mathbf{q} \mathbf{\pi}
+    \langle q_\text{total} \rangle (\pH) = \mathbf{q} \boldsymbol{\Pi} 
 \end{align}
 
 \begin{figure}[H]
@@ -286,6 +283,94 @@ We can simply take the matrix product to achieve the same.
 	\item Average charge vs pH to match electrochemical titrations, look at the mean signed deviation (MSD) or area between curves to see whether the charge curve behavior matches
 \end{itemize}
 
+\subsection{pKa matching algorithms}
+The experiments do not provide any microscopic information on what atom, or microstate a pKa belongs to.
+%
+Therefore, it is necessary to perform a matching of pKa values between experiment and predicted pKa values.
+%
+There are several ways one could go about this, each strategy can prioritize a different aspect to match.
+%
+Although the experimental values are macroscopic, comparing to microscopic pKas might give us insight into which microstates produce the macroscopic signature observed in the experiment.
+%
+We can also compare macroscopic pKas, either produced by Epik scan, or using \cref{eq:macropka}, directly to experimental values.
+%
+
+We consider three algorithms that emphasize different :
+
+\begin{itemize}
+ \item closest match
+ \item Hungarian match (linear sum assignment)
+ \item sequential match
+\end{itemize}
+
+which are described in the following three sections
+
+\subsubsection{Closest pKa matching}
+
+We systematically look for all possible pairings of pKa values, and assign them sequentially. 
+
+\begin{figure}
+
+\begin{algorithm}[H]
+	\SetAlgoLined
+	\caption{This algorithm matches experiment with prediction based on how close each value is, one pKa value at a time. Unless the matrix $C$ is square, some values will be unmatched. Those leftover pKa values are returned at the end. It uses a cost function, such as root mean square deviation, to assess how close two values are.}
+	\label{alg:closest}
+	\KwResult{Mapping of each experimental pKa $i$ to predicted pKa $j$}
+	 
+	$C$ is constructed, where every row  $i$ is an experiment, and every column $j$ a prediction\;
+	$C_{ij}$ = cost($\pKa_{\text{exp},i}$, $\pKa_{\text{pred},j}$)\;
+	\While{$C$.size > 0}{
+		$k, l$ = arg min($C_{ij}$)\;
+		assign experimental value $k$ to prediction $l$\;
+		remove row $k$, column $l$ from $C$;\
+	}
+	remaining values are unmatched\;
+
+\end{algorithm}
+\end{figure}
+
+
+\subsubsection{Hungarian pKa matching}
+This algorithm, also known as linear sum assignment.
+%
+It finds the combination of pKa that minimizes the overall cost by picking rows and columns in a matrix, also considering the cost of not mapping certain pKa values in the case of different numbers of predictions and experimental values.
+%
+The results do not seem to differ from closest-pka matching.
+
+\subsubsection{Sequential pKa matching}
+
+For macroscopic only, because it doesn't make sense to sequentially align microscopic pKa values to a set of macroscopic pKa values. 
+
+This algorithm is used because it should follow physically that protonation state constants would be sequentially adding charge/protons.
+
+When comparing macroscopic pKa values, we therefore would wish to constrain the matching of pKa values to be sequential. For this we use \cref{alg:sequential}.
+
+\begin{figure}
+	\begin{algorithm}[H]
+		\SetAlgoLined
+		\caption{Sequential pKa mapping. It uses a cost function to measure cost, and it rolls (shifts by one, and reintroduces last element as first). Any unmatched pKa values are represented by matching with a placeholder value. To calculate the cost, the placeholder is replaced by either 0, or 14, depending on whether the unmatched value is above or below 7.0.}
+		\label{alg:sequential}
+		\KwResult{Mapping of each experimental pKa $i$ to predicted pKa $j$}
+		 
+		$I$ = sorted experimental pKa values \;
+		$J$ = sorted predicted pKa values \;
+		length = max($I$.size, $J$.size)\;
+		Append placeholders such that $I$.size = length \;
+		Append placeholders such that $J$.size = length \;
+		min = $\infty$\;
+		solution = J rolled 0 times\;
+		\For{n in 0..length}{
+			$S$ = J rolled n times \;
+			total = 0.0\;
+			\For{m in 0..length}{				
+				total = total + cost($I_m$, $J_m$)\;
+			}
+			\If(solution is better){total < min}{
+				min = total\;
+				solution = S \;
+			}		}
+	\end{algorithm}
+\end{figure}
 
 \section{Results}
 
@@ -338,14 +423,8 @@ Overall performance of Epik and Jaguar based on various metrics (figures/tables)
 \subsubsection {Matching of experimental and calculated pKa values}
 
 
-The experiments do not provide any microscopic information on what atom, or microstate a pKa belongs to.
-%
-Therefore, it is necessary to perform a matching of pKa values between experiment and predicted pKa values.
-%
-There are several ways one could go about this, each strategy can prioritize a different aspect to match.
-%
-We consider three algorithms:
-\paragraph{Closest pKa matching}
+
+
 %
 
 \begin{table}[H]
@@ -401,20 +480,7 @@ SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 \end{figure}
 
 %
-\paragraph{Hungarian pKa matching}
-This algorithm, also known as linear sum assignment.
-%
-It finds the combination of pKa that minimizes the overall cost by picking rows and columns in a matrix, also considering the cost of not mapping certain pKa values in the case of different numbers of predictions and experimental values.
-%
-The results do not seem to differ from closest-pka matching.
 
-\paragraph{Sequential pKa matching}
-
-For macroscopic only, because it doesn't make sense to sequentially align microscopic pKa values to a set of macroscopic pKa values. 
-
-This algorithm is used because it should follow physically that protonation state constants would be sequentially adding charge/protons.
-
-When comparing macroscopic pKa values, we therefore would wish to constrain the matching of pKa values to be sequential. For this we use \cref{alg:sequential}.
 
 \begin{figure}[hbtp]
 	\centering
@@ -608,7 +674,7 @@ Perhaps SM08 has a non-UV titratable moiety?
 \todo[inline]{Highlight titratable moieties(add macro/micropKa list on top?), or make graph of microequilibria and jaguar pKa? Jaguar macro seems to be much better than micro, why is that? Perhaps, should pick the lowest pKa instead of pKA with lowest SEM?}
 \begin{figure}[H]
     \centering
-    \includegraphics{Images/Molecules/SM08.pdf}
+    \includegraphics[scale=0.5]{Images/Molecules/SM08.pdf}
     \caption{Jaguar titration states predicted for molecule SM08}
     \label{fig:my_label}
 \end{figure}
@@ -743,59 +809,9 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger, LLC.
 
 % \input{Reports/report-SM01}
 
-\begin{figure}
 
-\begin{algorithm}[H]
-	\SetAlgoLined
-	\caption{This algorithm matches experiment with prediction based on how close each value is, one pKa value at a time. Unless the matrix $C$ is square, some values will be unmatched. Those leftover pKa values are returned at the end. It uses a cost function, such as root mean square deviation, to assess how close two values are.}
-	\label{alg:closest}
-	\KwResult{Mapping of each experimental pKa $i$ to predicted pKa $j$}
-	 
-	$C$ is constructed, where every row  $i$ is an experiment, and every column $j$ a prediction\;
-	$C_{ij}$ = cost($\pKa_{\text{exp},i}$, $\pKa_{\text{pred},j}$)\;
-	\While{$C$.size > 0}{
-		$k, l$ = arg min($C_{ij}$)\;
-		assign experimental value $k$ to prediction $l$\;
-		remove row $k$, column $l$ from $C$;\
-	}
-	remaining values are unmatched\;
 
-\end{algorithm}
-\end{figure}
 
-\begin{figure}
-	\begin{algorithm}[H]
-		\SetAlgoLined
-		\caption{Sequential pKa mapping. It uses a cost function to measure cost, and it rolls (shifts by one, and reintroduces last element as first). Any unmatched pKa values are represented by matching with a placeholder value. To calculate the cost, the placeholder is replaced by either 0, or 14, depending on whether the unmatched value is above or below 7.0.}
-		\label{alg:sequential}
-		\KwResult{Mapping of each experimental pKa $i$ to predicted pKa $j$}
-		 
-		$I$ = sorted experimental pKa values \;
-		$J$ = sorted predicted pKa values \;
-		length = max($I$.size, $J$.size)\;
-		Append placeholders such that $I$.size = length \;
-		Append placeholders such that $J$.size = length \;
-		min = $\infty$\;
-		solution = J rolled 0 times\;
-		\For{n in 0..length}{
-			$S$ = J rolled n times \;
-			total = 0.0\;
-			\For{m in 0..length}{
-				\uIf(unmatched experiment){$I_m$ is placeholder}{
-					\eIf{$J_m$ <= 7.0}{$I_m$ = 0.0}{$I_m$ = 14.0}
-				}
-				\ElseIf(unmatched prediction){$J_m$ is placeholder}{
-					\eIf{$I_m$ <= 7.0}{$J_m$ = 0.0}{$J_m$ = 14.0}
-				}
-				total = total + cost($I_m$, $J_m$)\;
-			}
-			\If(solution is better){total < min}{
-				min = total\;
-				solution = S \;
-			}
-		}
-	\end{algorithm}
-\end{figure}
 
 \begin{itemize}
 	\item Titration curves and free energy plots for each compound, by each method
