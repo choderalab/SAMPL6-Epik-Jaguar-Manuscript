@@ -199,38 +199,68 @@ It is also possible to translate the micropKas into macropKas
 \cite{Philipp2018macropka}
 
 \begin{align}
- K_a^\text{macro} = \sum_{j=1}^{N_\text{deprot}} \frac{1}{\sum_{i=1}^{N_\text{prot}}\frac{1}{ K_{ij^\text{micro}}}}
+ K_a^\text{macro} = \sum_{j=1}^{N_\text{deprot}} \frac{1}{\sum_{i=1}^{N_\text{prot}}\frac{1}{ K_{ij^\text{micro}}}} \label{eq:macropka}
  \end{align}
 
-\todo[inline]{See if I can perform those conversions for my data.}
+\todo[inline]{Update tables and also add the macroestimates obtained using this equation}
  
 
 \subsection{Population curves from pKa}
-
-\begin{itemize}
-	\item Description of the population curve generation from pKa \\
-\end{itemize}
-
+One way to estimate the performance of a pKa prediction method is to look at the population curves.
+%
+To generate a population for a state from a pKa value one first needs to convert the pKa values (microscopic or macroscopic) to a free energy.
+%
+This simply depends on the pH, and the sequential pKa values that a state needs to go through, starting at the most protonated state.
+%
+The free energy of a single state is defined 
 \begin{eqnarray}
 	g_i(\pH) &=& \beta \left( n_i*\pH - \sum_j \pKa_j \right)
 \end{eqnarray}
+%
+, where $\beta$ is the inverse temperature, and the index j indicates all protonation states in between the most deprotonated state and state i. 
+%
+For macroscopic pKa values, this is straightforward.
+%
+Since the free energy is a state function, it should not depend on the path of reactions taken.
+%
+In practice, since pKa values are produced individually, one might get a slightly different answer depending on the path chosen.
+%
+In the case of microscopic pKa values, when more than one combinations of pKa values exist, the pKa path with the smallest standard error is chosen.
+%
+It is common to select one state as a reference state, and set its free energy to zero, whilst subtracting it's free energy from the other states.
+%
+We choose to set the free energy reference to be a neutral state, since this means the slope of the free energy with respect to pH will be equal to the charge of the species, which is illustrative.
+
+After obtaining normalized free energies, the populations $\pi_i$ of each state are derived in a familiar way, by Boltzmann weights
 
 \begin{eqnarray}
 	\pi_i(\pH) &=& \frac{e^{-g_i(\pH)}}{\sum_i e^{-g_i(\pH)} }
 \end{eqnarray}
 
+This provides us with a pH-dependent population for each microstate.
+
 \subsection{Virtual electrochemical titration}
 
+From the previous section, we know the populations of individual microstates, $\pi_i$. 
+%
+We can combine this with the charge of the individual microstates to generate a potentiometric titration curve.
+%
 
-\begin{itemize}
-	\item Description of the calculation of the mean charge curve \\
-\end{itemize}
 
 \begin{eqnarray}
 	\langle q_\text{total} \rangle (\pH) = \sum_i q_i \times \pi_i(\pH) 
 \end{eqnarray}
 
+We can take a slight shortcut if we use vector notation.
 
+We define $\mathbf{q}$ as a vector of charges $N$, $q_i$ for each state $i$.
+%
+Then, if we take $\mathbf{pi}$ to be a matrix of $N$ states by $M$ pH values,
+%
+We can simply take the matrix product to achieve the same.
+\begin{align}
+    \langle q_\text{total} \rangle (\pH) = \mathbf{q} \mathbf{\pi}
+\end{align}
 
 \begin{figure}[H]
 	\centering
@@ -260,7 +290,10 @@ It is also possible to translate the micropKas into macropKas
 \section{Results}
 
 \subsection{Overall performance}
-- Jaguar performs best of all methods.It has the strongest pKa correlations, and the titration curves are most likely to be correct.
+
+- Based on what we've seen in early overview assessments, Epik scan performed in the top-5 of methods out there, and Jaguar seems to perform better than Epik in our work here. Epik microscopic pKa values are also performing better than just using scan mode.
+
+- Jaguar performs best of all methods we considered here. It has the strongest pKa correlations, and the titration curves are most likely to be correct.
 - It did not perform well for a few outliers (SM18), perhaps due to the many different microstates, the accumulation of errors is large.
 
 
@@ -299,12 +332,6 @@ Epik scan     & 1.7; [1.2, 2.2]       &  &                       &  &           
 Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &                    \\ \bottomrule
 \end{tabular}
 \end{table}
-
-
-
-
-
-\subsection{Overall performance}
 
 
 Overall performance of Epik and Jaguar based on various metrics (figures/tables)
@@ -362,7 +389,7 @@ SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 
 \begin{figure}[hbtp]
 \centering
-\todo[inline,color=red!20]{ASR: Update these with latest version with correct rho/rmse values}
+\todo[inline,color=red!20]{ASR: Update these with latest version with correct rho/rmse values, make colors match area plots?}
 \includegraphics[scale=1.2]{closest_pka_jaguar.pdf}
 \includegraphics[scale=1.2]{closest_pka_epik_micropka.pdf}
 \includegraphics[scale=1.2]{closest_pka_epik_scan.pdf}
@@ -383,8 +410,11 @@ The results do not seem to differ from closest-pka matching.
 
 \paragraph{Sequential pKa matching}
 
-For macroscopic only, because it doesn't make sense to sequentially align microscopic pKa values to a set of macroscopic pKa values
-\cref{alg:sequential}
+For macroscopic only, because it doesn't make sense to sequentially align microscopic pKa values to a set of macroscopic pKa values. 
+
+This algorithm is used because it should follow physically that protonation state constants would be sequentially adding charge/protons.
+
+When comparing macroscopic pKa values, we therefore would wish to constrain the matching of pKa values to be sequential. For this we use \cref{alg:sequential}.
 
 \begin{figure}[hbtp]
 	\centering
@@ -443,11 +473,12 @@ For macroscopic only, because it doesn't make sense to sequentially align micros
 
 \subsection{Macroscopic titration curves}
 \begin{itemize}
-	\item Compare macroscopic titration results
+	\item Compare macroscopic titration results, see if microcurves are much different.
 	\item different types of mistakes
 	\begin{enumerate}
 	 \item wrong pKa value 
 	 \item too many pKa values (wrong total charges)
+	 \item compare number of apparent pKas vs macropKas obtained by using Arts equation.
 	\end{enumerate}
 
 \end{itemize}
@@ -574,7 +605,7 @@ Jaguar titration curve looks completely off. What is the most likely cause?
 
 Perhaps SM08 has a non-UV titratable moiety?
 
-\todo[inline]{Highlight titratable moieties, or make graph of microequilibria and jaguar pKa?}
+\todo[inline]{Highlight titratable moieties(add macro/micropKa list on top?), or make graph of microequilibria and jaguar pKa? Jaguar macro seems to be much better than micro, why is that? Perhaps, should pick the lowest pKa instead of pKA with lowest SEM?}
 \begin{figure}[H]
     \centering
     \includegraphics{Images/Molecules/SM08.pdf}
@@ -588,6 +619,11 @@ Perhaps SM08 has a non-UV titratable moiety?
 SM24 is a molecule with a lot of potential microstates. Epik seems to perform poorly on it. Perhaps because Jaguar considered all states, it doesn't seem to do as badly as Epik.
 
 \subsection{When Epik and Epik scan disagree}
+Epik scan may sometimes produce too many pKas, oddly enough?
+
+\subsection{Macro or micropKa, what is the realistic titration curve?}
+We can generate the titration curve purely based on microscopic pKa. Alternatively,
+we can use the macroscopic pKa generated using the equation \cref{eq:macropka}.
 
 \subsection{Problematic Lewis structures}
 
