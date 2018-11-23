@@ -1,0 +1,54 @@
+strict digraph G {
+	graph [bb="0,0,95.743,121",
+		fontname="sans bold",
+		splines=polyline
+	];
+	node [label="\N"];
+	subgraph subgraph_0 {
+		graph [label="Neutral charge",
+			style=""
+		];
+		SM17_micro010		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM17_micro010.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="28.743,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph subgraph_1 {
+		graph [label="+1 charge",
+			style=""
+		];
+		SM17_micro011		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM17_micro011.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="28.743,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	SM17_micro010 -> SM17_micro011	 [SEM=0.75,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="4.9+/-0.75",
+		lp="62.243,60.5",
+		pKa=4.9,
+		pos="e,28.743,36.176 28.743,84.802 28.743,73.674 28.743,58.945 28.743,46.244",
+		splines=polyline];
+}

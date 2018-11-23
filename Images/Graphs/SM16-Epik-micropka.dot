@@ -1,0 +1,137 @@
+strict digraph G {
+	graph [bb="0,0,280.74,206",
+		fontname="sans bold",
+		splines=polyline
+	];
+	node [label="\N"];
+	subgraph subgraph_0 {
+		graph [label="Neutral charge",
+			style=""
+		];
+		SM16_micro002		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM16_micro002.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="124.74,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM16_micro007		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM16_micro007.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="222.74,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph "subgraph_-1" {
+		graph [label="-1 charge",
+			style=""
+		];
+		SM16_micro005		 [charge=-1,
+			color="#ffffff:#f4a582",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM16_micro005.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="173.74,188",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph subgraph_1 {
+		graph [label="+1 charge",
+			style=""
+		];
+		SM16_micro004		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM16_micro004.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="173.74,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM16_micro006		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM16_micro006.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="28.743,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	SM16_micro002 -> SM16_micro004	 [SEM=2.22,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="4.71+/-2.22",
+		lp="163.24,60.5",
+		pKa=4.71,
+		pos="e,156.96,31.241 125.1,84.942 125.39,71.145 125.74,54 125.74,54 125.74,54 136.99,45.799 148.6,37.336",
+		splines=polyline];
+	SM16_micro002 -> SM16_micro006	 [SEM=0.9,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="-0.63+/-0.9",
+		lp="84.243,60.5",
+		pKa=-0.63,
+		pos="e,35.282,35.519 100.38,90.926 77.822,80.672 47.743,67 47.743,67 47.743,67 43.492,56.26 39.012,44.94",
+		splines=polyline];
+	SM16_micro007 -> SM16_micro004	 [SEM=2.22,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="9.81+/-2.22",
+		lp="243.24,60.5",
+		pKa=9.81,
+		pos="e,185.35,34.046 215.05,85.212 208.7,71.37 200.74,54 200.74,54 200.74,54 196.57,48.592 191.51,42.028",
+		splines=polyline];
+	SM16_micro005 -> SM16_micro002	 [SEM=2.22,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="9.85+/-2.22",
+		lp="163.24,145.5",
+		pKa=9.85,
+		pos="e,125.1,121.06 154.77,173.17 141.36,163.38 125.74,152 125.74,152 125.74,152 125.54,142.15 125.31,131.38",
+		splines=polyline];
+	SM16_micro005 -> SM16_micro007	 [SEM=0.94,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="7.67+/-0.94",
+		lp="243.24,145.5",
+		pKa=7.67,
+		pos="e,215.3,120.25 185.98,171.14 193.12,161.88 200.74,152 200.74,152 200.74,152 205.83,140.9 211.11,129.38",
+		splines=polyline];
+}

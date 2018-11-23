@@ -1,0 +1,100 @@
+strict digraph G {
+	graph [bb="0,0,282.74,121",
+		fontname="sans bold",
+		splines=polyline
+	];
+	node [label="\N"];
+	subgraph subgraph_0 {
+		graph [label="Neutral charge",
+			style=""
+		];
+		SM20_micro003		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM20_micro003.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="28.743,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM20_micro005		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM20_micro005.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="126.74,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM20_micro006		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM20_micro006.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="224.74,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph "subgraph_-1" {
+		graph [label="-1 charge",
+			style=""
+		];
+		SM20_micro004		 [charge=-1,
+			color="#ffffff:#f4a582",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM20_micro004.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="126.74,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	SM20_micro004 -> SM20_micro003	 [SEM=0.94,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="7.31+/-0.94",
+		lp="85.243,60.5",
+		pKa=7.31,
+		pos="e,35.282,35.519 102.18,91.118 78.99,80.843 47.743,67 47.743,67 47.743,67 43.492,56.26 39.012,44.94",
+		splines=polyline];
+	SM20_micro004 -> SM20_micro005	 [SEM=2.46,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="1.76+/-2.46",
+		lp="164.24,60.5",
+		pKa=1.76,
+		pos="e,126.74,36.176 126.74,84.802 126.74,73.674 126.74,58.945 126.74,46.244",
+		splines=polyline];
+	SM20_micro004 -> SM20_micro006	 [SEM=2.45,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="1.11+/-2.45",
+		lp="245.24,60.5",
+		pKa=1.11,
+		pos="e,217.3,35.251 150.79,90.926 173.06,80.672 202.74,67 202.74,67 202.74,67 207.83,55.902 213.11,44.379",
+		splines=polyline];
+}

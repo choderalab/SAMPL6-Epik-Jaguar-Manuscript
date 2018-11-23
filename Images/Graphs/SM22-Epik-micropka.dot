@@ -1,0 +1,114 @@
+strict digraph G {
+	graph [bb="0,0,184.74,206",
+		fontname="sans bold",
+		splines=polyline
+	];
+	node [label="\N"];
+	subgraph subgraph_0 {
+		graph [label="Neutral charge",
+			style=""
+		];
+		SM22_micro001		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM22_micro001.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="28.743,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM22_micro003		 [charge=0,
+			color="#ffffff:#333333",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM22_micro003.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="126.74,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph "subgraph_-1" {
+		graph [label="-1 charge",
+			style=""
+		];
+		SM22_micro004		 [charge=-1,
+			color="#ffffff:#f4a582",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM22_micro004.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="77.743,188",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph subgraph_1 {
+		graph [label="+1 charge",
+			style=""
+		];
+		SM22_micro002		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM22_micro002.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="77.743,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	SM22_micro001 -> SM22_micro002	 [SEM=2.22,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="3.51+/-2.22",
+		lp="67.243,60.5",
+		pKa=3.51,
+		pos="e,60.955,31.241 29.099,84.942 29.386,71.145 29.743,54 29.743,54 29.743,54 40.991,45.799 52.597,37.336",
+		splines=polyline];
+	SM22_micro003 -> SM22_micro002	 [SEM=1.06,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="5.12+/-1.06",
+		lp="147.24,60.5",
+		pKa=5.12,
+		pos="e,89.351,34.046 119.05,85.212 112.7,71.37 104.74,54 104.74,54 104.74,54 100.57,48.592 95.508,42.028",
+		splines=polyline];
+	SM22_micro004 -> SM22_micro001	 [SEM=0.86,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="6.79+/-0.86",
+		lp="67.243,145.5",
+		pKa=6.79,
+		pos="e,29.099,121.06 58.773,173.17 45.356,163.38 29.743,152 29.743,152 29.743,152 29.538,142.15 29.314,131.38",
+		splines=polyline];
+	SM22_micro004 -> SM22_micro003	 [SEM=1.4,
+		arrowhead=vee,
+		fontname="sans bold",
+		fontsize=12,
+		label="3.56+/-1.4",
+		lp="143.24,145.5",
+		pKa=3.56,
+		pos="e,119.3,120.25 89.979,171.14 97.123,161.88 104.74,152 104.74,152 104.74,152 109.83,140.9 115.11,129.38",
+		splines=polyline];
+}

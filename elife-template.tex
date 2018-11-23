@@ -15,7 +15,9 @@
 \usepackage[color=green!30, textsize=small]{todonotes}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{subfig}
 \usepackage{grffile}
+
 \usepackage{array}
 \usepackage[section]{placeins}
 \usepackage{algorithm2e}
@@ -26,6 +28,9 @@
 
 \newcommand{\pH}{\mathrm{pH}}
 \newcommand{\pKa}{\mathrm{pKa}}
+
+% var for storing a box size
+\newsavebox{\measurebox}
 
 % Hidden table column
 \newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
@@ -155,44 +160,31 @@ Afterwards, B3LYP/cc-pVTZ+ is used for atoms involved in the deprotonation react
 
 \section{Analysis}
 
-\subsection{Microstate predictions}
-
-Methods like Epik and Jaguar provide microstate pKa predictions.
-%
-This means that rather than macroscopic pKas observed in the average charge state (potentiometric titration) or number of titration events (UV titration curve), it produces a microequilibrium constant between a single pair of configurations (protonation states or tautomers) is predicted. 
-%
-One way to compare experiment and prediction is by directly comparing 
-pKa values.
-%
-However, there are likely many microstates, and only a few macrostates.
-%
-Therefore, we also look at the predicted titration curve, which can incorporate information from every microstate into a macrostate.
-
-
-\begin{figure}[H]
-	\centering
-	
-	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM14-pka.pdf} \hfill
-	\includegraphics[width=0.47\textwidth]{fig1_charge_SM14.pdf} \\
-    \includegraphics[width=0.47\textwidth]{fig1_free_energy_SM14.pdf} \hfill
-	\includegraphics[width=0.47\textwidth]{fig1_population_SM14.pdf}\\
-	\includegraphics[width=0.4\textwidth]{fig1_legend.pdf}
-	
-		\caption{{\bf Epik and Jaguar microscopic pKa values can be used to generate free energies (bottom left) or, populations (bottom right), and recapitulate the mean charge vs pH curve (top right) when the charge of each species is added up.} Molecule SM14 pKa values (top left) were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the most likely sites of titration were established. We used Epik and Jaguar to predict microscopic pKa values (denoted as Type I predictions in SAMPL6). The macrostate populatons from experiment, and microstate populations from predictions can be compared directly to an experimental titration curve derived from UV. Since NMR data was available for this molecule, the charge state in the experiment is also known.
-	\label{fig:sm14-prediction}}
-	
-\end{figure}
-
-
-
-
-
 \subsection{Predicting macroscopic pKa values}
+
 
 Epik and Jaguar predict microscopic pKa values or microstate energies, which must be translated into macroscopic pKa values for comparison to experiment.
 Several choices are possible for comparing these microscopic properties into macroscopic pKa values.
 %
-It is also possible to translate the micropKas into macropKas
+
+\begin{figure}[H]
+	\centering
+	
+	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM07-pka.pdf} \hfill
+	\includegraphics[width=0.47\textwidth]{fig2_charge_sm07.pdf} \\
+	
+    \includegraphics[width=0.47\textwidth]{fig2_free_energy_sm07.pdf}
+    \hfill
+	\includegraphics[width=0.47\textwidth]{fig2_population_sm07.pdf}\\
+ 	\includegraphics[width=0.4\textwidth]{fig2_legend}
+	
+		\caption{{\bf Macroscopic pKa values can be directly compared to experimental values. Additionally, a populations and the charge titration curve can be compared.} Molecule SM07 pKa values were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the identity of the microstates were identified. In this example, we show the results produced by Epik scan to for illustration.
+	\label{fig:scan-prediction}}
+	
+\end{figure}
+
+
+It is possible to translate the micropKas into macropKas
 \cite{Bochevarov2016multiconformation, Philipp2018macropka}
 
 \begin{align}
@@ -202,6 +194,7 @@ It is also possible to translate the micropKas into macropKas
 \todo[inline]{Update tables and also add the macroestimates obtained using this equation}
  
 
+ 
 \subsection{Population curves from pKa}
 One way to estimate the performance of a pKa prediction method is to look at the population curves.
 %
@@ -211,7 +204,7 @@ This simply depends on the pH, and the sequential pKa values that a state needs 
 %
 The free energy of a single state is defined 
 \begin{eqnarray}
-	g_i(\pH) &=& \beta \left( n_i*\pH - \sum_j \pKa_j \right)
+	g_i(\pH) &=& \beta \left( n_i*\pH - \sum_j \pKa_j \right) \label{eq:pkatodg}
 \end{eqnarray}
 %
 , where $\beta$ is the inverse temperature, and the index $j$ indicates all protonation states in between the most deprotonated state and state $i$. 
@@ -232,10 +225,11 @@ We choose to set the free energy reference to be a neutral state, since this mea
 After obtaining normalized free energies, the populations $\pi_i$ of each state are derived in a familiar way, by Boltzmann weights
 
 \begin{eqnarray}
-	\pi_i(\pH) &=& \frac{e^{-g_i(\pH)}}{\sum_i e^{-g_i(\pH)} }
+	\pi_i(\pH) &=& \frac{e^{-g_i(\pH)}}{\sum_i e^{-g_i(\pH)} } \label{eq:dgtopi}
 \end{eqnarray}
 
 This provides us with a pH-dependent population for each microstate.
+
 
 \subsection{Virtual electrochemical titration}
 
@@ -260,21 +254,7 @@ We can simply take the matrix product to achieve the same.
     \langle q_\text{total} \rangle (\pH) = \mathbf{q} \boldsymbol{\Pi} 
 \end{align}
 
-\begin{figure}[H]
-	\centering
-	
-	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM07-pka.pdf} \hfill
-	\includegraphics[width=0.47\textwidth]{fig2_charge_sm07.pdf} \\
-	
-    \includegraphics[width=0.47\textwidth]{fig2_free_energy_sm07.pdf}
-    \hfill
-	\includegraphics[width=0.47\textwidth]{fig2_population_sm07.pdf}\\
- 	\includegraphics[width=0.4\textwidth]{fig2_legend}
-	
-		\caption{{\bf Epik scan provides sequential pKa values for adding single protons, which can approximate a macroscopic titration curve.} Molecule SM07 pKa values were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the identity of the microstates were identified. We used Epik scan mode to predict most prevalent microstates from sequential pKa values, which can approximate macroscopic pKa values. The macrostate populatons from experiment, and microstate populations from predictions can be compared directly to an experimental titration curve derived from UV pKa values. Since NMR data was available for this molecule, the charge identity in the experiment is also known. 
-	\label{fig:scan-prediction}}
-	
-\end{figure}
+
 
 
 \begin{itemize}
@@ -283,6 +263,28 @@ We can simply take the matrix product to achieve the same.
 	\item For this experiment, we started from the predicted highest-occupancy microstate at pH 7 and went in both directions, returning pKa values between 2-12
 	\item Average charge vs pH to match electrochemical titrations, look at the mean signed deviation (MSD) or area between curves to see whether the charge curve behavior matches
 \end{itemize}
+
+\subsection{Directly from microstate predictions}
+
+Methods like Epik and Jaguar provide microstate pKa predictions.
+%
+This means that rather than macroscopic pKas observed in the average charge state (potentiometric titration) or number of titration events (UV titration curve), it produces a microequilibrium constant between a single pair of configurations (protonation states or tautomers) is predicted. 
+%
+One way to compare experiment and prediction is by directly comparing 
+pKa values.
+%
+However, there are likely many microstates, and only a few macrostates.
+%
+Therefore, we also look at the predicted titration curve, which can incorporate information from every microstate into a macrostate.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{micropka-workflow.pdf}
+\caption{{\bf Workflow for directly converting microscopic pKa values into a macroscopic titration curve.} Microscopic pKa predictions {\bf(a)} can be translated into free energies {\bf(b)} using Equation \ref{eq:pkatodg} and then into populations {\bf(c)} using Equation \ref{eq:dgtopi}. When one combines this with the charges for each microstate, one can generate the mean charge titration curve {\bf(d)}. The example shown is the Jaguar prediction for SM14.
+	\label{fig:sm14-prediction}}
+\end{figure}
+
 
 \subsection{pKa matching algorithms}
 The experiments do not provide any microscopic information on what atom, or microstate a pKa belongs to.
@@ -670,16 +672,25 @@ SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 
 \subsection{SM08 and SM11 outliers in Jaguar}
 
-Jaguar titration curve looks completely off. What is the most likely cause?
+The Jaguar titration curve for molecule SM08 looks very different from the experimental curve.
+%
+For SM08, a pKa of 4.22 was measured experimentally.
+%
+If we look at the Jaguar predictions for SM08 (Figure \ref{jaguar-sm08}), this would most likely correspond to the carboxylic acid moiety of the molecule.
+%
+However, Jaguar predicts that the quinoline moiety in SM08 is
+ titratable, and that the hydroxyl substituent is titratable as well. 
+%
+Experimentally, this might not be the case.
+%
+It seems therefore likely that Jaguar considers the titration of these
+moieties too favorable compared to what is experimentally observed.
 
-Perhaps SM08 has a non-UV titratable moiety?
-
-\todo[inline]{Highlight titratable moieties(add macro/micropKa list on top?), or make graph of microequilibria and jaguar pKa? Jaguar macro seems to be much better than micro, why is that? Perhaps, should pick the lowest pKa instead of pKA with lowest SEM?}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{Images/Molecules/SM08.pdf}
-    \caption{Jaguar titration states predicted for molecule SM08}
-    \label{fig:my_label}
+    \includegraphics[scale=0.5]{Images/Graphs/SM08-Jaguar-micropka.graph.pdf}
+    \caption{{\bf Jaguar titration states predicted for molecule SM08} The microscopic pKa value is shown on the \textit{right} of each arrow. The color indicates the charge (red for negative, blue for positive), where darker shades mean higher charge.}
+    \label{fig:jaguar-sm08}
 \end{figure}
 
 

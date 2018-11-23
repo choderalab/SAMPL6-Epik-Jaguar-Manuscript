@@ -1,0 +1,35 @@
+\BOOKMARK [1][-]{section*.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.2}{Technology}{}% 2
+\BOOKMARK [2][-]{subsection*.3}{Epik}{section*.2}% 3
+\BOOKMARK [2][-]{subsection*.4}{Jaguar}{section*.2}% 4
+\BOOKMARK [1][-]{section*.9}{Analysis}{}% 5
+\BOOKMARK [2][-]{subsection*.10}{Predicting macroscopic pKa values}{section*.9}% 6
+\BOOKMARK [2][-]{subsection*.13}{Population curves from pKa}{section*.9}% 7
+\BOOKMARK [2][-]{subsection*.14}{Virtual electrochemical titration}{section*.9}% 8
+\BOOKMARK [2][-]{subsection*.15}{Directly from microstate predictions}{section*.9}% 9
+\BOOKMARK [2][-]{subsection*.17}{pKa matching algorithms}{section*.9}% 10
+\BOOKMARK [2][-]{subsection*.18}{Closest pKa matching}{section*.9}% 11
+\BOOKMARK [2][-]{subsection*.20}{Hungarian pKa matching}{section*.9}% 12
+\BOOKMARK [2][-]{subsection*.21}{Sequential pKa matching}{section*.9}% 13
+\BOOKMARK [1][-]{section*.23}{Results}{}% 14
+\BOOKMARK [2][-]{subsection*.24}{Overall performance}{section*.23}% 15
+\BOOKMARK [3][-]{subsubsection*.26}{Matching of experimental and calculated pKa values}{subsection*.24}% 16
+\BOOKMARK [2][-]{subsection*.32}{Macroscopic titration curves}{section*.23}% 17
+\BOOKMARK [1][-]{section*.38}{Discussion}{}% 18
+\BOOKMARK [2][-]{subsection*.39}{SM08 and SM11 outliers in Jaguar}{section*.38}% 19
+\BOOKMARK [2][-]{subsection*.41}{SM24 outliers in Epik and Epik scan}{section*.38}% 20
+\BOOKMARK [2][-]{subsection*.42}{When Epik and Epik scan disagree}{section*.38}% 21
+\BOOKMARK [2][-]{subsection*.43}{Macro or micropKa, what is the realistic titration curve?}{section*.38}% 22
+\BOOKMARK [2][-]{subsection*.44}{Problematic Lewis structures}{section*.38}% 23
+\BOOKMARK [2][-]{subsection*.46}{Descriptor analysis}{section*.38}% 24
+\BOOKMARK [2][-]{subsection*.47}{Suggestions for future challenges}{section*.38}% 25
+\BOOKMARK [1][-]{section*.48}{Conclusions}{}% 26
+\BOOKMARK [1][-]{section*.49}{Methods}{}% 27
+\BOOKMARK [2][-]{subsection*.50}{Epik micropKa predictions}{section*.49}% 28
+\BOOKMARK [2][-]{subsection*.51}{Epik scan: Sequential titration of dominant species}{section*.49}% 29
+\BOOKMARK [2][-]{subsection*.52}{Jaguar: Ab initio quantum chemical pKa predictions}{section*.49}% 30
+\BOOKMARK [1][-]{section*.53}{Code and data availability}{}% 31
+\BOOKMARK [1][-]{section*.54}{Author Contributions}{}% 32
+\BOOKMARK [1][-]{section*.56}{Acknowledgments}{}% 33
+\BOOKMARK [1][-]{section*.57}{Disclosures}{}% 34
+\BOOKMARK [1][-]{section*.58}{Supplementary Information}{}% 35
