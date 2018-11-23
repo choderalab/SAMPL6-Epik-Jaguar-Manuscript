@@ -17,7 +17,7 @@
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage{array}
-
+\usepackage[section]{placeins}
 \usepackage{algorithm2e}
 \usepackage{cleveref} % use \cref or \Cref to refer to labeled elements for automatically referring to the right type of entity, with the right capital letter and/or abbreviation rules
 \usepackage[subpreambles=true]{standalone}
@@ -142,7 +142,7 @@ Gas phase term $\Delta G_\textrm{(g)}$ is calculated using
  \Delta G_\textrm{(g)} = E_\textrm{\ce{B_{(g)}}} - E_\textrm{\ce{BH+ _{(g)}}} + \frac{5RT}{2 } - T \Delta S \quad .
 \end{equation}
 
-The values for $\frac{5RT}{2}$ and  - $T \Delta S$ are approximated to be 1.48 kcal per mol and 7.76 kcal per mol, assuming room temperature and 1 atm pressure.~\cite{Bochevarov2016macropKa}
+The values for $\frac{5RT}{2}$ and  - $T \Delta S$ are approximated to be 1.48 kcal per mol and 7.76 kcal per mol, assuming room temperature and 1 atm pressure.~\cite{Bochevarov2016multiconformation}
 
 The energy terms require first a geometry optimization, which is performed using B3LYP/6-31G*. 
 %
@@ -178,7 +178,7 @@ Therefore, we also look at the predicted titration curve, which can incorporate 
 	\includegraphics[width=0.47\textwidth]{fig1_population_SM14.pdf}\\
 	\includegraphics[width=0.4\textwidth]{fig1_legend.pdf}
 	
-		\caption{{\bf Epik and Jaguar microscopic pKa values can be used to generate free energies (bottom left) or, populations (bottom right), and recapitulate the binding curve (top right) when the charge of each species is added up.} Molecule SM14 pKa values (top left) were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the most likely sites of titration were established. We used Epik and Jaguar to predict microscopic pKa values (denoted as Type I predictions in SAMPL6). The macrostate populatons from experiment, and microstate populations from predictions can be compared directly to an experimental titration curve derived from UV. Since NMR data was available for this molecule, the charge state in the experiment is also known.
+		\caption{{\bf Epik and Jaguar microscopic pKa values can be used to generate free energies (bottom left) or, populations (bottom right), and recapitulate the mean charge vs pH curve (top right) when the charge of each species is added up.} Molecule SM14 pKa values (top left) were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the most likely sites of titration were established. We used Epik and Jaguar to predict microscopic pKa values (denoted as Type I predictions in SAMPL6). The macrostate populatons from experiment, and microstate populations from predictions can be compared directly to an experimental titration curve derived from UV. Since NMR data was available for this molecule, the charge state in the experiment is also known.
 	\label{fig:sm14-prediction}}
 	
 \end{figure}
@@ -193,7 +193,7 @@ Epik and Jaguar predict microscopic pKa values or microstate energies, which mus
 Several choices are possible for comparing these microscopic properties into macroscopic pKa values.
 %
 It is also possible to translate the micropKas into macropKas
-\cite{Philipp2018macropka}
+\cite{Bochevarov2016multiconformation, Philipp2018macropka}
 
 \begin{align}
  K_a^\text{macro} = \sum_{j=1}^{N_\text{deprot}} \frac{1}{\sum_{i=1}^{N_\text{prot}}\frac{1}{ K_{ij^\text{micro}}}} \label{eq:macropka}
@@ -214,16 +214,17 @@ The free energy of a single state is defined
 	g_i(\pH) &=& \beta \left( n_i*\pH - \sum_j \pKa_j \right)
 \end{eqnarray}
 %
-, where $\beta$ is the inverse temperature, and the index j indicates all protonation states in between the most deprotonated state and state i. 
+, where $\beta$ is the inverse temperature, and the index $j$ indicates all protonation states in between the most deprotonated state and state $i$. 
 %
 For macroscopic pKa values, this is straightforward.
+%
+In the case of microscopic pKa values, when more than one combinations of pKa values exist, the pKa path with the smallest standard error is chosen.
 %
 Since the free energy is a state function, it should not depend on the path of reactions taken.
 %
 In practice, since pKa values are produced individually, one might get a slightly different answer depending on the path chosen.
 %
-In the case of microscopic pKa values, when more than one combinations of pKa values exist, the pKa path with the smallest standard error is chosen.
-%
+
 It is common to select one state as a reference state, and set its free energy to zero, whilst subtracting it's free energy from the other states.
 %
 We choose to set the free energy reference to be a neutral state, since this means the slope of the free energy with respect to pH will be equal to the charge of the species, which is illustrative.
@@ -305,11 +306,11 @@ We consider three algorithms that emphasize different :
 
 which are described in the following three sections
 
-\subsubsection{Closest pKa matching}
+\subsection{Closest pKa matching}
 
 We systematically look for all possible pairings of pKa values, and assign them sequentially. 
 
-\begin{figure}
+\begin{figure}[H]
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -330,22 +331,24 @@ We systematically look for all possible pairings of pKa values, and assign them 
 \end{figure}
 
 
-\subsubsection{Hungarian pKa matching}
+\subsection{Hungarian pKa matching}
 This algorithm, also known as linear sum assignment.
 %
 It finds the combination of pKa that minimizes the overall cost by picking rows and columns in a matrix, also considering the cost of not mapping certain pKa values in the case of different numbers of predictions and experimental values.
 %
-The results do not seem to differ from closest-pka matching.
+It is subtly different from the closest algorighm, as it looks for an overall minimized cost, rather than judging individual pKa costs, one at a time. 
+%
+In practice, the results may be similar to the closest algorithm.
 
-\subsubsection{Sequential pKa matching}
+\subsection{Sequential pKa matching}
 
 For macroscopic only, because it doesn't make sense to sequentially align microscopic pKa values to a set of macroscopic pKa values. 
-
+%
 This algorithm is used because it should follow physically that protonation state constants would be sequentially adding charge/protons.
-
+%
 When comparing macroscopic pKa values, we therefore would wish to constrain the matching of pKa values to be sequential. For this we use \cref{alg:sequential}.
 
-\begin{figure}
+\begin{figure}[H]
 	\begin{algorithm}[H]
 		\SetAlgoLined
 		\caption{Sequential pKa mapping. It uses a cost function to measure cost, and it rolls (shifts by one, and reintroduces last element as first). Any unmatched pKa values are represented by matching with a placeholder value. To calculate the cost, the placeholder is replaced by either 0, or 14, depending on whether the unmatched value is above or below 7.0.}
@@ -472,7 +475,7 @@ SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 \includegraphics[scale=1.2]{closest_pka_jaguar.pdf}
 \includegraphics[scale=1.2]{closest_pka_epik_micropka.pdf}
 \includegraphics[scale=1.2]{closest_pka_epik_scan.pdf}
-\caption{{\bf Comparison of computed pKa values to experimental macroscopic pKa values.} {\it Left:} Microscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure.
+\caption{{\bf Comparison of computed pKa values to experimental macroscopic pKa values.} {\it Left:} Microscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. 
 {\it Middle:} Microscopic pKa values for Epik were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure.
 {\it Right:} Macroscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. \label{correlation-closest}}
 
@@ -770,6 +773,7 @@ Produces the dominant microspecies as a way to mimic the likely macrostate.
 
 \begin{itemize}
 	\item Input files and analysis scripts are available at \href{https://github.com/choderalab/SAMPL6-reference-pka-calculations}{https://github.com/choderalab/SAMPL6-reference-pka-calculations}
+	\item Our analysis methods have been packaged together in the titrato library, available at \href{https://github.com/choderalab/titrato}{https://github.com/choderalab/titrato}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
