@@ -172,14 +172,27 @@ Several choices are possible for comparing these microscopic properties into mac
 \begin{figure}[H]
 	\centering
 	
-	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM07-pka.pdf} \hfill
-	\includegraphics[width=0.47\textwidth]{fig2_charge_sm07.pdf} \\
+	\includegraphics[width=0.47\textwidth]{Images/Molecules/SM14-pka.pdf} \hfill
 	
-    \includegraphics[width=0.47\textwidth]{fig2_free_energy_sm07.pdf}
+	\begin{gather*}
+\begin{bmatrix} \pi_{1} \\ \pi_{2} \\ \pi_{n} \\ \vdots \\ \vdots \\ \pi_{m} \\ \pi_{m+1}\\ \end{bmatrix}
+=
+\begin{bmatrix}
+ 1       & 1       & 1       & 1       & \cdots    & 1& 1  & 1 \\
+ K_{a,1} & -H      & 0       & 0       & \cdots    & 0&0  & 0 \\
+ 0       & K_{a,2} & -H      & 0       & \cdots    & 0&0  & 0 \\
+ 0       & 0       & K_{a,n} & -H      & \cdots    & 0&0  & 0 \\  
+ \vdots  & \vdots  & \vdots  & \vdots  & \ddots    & \vdots & \vdots  & \vdots \\
+ 0       & 0       & 0       & 0       & \cdots    & K_{a,m} & -H & 0 \\  
+ 0       & 0       & 0       & 0       & \cdots    &         0    & K_{a,m+1}   & -H \\
+\end{bmatrix}^{-1}
+\begin{bmatrix} \sum_{i=1}^{m+1} \pi_i \\ 0 \\ 0 \\ \vdots \\ \vdots \\ 0 \\ 0\\ \end{bmatrix}\\
+\end{gather*}
     \hfill
-	\includegraphics[width=0.47\textwidth]{fig2_population_sm07.pdf}\\
+	\includegraphics[width=0.47\textwidth]{fig2_population_sm14.pdf}
+	\includegraphics[width=0.47\textwidth]{fig2_charge_sm14.pdf} \\
  	\includegraphics[width=0.4\textwidth]{fig2_legend}
-	
+	\todo[inline]{Fix this figure, make it with macroscopic estimates}
 		\caption{{\bf Macroscopic pKa values can be directly compared to experimental values. Additionally, a populations and the charge titration curve can be compared.} Molecule SM07 pKa values were measured using UV (citation) for the purpose of the SAMPL6 challenge, and based on a subsequent NMR experiment the identity of the microstates were identified. In this example, we show the results produced by Epik scan to for illustration.
 	\label{fig:scan-prediction}}
 	
@@ -200,9 +213,34 @@ It is possible to translate the micropKas into macropKas
 \subsection{Population curves from pKa}
 One way to estimate the performance of a pKa prediction method is to look at the population curves.
 %
-To generate a population for a state from a pKa value one first needs to convert the pKa values (microscopic or macroscopic) to a free energy.
+To generate a population ($\pi_i$) for a state $i$ from a pKa value one first needs to convert the pKa values (microscopic or macroscopic), one can make use of the sequential equilibrium constants 
 %
-This simply depends on the pH, and the sequential pKa values that a state needs to go through, starting at the most protonated state.
+\begin{align}
+ \frac{K_{a,i}}{10^{-pH}} = \frac{\pi_{i+1}}{\pi_{i}}
+\end{align}
+
+to construct a system of equations. The macroscopic equations can be represented as a matrix equation \textcolor{green}{add citation}
+%
+\begin{gather}
+\begin{bmatrix} \pi_{1} \\ \pi_{2} \\ \pi_{n} \\ \vdots \\ \vdots \\ \pi_{m} \\ \pi_{m+1}\\ \end{bmatrix}
+=
+\begin{bmatrix}
+ 1       & 1       & 1       & 1       & \cdots    & 1& 1  & 1 \\
+ K_{a,1} & -H      & 0       & 0       & \cdots    & 0&0  & 0 \\
+ 0       & K_{a,2} & -H      & 0       & \cdots    & 0&0  & 0 \\
+ 0       & 0       & K_{a,n} & -H      & \cdots    & 0&0  & 0 \\  
+ \vdots  & \vdots  & \vdots  & \vdots  & \ddots    & \vdots & \vdots  & \vdots \\
+ 0       & 0       & 0       & 0       & \cdots    & K_{a,m} & -H & 0 \\  
+ 0       & 0       & 0       & 0       & \cdots    &         0    & K_{a,m+1}   & -H \\
+\end{bmatrix}^{-1}
+\begin{bmatrix} \sum_{i=1}^{m+1} \pi_i \\ 0 \\ 0 \\ \vdots \\ \vdots \\ 0 \\ 0\\ \end{bmatrix}
+\end{gather}
+%
+Note that in our case, $\sum\limits_{i=1}^{m+1} \pi_i \equiv 1$, but if one is dealing with actual concentrations, one can use the total concentration of the compound to receive concentrations instead of populations.
+
+For microscopic states, one can constructing a similar matrix, but very often there is no solution to the equation as one ends up with a singular matrix. 
+%
+For directly predicting microscopic populations, instead we derive them based on free energies. 
 %
 The free energy of a single state is defined 
 \begin{eqnarray}
@@ -401,27 +439,32 @@ problematic configurations of the molecule (see also Discussion).
 \centering
 	\caption{{\bf Overall performance of each method} using either the closest pKa matching, Hungarian pKa matching, or sequentially aligned pKa values, and the area between the experimental and predicted macroscopic charge titration curve}
 	\label{tab:overview-performance}
-
-\begin{tabular}{@{}cccccc@{}}
+\todo[inline]{Add area back into this table}
+\begin{tabular}{lll}
 \toprule
-              & \multicolumn{5}{c}{pKa}                                                  \\ \midrule
-              & \multicolumn{5}{c}{RMSE}                                                 \\ \cmidrule(l){2-6} 
-              & closest               &  & hungarian             &  & align              \\ \cmidrule(lr){2-2} \cmidrule(lr){4-4} \cmidrule(l){6-6} 
-Epik micropka & 0.5; [0.3, 0.7]       &  & 0.5; [0.3, 0.7]       &  & \textemdash        \\
-Epik scan     & 0.8; [0.6, 1.0]       &  & 0.8; [0.6, 1.0]       &  & 0.8; [0.6, 1.0]    \\
-Jaguar        & 0.3; [0.2, 0.5]       &  & 0.3; [0.2, 0.5]       &  & \textemdash        \\
-              &                       &  &                       &  &                    \\
-              & \multicolumn{5}{c}{Pearson $\rho$}                                       \\ \cmidrule(l){2-6} 
-              & closest               &  & hungarian             &  & align              \\ \cmidrule(lr){2-2} \cmidrule(lr){4-4} \cmidrule(l){6-6} 
-Epik micropka & 0.96; [0.93, 0.99]    &  & 0.96; [0.92, 0.99]    &  & \textemdash        \\
-Epik scan     & 0.94; [0.88, 0.97]    &  & 0.94; [0.87, 0.97]    &  & 0.94; [0.87, 0.97] \\
-Jaguar        & 0.986; [0.966, 0.995] &  & 0.986; [0.969, 0.995] &  & \textemdash        \\ \midrule
-              &                       &  &                       &  &                    \\
-              & Charge vs pH          &  &                       &  &                    \\ \cmidrule(lr){2-2}
-              & $\Delta$ area         &  &                       &  &                    \\ \cmidrule(lr){2-2}
-Epik micropka & 1.8; [1.5, 2.1]       &  &                       &  &                    \\
-Epik scan     & 1.7; [1.2, 2.2]       &  &                       &  &                    \\
-Jaguar        & 1.5; [1.0, 2.1]       &  &                       &  &                    \\ \bottomrule
+       Method &             Metric &                 Value \\
+\midrule
+  Epik macro &               RMSE &        1.0 [0.9, 1.1] \\
+  Epik macro &    Mean abs. error &        0.8 [0.7, 0.9] \\
+  Epik macro &     pearson $\rho$ &     0.93 [0.91, 0.96] \\
+  Epik macro &  Median abs. error &        0.7 [0.5, 0.9] \\
+  Epik micro &               RMSE &        0.7 [0.6, 0.9] \\
+  Epik micro &    Mean abs. error &        0.5 [0.4, 0.6] \\
+  Epik micro &     pearson $\rho$ &     0.96 [0.92, 0.98] \\
+  Epik micro &  Median abs. error &        0.3 [0.2, 0.4] \\
+   Epik scan &               RMSE &        0.9 [0.8, 1.1] \\
+   Epik scan &    Mean abs. error &        0.8 [0.6, 0.9] \\
+   Epik scan &     pearson $\rho$ &     0.94 [0.89, 0.97] \\
+   Epik scan &  Median abs. error &        0.7 [0.5, 0.8] \\
+Jaguar macro &               RMSE &        1.1 [0.8, 1.3] \\
+Jaguar macro &    Mean abs. error &        0.8 [0.6, 0.9] \\
+Jaguar macro &     pearson $\rho$ &     0.94 [0.91, 0.97] \\
+Jaguar macro &  Median abs. error &        0.7 [0.6, 0.8] \\
+Jaguar micro &               RMSE &     0.47 [0.31, 0.54] \\
+Jaguar micro &    Mean abs. error &        0.3 [0.2, 0.4] \\
+Jaguar micro &     pearson $\rho$ &  0.986 [0.971, 0.994] \\
+Jaguar micro &  Median abs. error &     0.21 [0.15, 0.25] \\
+\bottomrule
 \end{tabular}
 \end{table}
 
@@ -437,112 +480,133 @@ Overall performance of Epik and Jaguar based on various metrics (figures/tables)
 \begin{table}[H]
 \centering
  \caption{{\bf Mean charge titration curve comparison with respect to experiment ($\Delta$ area) with confidence intervals.} Confidence intervals were obtained by gaussian bootstrapping over pKa values from the standard errors reported by the software.}\label{tab:titrationcurves}
- \begin{tabular}{lccc}
+\begin{tabular}{llllll}
 \toprule
- &    Epik micropka &           Jaguar &        Epik scan \\
-Molecule &                  &                  &                  \\
+{} &       Epik-micro &         Epik-macro &          Epik-scan &    Jaguar-micro &       Jaguar-macro \\
 \midrule
-SM01     &  0.5; [0.2, 4.9] &  1.1; [0.0, 3.5] &  0.5; [0.1, 4.0] \\
-SM02     &  2.1; [0.2, 3.1] &  1.6; [0.3, 5.3] &  1.9; [0.7, 4.2] \\
-SM03     &  1.5; [1.0, 4.9] &  0.5; [0.8, 4.8] &  0.1; [0.2, 4.7] \\
-SM04     &  2.6; [0.2, 4.0] &  1.1; [0.1, 4.0] &  2.2; [0.3, 5.0] \\
-SM05     &  2.2; [0.6, 4.7] &  0.2; [0.1, 4.5] &  1.1; [0.5, 4.6] \\
-SM06     &  2.2; [0.7, 9.5] &  1.3; [0.6, 4.7] &  2.6; [0.6, 6.8] \\
-SM07     &  2.6; [0.1, 4.1] &  0.8; [0.1, 4.1] &  2.2; [0.7, 4.8] \\
-SM08     &  1.2; [0.5, 6.2] &  7.1; [3.3, 9.2] &  0.6; [0.1, 5.8] \\
-SM09     &  2.5; [0.3, 3.4] &  1.0; [0.1, 4.3] &  2.3; [0.6, 3.3] \\
-SM10     &  0.6; [0.2, 5.1] &  0.3; [0.2, 5.3] &  0.6; [0.1, 5.6] \\
-SM11     &  1.9; [0.2, 4.1] &  3.9; [0.5, 6.8] &  0.1; [0.2, 5.0] \\
-SM12     &  2.5; [0.2, 3.4] &  0.9; [0.4, 4.7] &  2.2; [1.1, 3.6] \\
-SM13     &  2.6; [0.2, 3.8] &  0.5; [0.1, 4.0] &  2.8; [0.3, 5.0] \\
-SM14     &  1.0; [0.8, 5.4] &  1.2; [0.1, 4.1] &  1.8; [0.6, 5.2] \\
-SM15     &  1.1; [0.4, 4.6] &  0.3; [0.2, 2.4] &  1.3; [0.4, 4.2] \\
-SM16     &  2.9; [0.7, 4.7] &  1.5; [0.5, 4.4] &  1.4; [0.6, 4.7] \\
-SM17     &  1.7; [0.1, 3.2] &  0.1; [0.0, 1.6] &  1.7; [0.2, 3.1] \\
-SM18     &  0.8; [1.2, 9.7] &  2.2; [1.5, 7.9] &  1.0; [1.1, 8.2] \\
-SM19     &  0.7; [0.2, 5.2] &  1.8; [0.6, 6.7] &  0.7; [0.2, 5.9] \\
-SM20     &  2.3; [0.1, 4.7] &  1.6; [0.2, 3.4] &  2.3; [0.1, 4.8] \\
-SM21     &  2.2; [0.8, 5.5] &  1.6; [0.5, 7.0] &  0.5; [0.4, 6.7] \\
-SM22     &  1.6; [0.5, 4.8] &  0.2; [0.1, 3.4] &  1.6; [0.3, 3.9] \\
-SM23     &  0.4; [0.2, 3.5] &  2.1; [0.7, 5.7] &  3.1; [1.9, 4.8] \\
-SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
+SM01     &   0.5 [0.2, 4.8] &     0.4 [0.1, 3.0] &     0.5 [0.1, 4.0] &  1.1 [0.1, 4.2] &     0.2 [0.0, 1.7] \\
+SM02     &   2.1 [0.2, 3.2] &     0.9 [0.1, 4.0] &     1.9 [0.7, 4.0] &  1.6 [0.3, 4.9] &     1.3 [0.2, 4.5] \\
+SM03     &   1.5 [0.6, 5.1] &  0.11 [0.12, 4.52] &  0.10 [0.07, 4.67] &  0.5 [0.7, 4.9] &     0.3 [0.1, 3.8] \\
+SM04     &   2.6 [0.1, 4.0] &     0.4 [0.1, 3.5] &     2.2 [0.3, 4.9] &  1.1 [0.1, 4.0] &     0.8 [0.1, 2.7] \\
+SM05     &   2.2 [0.4, 4.8] &     1.1 [0.2, 4.6] &     1.1 [0.3, 4.7] &  0.2 [0.1, 3.9] &     0.4 [0.0, 1.3] \\
+SM06     &  2.2 [0.6, 10.0] &     2.6 [0.6, 6.9] &     2.6 [0.6, 7.0] &  1.3 [0.5, 4.8] &     2.1 [1.1, 3.0] \\
+SM07     &   2.6 [0.1, 4.1] &     0.5 [0.1, 3.5] &     2.2 [0.8, 4.8] &  0.8 [0.1, 4.1] &     0.7 [0.0, 2.6] \\
+SM08     &   1.2 [0.4, 6.7] &     0.6 [0.3, 5.4] &     0.6 [0.3, 6.5] &  7.1 [3.0, 9.4] &     4.5 [2.7, 6.1] \\
+SM09     &   2.5 [0.2, 3.5] &     1.2 [0.1, 3.2] &     2.3 [0.6, 3.7] &  1.0 [0.2, 4.4] &     0.7 [0.1, 3.6] \\
+SM10     &   0.6 [0.2, 5.4] &     0.4 [0.1, 3.9] &     0.6 [0.2, 5.7] &  0.3 [0.1, 5.2] &     0.2 [0.0, 2.0] \\
+SM11     &   1.9 [0.2, 3.8] &  0.05 [0.10, 3.55] &     0.1 [0.2, 4.8] &  3.9 [0.3, 7.1] &     1.6 [0.2, 4.7] \\
+SM12     &   2.5 [0.2, 3.7] &     1.2 [0.1, 4.4] &     2.2 [0.8, 4.1] &  0.9 [0.2, 4.9] &     2.1 [0.6, 4.7] \\
+SM13     &   2.6 [0.1, 3.9] &     1.4 [0.1, 3.8] &     2.8 [0.4, 5.0] &  0.5 [0.1, 4.0] &     0.3 [0.0, 2.7] \\
+SM14     &   1.0 [0.6, 6.0] &     1.7 [0.7, 5.2] &     1.8 [0.5, 5.6] &  1.2 [0.1, 3.6] &     0.3 [0.2, 3.8] \\
+SM15     &   1.1 [0.4, 4.4] &     1.3 [0.5, 4.6] &     1.3 [0.5, 4.3] &  0.3 [0.2, 2.6] &     0.3 [0.2, 2.5] \\
+SM16     &   2.9 [0.6, 4.8] &     1.4 [0.6, 4.8] &     1.4 [0.5, 4.8] &  1.5 [0.4, 4.6] &     1.0 [0.3, 3.2] \\
+SM17     &   1.7 [0.3, 3.2] &     1.7 [0.3, 3.2] &     1.7 [0.3, 3.1] &  0.1 [0.0, 1.4] &  0.08 [0.06, 3.81] \\
+SM18     &   0.8 [1.0, 9.7] &     0.7 [0.6, 5.8] &     1.0 [0.9, 8.4] &  2.2 [1.4, 6.9] &     1.6 [0.7, 3.8] \\
+SM19     &   0.7 [0.1, 5.3] &     0.4 [0.1, 4.1] &     0.7 [0.2, 5.9] &  1.8 [0.3, 6.8] &     0.9 [0.1, 3.7] \\
+SM20     &   2.3 [0.1, 4.9] &     2.3 [0.1, 4.9] &     2.3 [0.1, 4.9] &  1.6 [0.1, 3.5] &     1.6 [0.1, 3.4] \\
+SM21     &   2.2 [0.6, 6.6] &     0.3 [0.1, 4.6] &     0.5 [0.3, 6.5] &  1.6 [0.6, 7.1] &     2.5 [0.6, 5.0] \\
+SM22     &   1.6 [0.4, 4.6] &     1.6 [0.5, 4.4] &     1.6 [0.4, 3.9] &  0.2 [0.1, 2.9] &     0.6 [0.3, 4.0] \\
+SM23     &   0.4 [0.1, 3.4] &     0.6 [0.1, 2.4] &     3.1 [1.6, 5.0] &  2.1 [1.2, 5.7] &     3.6 [2.9, 4.4] \\
+SM24     &   3.6 [0.2, 5.2] &     3.5 [1.5, 5.0] &     5.6 [3.1, 9.3] &  2.3 [0.2, 5.3] &     0.8 [0.1, 4.3] \\
 \bottomrule
 \end{tabular}
  
 \end{table}
 
-
-
-\begin{figure}[hbtp]
-\centering
-\todo[inline,color=red!20]{ASR: Update these with latest version with correct rho/rmse values, make colors match area plots?}
-\includegraphics[scale=1.2]{closest_pka_jaguar.pdf}
-\includegraphics[scale=1.2]{closest_pka_epik_micropka.pdf}
-\includegraphics[scale=1.2]{closest_pka_epik_scan.pdf}
-\caption{{\bf Comparison of computed pKa values to experimental macroscopic pKa values.} {\it Left:} Microscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. 
-{\it Middle:} Microscopic pKa values for Epik were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure.
-{\it Right:} Macroscopic pKa values for Jaguar were matched ot the experimental dataset using \cref{alg:closest}. An alternative alignment of pKa values using the Hungarian algorithm (\cref{alg:hungarian}) is available as a supplementary figure. \label{correlation-closest}}
-
-
-\end{figure}
-
-%
 
 
 \begin{figure}[hbtp]
 	\centering
-	\includegraphics[scale=1.2]{aligned_pka_epik_scan.pdf}	
-	\caption{{\bf Epik macroscopic pKa values compared to macroscopic experimental pKa values, sequentially matching pKa values}
-		Comparison of the Epik sequential scan with entire experimental data set is shown, allowing only sequential pKa values to match experiment.\label{fig:correlation-sequential}}
+	\includegraphics[]{Reports/Experiment-Jaguar-macro-align-correlation.pdf}	
+	\caption{{\bf Jaguar macroscopic pKa values compared to macroscopic experimental pKa values, sequentially matching pKa values}  Gray bands denote one pKa unit difference, while the dashed lines indicate two pKa units. Outliers with more than 2 pKa units deviation are labeled.}
 \end{figure}
-    
 
- 
- \sisetup{separate-uncertainty=true}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[]{Reports/Experiment-Epik-macro-align-correlation.pdf}	
+	\caption{{\bf Epik macroscopic pKa values compared to macroscopic experimental pKa values, sequentially matching pKa values}  Gray bands denote one pKa unit difference, while the dashed lines indicate two pKa units. Outliers with more than 2 pKa units deviation are labeled.}
+\end{figure}
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[]{Reports/Experiment-Epik-scan-align-correlation.pdf}	
+	\caption{{\bf Epik scan pKa values compared to macroscopic experimental pKa values, sequentially matching pKa values}  Gray bands denote one pKa unit difference, while the dashed lines indicate two pKa units. Outliers with more than 2 pKa units deviation are labeled.}
+\end{figure}
+
+
+\begin{figure}
+ \centering
+ \includegraphics{Reports/overview-align-distribution.pdf}
+ \caption{{\bf Distribution of the pKa errors for macroscopic estimates.} The difference (predicted - measured) are plotted as a gaussian kernel density estimate.}
+\end{figure}
+
+
+\begin{figure}
+ \centering
+ \includegraphics{Reports/Experiment-Jaguar-Macro-align-distribution.pdf}
+ \caption{{\bf Distribution of the Jaguar pKa errors for macroscopic estimates.} The difference (predicted - measured) are plotted as a gaussian kernel density estimate with individual values as marks at the bottom. The median error is denoted by a vertical line.}
+\end{figure}
+
+\begin{figure}
+ \centering
+ \includegraphics{Reports/Experiment-Epik-Macro-align-distribution.pdf}
+ \caption{{\bf Distribution of the Epik pKa errors for macroscopic estimates.} The difference (predicted - measured) are plotted as a gaussian kernel density estimate with individual values as marks at the bottom. The median error is denoted by a vertical line.}
+\end{figure}
+
+\begin{figure}
+ \centering
+ \includegraphics{Reports/Experiment-Epik-Scan-align-distribution.pdf}
+ \caption{{\bf Distribution of the Epik pKa errors for macroscopic estimates.} The difference (predicted - measured) are plotted as a gaussian kernel density estimate with individual values as marks at the bottom. The median error is denoted by a vertical line.}
+\end{figure}
+
+
+\sisetup{separate-uncertainty=true}
 \begin{table}
 \centering
-\caption{{\bf Macroscopic pKa values computed via Epik's sequential scan procedure.}
-		Experimental and computed pKa values matched using sequential alignment of pKa values.}
+\small
+\caption{{\bf Macroscopic pKa values assigned by sequential pKa alignment.}}
 \label{tab:molecule-macro}
 \rowcolors{2}{gray!25}{white}
-\begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
-{Molecule} &  {Experimental} &  {Epik-scan} \\
+\begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
+{Molecule} &    {Experiment} & {Epik macro} & {Epik macro Delta} &  {Epik scan} & {Epik scan Delta} & {Jaguar macro} & {Jaguar macro Delta} \\
 \midrule
-      SM01 &   9.53 \pm 0.01 &      9 \pm 1 \\
-      SM02 &   5.03 \pm 0.01 &      4 \pm 1 \\
-      SM03 &   7.02 \pm 0.01 &      7 \pm 2 \\
-      SM04 &   6.02 \pm 0.01 &      6 \pm 1 \\
-      SM05 &   4.59 \pm 0.01 &      5 \pm 2 \\
-      SM06 &   3.03 \pm 0.04 &      4 \pm 1 \\
-      SM06 &  11.74 \pm 0.01 &     10 \pm 2 \\
-      SM07 &   6.08 \pm 0.01 &      6 \pm 2 \\
-      SM08 &   4.22 \pm 0.01 &      4 \pm 2 \\
-      SM09 &   5.37 \pm 0.01 &  4.0 \pm 0.9 \\
-      SM10 &   9.02 \pm 0.01 &      9 \pm 1 \\
-      SM11 &   3.89 \pm 0.01 &      4 \pm 2 \\
-      SM12 &   5.28 \pm 0.01 &      4 \pm 1 \\
-      SM13 &   5.77 \pm 0.01 &      4 \pm 2 \\
-      SM14 &   2.58 \pm 0.01 &      3 \pm 2 \\
-      SM14 &   5.30 \pm 0.01 &      6 \pm 2 \\
-      SM15 &   4.70 \pm 0.01 &      6 \pm 1 \\
-      SM15 &   8.94 \pm 0.01 &      9 \pm 1 \\
-      SM16 &   5.37 \pm 0.01 &  4.7 \pm 0.9 \\
-      SM16 &  10.65 \pm 0.01 &     10 \pm 2 \\
-      SM17 &   3.16 \pm 0.01 &  4.9 \pm 0.7 \\
-      SM18 &   2.15 \pm 0.02 &      2 \pm 2 \\
-      SM18 &   9.58 \pm 0.03 &      9 \pm 2 \\
-      SM18 &  11.02 \pm 0.04 &     10 \pm 2 \\
-      SM19 &   9.56 \pm 0.02 &      9 \pm 2 \\
-      SM20 &   5.70 \pm 0.03 &      8 \pm 2 \\
-      SM21 &   4.10 \pm 0.01 &      4 \pm 2 \\
-      SM22 &   2.40 \pm 0.02 &      4 \pm 1 \\
-      SM22 &   7.43 \pm 0.01 &  6.8 \pm 0.9 \\
-      SM23 &   5.45 \pm 0.01 &  6.0 \pm 0.8 \\
-      SM24 &   2.60 \pm 0.01 &      4 \pm 1 \\
+      SM01 &   9.53 \pm 0.01 &      9 \pm 1 &           -0 \pm 1 &      9 \pm 1 &          -0 \pm 1 &    9.7 \pm 0.8 &          0.1 \pm 0.8 \\
+      SM02 &   5.03 \pm 0.01 &      4 \pm 1 &           -1 \pm 1 &      4 \pm 1 &          -1 \pm 1 &    4.2 \pm 0.7 &         -0.8 \pm 0.7 \\
+      SM03 &   7.02 \pm 0.01 &      7 \pm 2 &            0 \pm 2 &      7 \pm 2 &           0 \pm 2 &        7 \pm 1 &              0 \pm 1 \\
+      SM04 &   6.02 \pm 0.01 &      6 \pm 1 &           -0 \pm 1 &      6 \pm 1 &          -0 \pm 1 &    5.2 \pm 0.7 &         -0.8 \pm 0.7 \\
+      SM05 &   4.59 \pm 0.01 &      5 \pm 2 &            1 \pm 2 &      5 \pm 2 &           1 \pm 2 &    5.0 \pm 0.5 &          0.4 \pm 0.5 \\
+      SM06 &   3.03 \pm 0.04 &  4.0 \pm 0.7 &        1.0 \pm 0.7 &      4 \pm 1 &           1 \pm 1 &    4.7 \pm 0.5 &          1.7 \pm 0.5 \\
+      SM06 &  11.74 \pm 0.01 &     10 \pm 1 &           -1 \pm 1 &     10 \pm 2 &          -1 \pm 2 &   15.1 \pm 0.5 &          3.4 \pm 0.5 \\
+      SM07 &   6.08 \pm 0.01 &      6 \pm 1 &           -0 \pm 1 &      6 \pm 2 &          -0 \pm 2 &    5.4 \pm 0.7 &         -0.7 \pm 0.7 \\
+      SM08 &   4.22 \pm 0.01 &      4 \pm 2 &           -0 \pm 2 &      4 \pm 2 &          -0 \pm 2 &    7.0 \pm 0.7 &          2.8 \pm 0.7 \\
+      SM09 &   5.37 \pm 0.01 &      4 \pm 1 &           -1 \pm 1 &  4.0 \pm 0.9 &      -1.3 \pm 0.9 &    4.7 \pm 0.7 &         -0.6 \pm 0.7 \\
+      SM10 &   9.02 \pm 0.01 &      9 \pm 2 &           -0 \pm 2 &      9 \pm 1 &          -0 \pm 1 &    9.2 \pm 0.9 &          0.2 \pm 0.9 \\
+      SM11 &   3.89 \pm 0.01 &      4 \pm 2 &           -0 \pm 2 &      4 \pm 2 &          -0 \pm 2 &    3.1 \pm 0.6 &         -0.8 \pm 0.6 \\
+      SM12 &   5.28 \pm 0.01 &      4 \pm 1 &           -1 \pm 1 &      4 \pm 1 &          -1 \pm 1 &    3.5 \pm 0.7 &         -1.8 \pm 0.7 \\
+      SM13 &   5.77 \pm 0.01 &      4 \pm 2 &           -1 \pm 2 &      4 \pm 2 &          -2 \pm 2 &    5.5 \pm 0.6 &         -0.3 \pm 0.6 \\
+      SM14 &   2.58 \pm 0.01 &  0.3 \pm 0.7 &       -2.3 \pm 0.7 &      3 \pm 2 &           1 \pm 2 &        3 \pm 2 &              0 \pm 2 \\
+      SM14 &   5.30 \pm 0.01 &      6 \pm 2 &            1 \pm 2 &      6 \pm 2 &           1 \pm 2 &    5.5 \pm 0.5 &          0.2 \pm 0.5 \\
+      SM15 &   4.70 \pm 0.01 &      6 \pm 1 &            1 \pm 1 &      6 \pm 1 &           1 \pm 1 &    4.8 \pm 0.8 &          0.1 \pm 0.8 \\
+      SM15 &   8.94 \pm 0.01 &      9 \pm 2 &           -0 \pm 2 &      9 \pm 1 &          -0 \pm 1 &    8.7 \pm 0.7 &         -0.2 \pm 0.7 \\
+      SM16 &   5.37 \pm 0.01 &      5 \pm 2 &           -1 \pm 2 &  4.7 \pm 0.9 &      -0.7 \pm 0.9 &        5 \pm 1 &             -1 \pm 1 \\
+      SM16 &  10.65 \pm 0.01 &     10 \pm 2 &           -1 \pm 2 &     10 \pm 2 &          -1 \pm 2 &   11.2 \pm 0.6 &          0.6 \pm 0.6 \\
+      SM17 &   3.16 \pm 0.01 &  4.9 \pm 0.7 &        1.7 \pm 0.7 &  4.9 \pm 0.7 &       1.7 \pm 0.7 &        3 \pm 2 &              0 \pm 2 \\
+      SM18 &   2.15 \pm 0.02 &      2 \pm 1 &            0 \pm 1 &      2 \pm 2 &           0 \pm 2 &    1.3 \pm 0.9 &         -0.9 \pm 0.9 \\
+      SM18 &   9.58 \pm 0.03 &      9 \pm 1 &           -0 \pm 1 &      9 \pm 2 &          -0 \pm 2 &        9 \pm 1 &             -1 \pm 1 \\
+      SM18 &  11.02 \pm 0.04 &     11 \pm 2 &           -0 \pm 2 &     10 \pm 2 &          -1 \pm 2 &   12.4 \pm 0.8 &          1.4 \pm 0.8 \\
+      SM19 &   9.56 \pm 0.02 &      9 \pm 2 &           -0 \pm 2 &      9 \pm 2 &          -0 \pm 2 &        9 \pm 1 &             -1 \pm 1 \\
+      SM20 &   5.70 \pm 0.03 &      8 \pm 2 &            2 \pm 2 &      8 \pm 2 &           2 \pm 2 &    7.3 \pm 0.9 &          1.6 \pm 0.9 \\
+      SM21 &   4.10 \pm 0.01 &      4 \pm 2 &           -0 \pm 2 &      4 \pm 2 &          -0 \pm 2 &        4 \pm 1 &             -1 \pm 1 \\
+      SM22 &   2.40 \pm 0.02 &  3.5 \pm 0.8 &        1.1 \pm 0.8 &      4 \pm 1 &           1 \pm 1 &    1.7 \pm 0.5 &         -0.7 \pm 0.5 \\
+      SM22 &   7.43 \pm 0.01 &      7 \pm 2 &           -1 \pm 2 &  6.8 \pm 0.9 &      -0.6 \pm 0.9 &        8 \pm 2 &              0 \pm 2 \\
+      SM23 &   5.45 \pm 0.01 &  6.0 \pm 0.9 &        0.5 \pm 0.9 &  6.0 \pm 0.8 &       0.5 \pm 0.8 &    6.4 \pm 0.3 &          0.9 \pm 0.3 \\
+      SM24 &   2.60 \pm 0.01 &  0.6 \pm 0.7 &       -2.0 \pm 0.7 &      4 \pm 1 &           1 \pm 1 &        3 \pm 2 &              1 \pm 2 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+
+    
 
 \subsection{Macroscopic titration curves}
 \begin{itemize}
@@ -557,85 +621,35 @@ SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 \end{itemize}
 
 
-
-
-\sisetup{separate-uncertainty=true}
-\begin{table}[H]
-\centering
-\caption{{\bf Microscopic pKa per molecule for each method as matched by the "closest" algorithm (\cref{alg:closest}), compared to experiment.} The uncertainty indicated is the standard error from the experiment, and the reported standard error by the prediction method.}
-	\label{tab:molecule-micro-closest}
-\rowcolors{2}{gray!25}{white}
-\todo[inline]{Add deviation from experiment columns}
-\begin{tabular}{cS[table-format=-1.2,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]S[table-format=-1.1,table-figures-uncertainty=1]}\toprule
-{Molecule} &  {Experimental} & {Epik-micropka} &      {Jaguar} &  {Epik-scan} \\
-\midrule
-      SM01 &   9.53 \pm 0.01 &        10 \pm 1 &   9.7 \pm 0.8 &      9 \pm 1 \\
-      SM02 &   5.03 \pm 0.01 &         5 \pm 1 &       5 \pm 2 &      4 \pm 1 \\
-      SM03 &   7.02 \pm 0.01 &         7 \pm 2 &       7 \pm 2 &      7 \pm 2 \\
-      SM04 &   6.02 \pm 0.01 &     6.1 \pm 0.9 &       5 \pm 2 &      6 \pm 1 \\
-      SM05 &   4.59 \pm 0.01 &         5 \pm 2 &   4.4 \pm 0.5 &      5 \pm 2 \\
-      SM06 &   3.03 \pm 0.04 &         3 \pm 2 &   3.5 \pm 0.5 &  2.2 \pm 0.9 \\
-      SM06 &  11.74 \pm 0.01 &        10 \pm 2 &      11 \pm 2 &     10 \pm 2 \\
-      SM07 &   6.08 \pm 0.01 &     6.1 \pm 0.9 &       5 \pm 2 &      6 \pm 2 \\
-      SM08 &   4.22 \pm 0.01 &         4 \pm 2 &   4.1 \pm 0.8 &      4 \pm 2 \\
-      SM09 &   5.37 \pm 0.01 &         5 \pm 1 &       6 \pm 2 &  4.0 \pm 0.9 \\
-      SM10 &   9.02 \pm 0.01 &         9 \pm 2 &       9 \pm 2 &      9 \pm 1 \\
-      SM11 &   3.89 \pm 0.01 &         4 \pm 2 &   3.0 \pm 0.4 &      4 \pm 2 \\
-      SM12 &   5.28 \pm 0.01 &         5 \pm 1 &       5 \pm 2 &      4 \pm 1 \\
-      SM13 &   5.77 \pm 0.01 &         5 \pm 2 &       5 \pm 2 &      4 \pm 2 \\
-      SM14 &   5.30 \pm 0.01 &         5 \pm 2 &   5.3 \pm 0.7 &      6 \pm 2 \\
-      SM14 &   2.58 \pm 0.01 &         3 \pm 2 &   2.8 \pm 0.1 &      3 \pm 2 \\
-      SM15 &   8.94 \pm 0.01 &         9 \pm 1 &   8.7 \pm 0.8 &      9 \pm 1 \\
-      SM15 &   4.70 \pm 0.01 &         6 \pm 1 &   4.8 \pm 0.7 &      6 \pm 1 \\
-      SM16 &   5.37 \pm 0.01 &         5 \pm 2 &       6 \pm 2 &  4.7 \pm 0.9 \\
-      SM16 &  10.65 \pm 0.01 &        10 \pm 2 &  11.2 \pm 0.9 &     10 \pm 2 \\
-      SM17 &   3.16 \pm 0.01 &     4.9 \pm 0.8 &   3.2 \pm 0.6 &  4.9 \pm 0.7 \\
-      SM18 &   9.58 \pm 0.03 &        10 \pm 2 &      10 \pm 2 &      9 \pm 2 \\
-      SM18 &   2.15 \pm 0.02 &         2 \pm 2 &       2 \pm 2 &      2 \pm 2 \\
-      SM18 &  11.02 \pm 0.04 &        11 \pm 2 &      11 \pm 2 &     10 \pm 2 \\
-      SM19 &   9.56 \pm 0.02 &         9 \pm 2 &  10.1 \pm 0.7 &      9 \pm 2 \\
-      SM20 &   5.70 \pm 0.03 &         8 \pm 2 &   7.3 \pm 0.9 &      8 \pm 2 \\
-      SM21 &   4.10 \pm 0.01 &         4 \pm 2 &       4 \pm 2 &      4 \pm 2 \\
-      SM22 &   7.43 \pm 0.01 &     6.8 \pm 0.9 &   7.6 \pm 0.5 &  6.8 \pm 0.9 \\
-      SM22 &   2.40 \pm 0.02 &         4 \pm 2 &   2.4 \pm 0.5 &      4 \pm 1 \\
-      SM23 &   5.45 \pm 0.01 &         5 \pm 2 &       6 \pm 2 &  6.0 \pm 0.8 \\
-      SM24 &   2.60 \pm 0.01 &         4 \pm 2 &   2.5 \pm 0.3 &      4 \pm 1 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-
-
-
     
-\begin{figure}[H]
+\begin{figure}[hbt]
 	\centering	
-	\includegraphics[width=0.33\textwidth]{Reports/SM01-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM02-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM03-titrationcurve-views.pdf}	 \\
-    \includegraphics[width=0.33\textwidth]{Reports/SM04-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM05-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM06-titrationcurve-views.pdf}	 \\
-		\includegraphics[width=0.33\textwidth]{Reports/SM07-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM08-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM09-titrationcurve-views.pdf}	 \\
-	\includegraphics[]{Reports/overview-legend.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM01-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM02-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM03-titration-bootstrap-molecule.pdf}	 \\
+    \includegraphics[width=0.33\textwidth]{Reports/overview-SM04-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM05-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM06-titration-bootstrap-molecule.pdf}	 \\
+		\includegraphics[width=0.33\textwidth]{Reports/overview-SM07-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM08-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM09-titration-bootstrap-molecule.pdf}	 \\
+	\includegraphics[]{Reports/overview-overview-legend.pdf}
 	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM01-SM09.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. Since the absolute experimental charge is not available in general, experimental curves (dashed) were aligned to each prediction independently using an integer offset that minimizes the area between curves. A numerical comparison to experiment is presented in \cref{tab:titrationcurves}.
 	\label{fig:charge-curves1}}
 	\end{figure}
 	
 	
-\begin{figure}[H]	
+\begin{figure}[hbt]	
 	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/SM10-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM11-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM12-titrationcurve-views.pdf}	 \\
-	\includegraphics[width=0.33\textwidth]{Reports/SM13-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM14-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM15-titrationcurve-views.pdf}	 \\
-	\includegraphics[width=0.33\textwidth]{Reports/SM16-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM17-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM18-titrationcurve-views.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM10-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM11-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM12-titration-bootstrap-molecule.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM13-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM14-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM15-titration-bootstrap-molecule.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM16-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM17-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM18-titration-bootstrap-molecule.pdf}	 \\
 	\includegraphics[]{Reports/overview-legend.pdf}
 
 	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM10-SM18.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. Since the absolute experimental charge is not available in general, experimental curves (dashed) were aligned to each prediction independently using an integer offset that minimizes the area between curves. A numerical comparison to experiment is presented in \cref{tab:titrationcurves}.
@@ -643,21 +657,22 @@ SM24     &  3.6; [0.1, 5.0] &  2.3; [0.2, 4.9] &  5.6; [3.0, 8.6] \\
 
 \end{figure}
     
- \begin{figure}[H]	
+ \begin{figure}[hbt]	
 	\centering
-	\includegraphics[width=0.33\textwidth]{Reports/SM19-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM20-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM21-titrationcurve-views.pdf}	 \\
-	\includegraphics[width=0.33\textwidth]{Reports/SM22-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM23-titrationcurve-views.pdf}
-	\includegraphics[width=0.33\textwidth]{Reports/SM24-titrationcurve-views.pdf}	 \\
-    \includegraphics[]{Reports/overview-legend.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM19-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM20-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM21-titration-bootstrap-molecule.pdf}	 \\
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM22-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM23-titration-bootstrap-molecule.pdf}
+	\includegraphics[width=0.33\textwidth]{Reports/overview-SM24-titration-bootstrap-molecule.pdf}	 \\
+    \includegraphics[]{Reports/overview-overview-legend.pdf}
 
 	\caption{{\bf Bootstrap titration curves for each method compared to experiment for molecules SM19-SM24.} The titration curve for each method is shown as a solid line, and 96 \% confidence intervals from bootstrap have been shown as dotted lines. Since the absolute experimental charge is not available in general, experimental curves (dashed) were aligned to each prediction independently using an integer offset that minimizes the area between curves. A numerical comparison to experiment is presented in \cref{tab:titrationcurves}.
 	\label{fig:charge-curves3}}
 	
 
 \end{figure}
+
 
 \section{Discussion}
 
