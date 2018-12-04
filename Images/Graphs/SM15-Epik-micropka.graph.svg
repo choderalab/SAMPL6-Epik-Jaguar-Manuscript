@@ -21,7 +21,7 @@
 <image xlink:href="Images\Microstates\SM15_micro001.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="13.9597" y="-368.535"/>
 </g>
 <!-- SM15_micro003 -->
-<g id="node4" class="node"><title>SM15_micro003</title>
+<g id="node3" class="node"><title>SM15_micro003</title>
 <defs>
 <radialGradient id="r_1" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -55,7 +55,7 @@
 <text text-anchor="middle" x="348.96" y="-184.09" font-family="sans bold" font-size="12.00">5.82+/&#45;2.22</text>
 </g>
 <!-- SM15_micro004 -->
-<g id="node3" class="node"><title>SM15_micro004</title>
+<g id="node4" class="node"><title>SM15_micro004</title>
 <defs>
 <radialGradient id="r_3" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>

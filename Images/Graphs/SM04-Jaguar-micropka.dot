@@ -51,72 +51,6 @@ strict digraph G {
 			style=radial,
 			width=0.79843];
 	}
-	subgraph subgraph_3 {
-		graph [label="+3 charge",
-			style=""
-		];
-		SM04_micro016		 [charge=3,
-			color="#ffffff:#2166ac",
-			fontcolor=black,
-			fontname="sans bold",
-			fontsize=12,
-			height=0.5,
-			image="Images\Microstates\SM04_micro016.svg",
-			label="",
-			labelloc=b,
-			penwidth=1,
-			pos="253,18",
-			shape=egg,
-			style=radial,
-			width=0.79843];
-	}
-	subgraph subgraph_1 {
-		graph [label="+1 charge",
-			style=""
-		];
-		SM04_micro002		 [charge=1,
-			color="#ffffff:#92c5de",
-			fontcolor=black,
-			fontname="sans bold",
-			fontsize=12,
-			height=0.5,
-			image="Images\Microstates\SM04_micro002.svg",
-			label="",
-			labelloc=b,
-			penwidth=1,
-			pos="78,188",
-			shape=egg,
-			style=radial,
-			width=0.79843];
-		SM04_micro006		 [charge=1,
-			color="#ffffff:#92c5de",
-			fontcolor=black,
-			fontname="sans bold",
-			fontsize=12,
-			height=0.5,
-			image="Images\Microstates\SM04_micro006.svg",
-			label="",
-			labelloc=b,
-			penwidth=1,
-			pos="405,188",
-			shape=egg,
-			style=radial,
-			width=0.79843];
-		SM04_micro008		 [charge=1,
-			color="#ffffff:#92c5de",
-			fontcolor=black,
-			fontname="sans bold",
-			fontsize=12,
-			height=0.5,
-			image="Images\Microstates\SM04_micro008.svg",
-			label="",
-			labelloc=b,
-			penwidth=1,
-			pos="228,188",
-			shape=egg,
-			style=radial,
-			width=0.79843];
-	}
 	subgraph subgraph_2 {
 		graph [label="+2 charge",
 			style=""
@@ -179,6 +113,72 @@ strict digraph G {
 			labelloc=b,
 			penwidth=1,
 			pos="228,358",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph subgraph_3 {
+		graph [label="+3 charge",
+			style=""
+		];
+		SM04_micro016		 [charge=3,
+			color="#ffffff:#2166ac",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM04_micro016.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="253,18",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph subgraph_1 {
+		graph [label="+1 charge",
+			style=""
+		];
+		SM04_micro002		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM04_micro002.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="78,188",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM04_micro006		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM04_micro006.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="405,188",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+		SM04_micro008		 [charge=1,
+			color="#ffffff:#92c5de",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM04_micro008.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="228,188",
 			shape=egg,
 			style=radial,
 			width=0.79843];

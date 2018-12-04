@@ -140,25 +140,6 @@ strict digraph G {
 			style=radial,
 			width=0.79843];
 	}
-	subgraph subgraph_3 {
-		graph [label="+3 charge",
-			style=""
-		];
-		SM24_micro035		 [charge=3,
-			color="#ffffff:#2166ac",
-			fontcolor=black,
-			fontname="sans bold",
-			fontsize=12,
-			height=0.5,
-			image="Images\Microstates\SM24_micro035.svg",
-			label="",
-			labelloc=b,
-			penwidth=1,
-			pos="1455,18",
-			shape=egg,
-			style=radial,
-			width=0.79843];
-	}
 	subgraph subgraph_2 {
 		graph [label="+2 charge",
 			style=""
@@ -244,6 +225,25 @@ strict digraph G {
 			labelloc=b,
 			penwidth=1,
 			pos="1802,103",
+			shape=egg,
+			style=radial,
+			width=0.79843];
+	}
+	subgraph subgraph_3 {
+		graph [label="+3 charge",
+			style=""
+		];
+		SM24_micro035		 [charge=3,
+			color="#ffffff:#2166ac",
+			fontcolor=black,
+			fontname="sans bold",
+			fontsize=12,
+			height=0.5,
+			image="Images\Microstates\SM24_micro035.svg",
+			label="",
+			labelloc=b,
+			penwidth=1,
+			pos="1455,18",
 			shape=egg,
 			style=radial,
 			width=0.79843];

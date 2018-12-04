@@ -21,7 +21,7 @@
 <image xlink:href="Images\Microstates\SM18_micro013.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="1248.96" y="-580.226"/>
 </g>
 <!-- SM18_micro001 -->
-<g id="node40" class="node"><title>SM18_micro001</title>
+<g id="node22" class="node"><title>SM18_micro001</title>
 <defs>
 <radialGradient id="r_1" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -38,7 +38,7 @@
 <text text-anchor="middle" x="1386.46" y="-395.781" font-family="sans bold" font-size="12.00">2.5+/&#45;1.9</text>
 </g>
 <!-- SM18_micro053 -->
-<g id="node47" class="node"><title>SM18_micro053</title>
+<g id="node29" class="node"><title>SM18_micro053</title>
 <defs>
 <radialGradient id="r_2" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -72,7 +72,7 @@
 <text text-anchor="middle" x="2471.46" y="-395.781" font-family="sans bold" font-size="12.00">&#45;4.79+/&#45;2.26</text>
 </g>
 <!-- SM18_micro034 -->
-<g id="node43" class="node"><title>SM18_micro034</title>
+<g id="node25" class="node"><title>SM18_micro034</title>
 <defs>
 <radialGradient id="r_4" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -89,7 +89,7 @@
 <text text-anchor="middle" x="3267.96" y="-395.781" font-family="sans bold" font-size="12.00">1.06+/&#45;0.62</text>
 </g>
 <!-- SM18_micro056 -->
-<g id="node48" class="node"><title>SM18_micro056</title>
+<g id="node30" class="node"><title>SM18_micro056</title>
 <defs>
 <radialGradient id="r_5" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -106,7 +106,7 @@
 <text text-anchor="middle" x="3839.96" y="-395.781" font-family="sans bold" font-size="12.00">0.44+/&#45;0.66</text>
 </g>
 <!-- SM18_micro058 -->
-<g id="node49" class="node"><title>SM18_micro058</title>
+<g id="node31" class="node"><title>SM18_micro058</title>
 <defs>
 <radialGradient id="r_6" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -123,7 +123,7 @@
 <text text-anchor="middle" x="4124.46" y="-395.781" font-family="sans bold" font-size="12.00">&#45;3.85+/&#45;0.58</text>
 </g>
 <!-- SM18_micro074 -->
-<g id="node50" class="node"><title>SM18_micro074</title>
+<g id="node32" class="node"><title>SM18_micro074</title>
 <defs>
 <radialGradient id="r_7" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -157,7 +157,7 @@
 <text text-anchor="middle" x="1315.96" y="-395.781" font-family="sans bold" font-size="12.00">2.65+/&#45;0.57</text>
 </g>
 <!-- SM18_micro037 -->
-<g id="node44" class="node"><title>SM18_micro037</title>
+<g id="node26" class="node"><title>SM18_micro037</title>
 <defs>
 <radialGradient id="r_9" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -185,7 +185,7 @@
 <image xlink:href="Images\Microstates\SM18_micro002.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="2236.96" y="-580.226"/>
 </g>
 <!-- SM18_micro004 -->
-<g id="node41" class="node"><title>SM18_micro004</title>
+<g id="node23" class="node"><title>SM18_micro004</title>
 <defs>
 <radialGradient id="r_11" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -202,7 +202,7 @@
 <text text-anchor="middle" x="2376.96" y="-395.781" font-family="sans bold" font-size="12.00">0.45+/&#45;2.26</text>
 </g>
 <!-- SM18_micro031 -->
-<g id="node42" class="node"><title>SM18_micro031</title>
+<g id="node24" class="node"><title>SM18_micro031</title>
 <defs>
 <radialGradient id="r_12" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -231,7 +231,7 @@
 <text text-anchor="middle" x="1572.46" y="-395.781" font-family="sans bold" font-size="12.00">&#45;6.03+/&#45;2.26</text>
 </g>
 <!-- SM18_micro054 -->
-<g id="node45" class="node"><title>SM18_micro054</title>
+<g id="node27" class="node"><title>SM18_micro054</title>
 <defs>
 <radialGradient id="r_13" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -282,7 +282,7 @@
 <text text-anchor="middle" x="2179.96" y="-395.781" font-family="sans bold" font-size="12.00">2.52+/&#45;1.87</text>
 </g>
 <!-- SM18_micro010 -->
-<g id="node46" class="node"><title>SM18_micro010</title>
+<g id="node28" class="node"><title>SM18_micro010</title>
 <defs>
 <radialGradient id="r_16" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -299,7 +299,7 @@
 <text text-anchor="middle" x="753.46" y="-395.781" font-family="sans bold" font-size="12.00">&#45;6.19+/&#45;2.26</text>
 </g>
 <!-- SM18_micro059 -->
-<g id="node51" class="node"><title>SM18_micro059</title>
+<g id="node33" class="node"><title>SM18_micro059</title>
 <defs>
 <radialGradient id="r_17" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -316,7 +316,7 @@
 <text text-anchor="middle" x="1673.96" y="-395.781" font-family="sans bold" font-size="12.00">9.8+/&#45;2.46</text>
 </g>
 <!-- SM18_micro063 -->
-<g id="node52" class="node"><title>SM18_micro063</title>
+<g id="node34" class="node"><title>SM18_micro063</title>
 <defs>
 <radialGradient id="r_18" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -545,7 +545,7 @@
 <text text-anchor="middle" x="3565.96" y="-395.781" font-family="sans bold" font-size="12.00">4.76+/&#45;0.62</text>
 </g>
 <!-- SM18_micro055 -->
-<g id="node53" class="node"><title>SM18_micro055</title>
+<g id="node35" class="node"><title>SM18_micro055</title>
 <defs>
 <radialGradient id="r_29" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -653,7 +653,7 @@
 <text text-anchor="middle" x="4575.46" y="-395.781" font-family="sans bold" font-size="12.00">&#45;0.69+/&#45;0.66</text>
 </g>
 <!-- SM18_micro029 -->
-<g id="node22" class="node"><title>SM18_micro029</title>
+<g id="node47" class="node"><title>SM18_micro029</title>
 <defs>
 <radialGradient id="r_35" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -663,8 +663,14 @@
 <polygon fill="url(#r_35)" stroke="#ffffff" points="1508.05,-0.377089 1515.06,-0.821554 1522,-1.48673 1528.83,-2.37079 1535.54,-3.47132 1542.09,-4.78529 1548.46,-6.3091 1554.63,-8.03859 1560.57,-9.969 1566.25,-12.0951 1571.66,-14.4109 1576.78,-16.9102 1581.6,-19.5862 1586.09,-22.4314 1590.24,-25.4381 1594.05,-28.598 1597.5,-31.9025 1600.58,-35.3425 1603.3,-38.9086 1605.64,-42.5911 1607.6,-46.3797 1609.19,-50.2642 1610.41,-54.2339 1611.26,-58.2779 1611.75,-62.3851 1611.88,-66.5443 1611.66,-70.744 1611.11,-74.9728 1610.23,-79.2191 1609.04,-83.4712 1607.54,-87.7175 1605.76,-91.9463 1603.71,-96.146 1601.39,-100.305 1598.84,-104.412 1596.06,-108.456 1593.07,-112.426 1589.88,-116.311 1586.51,-120.099 1582.97,-123.782 1579.29,-127.348 1575.47,-130.788 1571.52,-134.092 1567.47,-137.252 1563.31,-140.259 1559.07,-143.104 1554.75,-145.78 1550.37,-148.279 1545.93,-150.595 1541.44,-152.721 1536.91,-154.652 1532.34,-156.381 1527.74,-157.905 1523.12,-159.219 1518.48,-160.32 1513.82,-161.204 1509.15,-161.869 1504.48,-162.313 1499.8,-162.536 1495.12,-162.536 1490.44,-162.313 1485.76,-161.869 1481.1,-161.204 1476.44,-160.32 1471.8,-159.219 1467.18,-157.905 1462.58,-156.381 1458.01,-154.652 1453.48,-152.721 1448.99,-150.595 1444.55,-148.279 1440.16,-145.78 1435.85,-143.104 1431.61,-140.259 1427.45,-137.252 1423.4,-134.092 1419.45,-130.788 1415.63,-127.348 1411.94,-123.782 1408.41,-120.099 1405.04,-116.311 1401.85,-112.426 1398.86,-108.456 1396.08,-104.412 1393.53,-100.305 1391.21,-96.146 1389.16,-91.9463 1387.38,-87.7175 1385.88,-83.4712 1384.69,-79.2191 1383.81,-74.9728 1383.26,-70.744 1383.04,-66.5443 1383.17,-62.3851 1383.66,-58.2779 1384.51,-54.2339 1385.73,-50.2642 1387.32,-46.3797 1389.28,-42.5911 1391.62,-38.9086 1394.34,-35.3425 1397.42,-31.9025 1400.87,-28.598 1404.68,-25.4381 1408.83,-22.4314 1413.32,-19.5862 1418.13,-16.9102 1423.26,-14.4109 1428.67,-12.0951 1434.35,-9.969 1440.29,-8.03859 1446.45,-6.3091 1452.83,-4.78529 1459.38,-3.47132 1466.09,-2.37079 1472.92,-1.48673 1479.86,-0.821554 1486.87,-0.377089 1493.93,-0.154551 1500.99,-0.154551 1508.05,-0.377089"/>
 <image xlink:href="Images\Microstates\SM18_micro029.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="1396.96" y="-156.845"/>
 </g>
+<!-- SM18_micro001&#45;&gt;SM18_micro029 -->
+<g id="edge44" class="edge"><title>SM18_micro001&#45;&gt;SM18_micro029</title>
+<path fill="none" stroke="black" d="M1497.46,-211.563C1497.46,-198.896 1497.46,-185.726 1497.46,-172.85"/>
+<polygon fill="black" stroke="black" points="1497.46,-162.602 1501.96,-172.602 1497.46,-167.602 1497.46,-172.602 1497.46,-172.602 1497.46,-172.602 1497.46,-167.602 1492.96,-172.602 1497.46,-162.602 1497.46,-162.602"/>
+<text text-anchor="middle" x="1534.96" y="-184.09" font-family="sans bold" font-size="12.00">1.51+/&#45;0.63</text>
+</g>
 <!-- SM18_micro026 -->
-<g id="node23" class="node"><title>SM18_micro026</title>
+<g id="node48" class="node"><title>SM18_micro026</title>
 <defs>
 <radialGradient id="r_36" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -674,8 +680,14 @@
 <polygon fill="url(#r_36)" stroke="#ffffff" points="3156.05,-0.377089 3163.06,-0.821554 3170,-1.48673 3176.83,-2.37079 3183.54,-3.47132 3190.09,-4.78529 3196.46,-6.3091 3202.63,-8.03859 3208.57,-9.969 3214.25,-12.0951 3219.66,-14.4109 3224.78,-16.9102 3229.6,-19.5862 3234.09,-22.4314 3238.24,-25.4381 3242.05,-28.598 3245.5,-31.9025 3248.58,-35.3425 3251.3,-38.9086 3253.64,-42.5911 3255.6,-46.3797 3257.19,-50.2642 3258.41,-54.2339 3259.26,-58.2779 3259.75,-62.3851 3259.88,-66.5443 3259.66,-70.744 3259.11,-74.9728 3258.23,-79.2191 3257.04,-83.4712 3255.54,-87.7175 3253.76,-91.9463 3251.71,-96.146 3249.39,-100.305 3246.84,-104.412 3244.06,-108.456 3241.07,-112.426 3237.88,-116.311 3234.51,-120.099 3230.97,-123.782 3227.29,-127.348 3223.47,-130.788 3219.52,-134.092 3215.47,-137.252 3211.31,-140.259 3207.07,-143.104 3202.75,-145.78 3198.37,-148.279 3193.93,-150.595 3189.44,-152.721 3184.91,-154.652 3180.34,-156.381 3175.74,-157.905 3171.12,-159.219 3166.48,-160.32 3161.82,-161.204 3157.15,-161.869 3152.48,-162.313 3147.8,-162.536 3143.12,-162.536 3138.44,-162.313 3133.76,-161.869 3129.1,-161.204 3124.44,-160.32 3119.8,-159.219 3115.18,-157.905 3110.58,-156.381 3106.01,-154.652 3101.48,-152.721 3096.99,-150.595 3092.55,-148.279 3088.16,-145.78 3083.85,-143.104 3079.61,-140.259 3075.45,-137.252 3071.4,-134.092 3067.45,-130.788 3063.63,-127.348 3059.94,-123.782 3056.41,-120.099 3053.04,-116.311 3049.85,-112.426 3046.86,-108.456 3044.08,-104.412 3041.53,-100.305 3039.21,-96.146 3037.16,-91.9463 3035.38,-87.7175 3033.88,-83.4712 3032.69,-79.2191 3031.81,-74.9728 3031.26,-70.744 3031.04,-66.5443 3031.17,-62.3851 3031.66,-58.2779 3032.51,-54.2339 3033.73,-50.2642 3035.32,-46.3797 3037.28,-42.5911 3039.62,-38.9086 3042.34,-35.3425 3045.42,-31.9025 3048.87,-28.598 3052.68,-25.4381 3056.83,-22.4314 3061.32,-19.5862 3066.13,-16.9102 3071.26,-14.4109 3076.67,-12.0951 3082.35,-9.969 3088.29,-8.03859 3094.45,-6.3091 3100.83,-4.78529 3107.38,-3.47132 3114.09,-2.37079 3120.92,-1.48673 3127.86,-0.821554 3134.87,-0.377089 3141.93,-0.154551 3148.99,-0.154551 3156.05,-0.377089"/>
 <image xlink:href="Images\Microstates\SM18_micro026.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="3044.96" y="-156.845"/>
 </g>
+<!-- SM18_micro004&#45;&gt;SM18_micro026 -->
+<g id="edge45" class="edge"><title>SM18_micro004&#45;&gt;SM18_micro026</title>
+<path fill="none" stroke="black" d="M2663.33,-253.697C2771.3,-215.323 2936.23,-156.706 3042.45,-118.955"/>
+<polygon fill="black" stroke="black" points="3051.91,-115.595 3043.99,-123.184 3047.19,-117.27 3042.48,-118.944 3042.48,-118.944 3042.48,-118.944 3047.19,-117.27 3040.98,-114.704 3051.91,-115.595 3051.91,-115.595"/>
+<text text-anchor="middle" x="2905.96" y="-184.09" font-family="sans bold" font-size="12.00">7.73+/&#45;0.84</text>
+</g>
 <!-- SM18_micro076 -->
-<g id="node24" class="node"><title>SM18_micro076</title>
+<g id="node49" class="node"><title>SM18_micro076</title>
 <defs>
 <radialGradient id="r_37" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -685,8 +697,50 @@
 <polygon fill="url(#r_37)" stroke="#ffffff" points="2347.05,-0.377089 2354.06,-0.821554 2361,-1.48673 2367.83,-2.37079 2374.54,-3.47132 2381.09,-4.78529 2387.46,-6.3091 2393.63,-8.03859 2399.57,-9.969 2405.25,-12.0951 2410.66,-14.4109 2415.78,-16.9102 2420.6,-19.5862 2425.09,-22.4314 2429.24,-25.4381 2433.05,-28.598 2436.5,-31.9025 2439.58,-35.3425 2442.3,-38.9086 2444.64,-42.5911 2446.6,-46.3797 2448.19,-50.2642 2449.41,-54.2339 2450.26,-58.2779 2450.75,-62.3851 2450.88,-66.5443 2450.66,-70.744 2450.11,-74.9728 2449.23,-79.2191 2448.04,-83.4712 2446.54,-87.7175 2444.76,-91.9463 2442.71,-96.146 2440.39,-100.305 2437.84,-104.412 2435.06,-108.456 2432.07,-112.426 2428.88,-116.311 2425.51,-120.099 2421.97,-123.782 2418.29,-127.348 2414.47,-130.788 2410.52,-134.092 2406.47,-137.252 2402.31,-140.259 2398.07,-143.104 2393.75,-145.78 2389.37,-148.279 2384.93,-150.595 2380.44,-152.721 2375.91,-154.652 2371.34,-156.381 2366.74,-157.905 2362.12,-159.219 2357.48,-160.32 2352.82,-161.204 2348.15,-161.869 2343.48,-162.313 2338.8,-162.536 2334.12,-162.536 2329.44,-162.313 2324.76,-161.869 2320.1,-161.204 2315.44,-160.32 2310.8,-159.219 2306.18,-157.905 2301.58,-156.381 2297.01,-154.652 2292.48,-152.721 2287.99,-150.595 2283.55,-148.279 2279.16,-145.78 2274.85,-143.104 2270.61,-140.259 2266.45,-137.252 2262.4,-134.092 2258.45,-130.788 2254.63,-127.348 2250.94,-123.782 2247.41,-120.099 2244.04,-116.311 2240.85,-112.426 2237.86,-108.456 2235.08,-104.412 2232.53,-100.305 2230.21,-96.146 2228.16,-91.9463 2226.38,-87.7175 2224.88,-83.4712 2223.69,-79.2191 2222.81,-74.9728 2222.26,-70.744 2222.04,-66.5443 2222.17,-62.3851 2222.66,-58.2779 2223.51,-54.2339 2224.73,-50.2642 2226.32,-46.3797 2228.28,-42.5911 2230.62,-38.9086 2233.34,-35.3425 2236.42,-31.9025 2239.87,-28.598 2243.68,-25.4381 2247.83,-22.4314 2252.32,-19.5862 2257.13,-16.9102 2262.26,-14.4109 2267.67,-12.0951 2273.35,-9.969 2279.29,-8.03859 2285.45,-6.3091 2291.83,-4.78529 2298.38,-3.47132 2305.09,-2.37079 2311.92,-1.48673 2318.86,-0.821554 2325.87,-0.377089 2332.93,-0.154551 2339.99,-0.154551 2347.05,-0.377089"/>
 <image xlink:href="Images\Microstates\SM18_micro076.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="2235.96" y="-156.845"/>
 </g>
+<!-- SM18_micro004&#45;&gt;SM18_micro076 -->
+<g id="edge46" class="edge"><title>SM18_micro004&#45;&gt;SM18_micro076</title>
+<path fill="none" stroke="black" d="M2484.66,-224.245C2459.64,-200.285 2431.52,-173.363 2406.55,-149.46"/>
+<polygon fill="black" stroke="black" points="2399.26,-142.476 2409.59,-146.141 2402.87,-145.934 2406.48,-149.392 2406.48,-149.392 2406.48,-149.392 2402.87,-145.934 2403.37,-152.642 2399.26,-142.476 2399.26,-142.476"/>
+<text text-anchor="middle" x="2490.96" y="-184.09" font-family="sans bold" font-size="12.00">3.51+/&#45;0.64</text>
+</g>
+<!-- SM18_micro031&#45;&gt;SM18_micro076 -->
+<g id="edge47" class="edge"><title>SM18_micro031&#45;&gt;SM18_micro076</title>
+<path fill="none" stroke="black" d="M1891.59,-234.285C1911.3,-221.511 1926.46,-211.69 1926.46,-211.69 1926.46,-211.69 2109.64,-153.9 2231.12,-115.577"/>
+<polygon fill="black" stroke="black" points="2240.85,-112.508 2232.67,-119.808 2236.08,-114.012 2231.31,-115.516 2231.31,-115.516 2231.31,-115.516 2236.08,-114.012 2229.96,-111.225 2240.85,-112.508 2240.85,-112.508"/>
+<text text-anchor="middle" x="2059.96" y="-184.09" font-family="sans bold" font-size="12.00">2.2+/&#45;0.66</text>
+</g>
+<!-- SM18_micro034&#45;&gt;SM18_micro029 -->
+<g id="edge48" class="edge"><title>SM18_micro034&#45;&gt;SM18_micro029</title>
+<path fill="none" stroke="black" d="M2849.01,-260.281C2770.18,-237.823 2678.46,-211.69 2678.46,-211.69 2678.46,-211.69 1902.46,-193.69 1902.46,-193.69 1902.46,-193.69 1725.45,-145.026 1605.48,-112.042"/>
+<polygon fill="black" stroke="black" points="1595.5,-109.299 1606.33,-107.611 1600.32,-110.624 1605.14,-111.95 1605.14,-111.95 1605.14,-111.95 1600.32,-110.624 1603.95,-116.289 1595.5,-109.299 1595.5,-109.299"/>
+<text text-anchor="middle" x="1942.46" y="-184.09" font-family="sans bold" font-size="12.00">&#45;4.56+/&#45;2.26</text>
+</g>
+<!-- SM18_micro034&#45;&gt;SM18_micro026 -->
+<g id="edge49" class="edge"><title>SM18_micro034&#45;&gt;SM18_micro026</title>
+<path fill="none" stroke="black" d="M3022.83,-221.336C3041.98,-199.639 3063.05,-175.752 3082.25,-153.993"/>
+<polygon fill="black" stroke="black" points="3088.95,-146.392 3085.71,-156.868 3085.65,-150.141 3082.34,-153.891 3082.34,-153.891 3082.34,-153.891 3085.65,-150.141 3078.96,-150.914 3088.95,-146.392 3088.95,-146.392"/>
+<text text-anchor="middle" x="3092.96" y="-184.09" font-family="sans bold" font-size="12.00">2.2+/&#45;0.66</text>
+</g>
+<!-- SM18_micro037&#45;&gt;SM18_micro029 -->
+<g id="edge50" class="edge"><title>SM18_micro037&#45;&gt;SM18_micro029</title>
+<path fill="none" stroke="black" d="M750.469,-255.39C813.503,-234.199 880.46,-211.69 880.46,-211.69 880.46,-211.69 1207.83,-143.061 1385.65,-105.784"/>
+<polygon fill="black" stroke="black" points="1395.57,-103.704 1386.71,-110.16 1390.68,-104.73 1385.79,-105.756 1385.79,-105.756 1385.79,-105.756 1390.68,-104.73 1384.86,-101.351 1395.57,-103.704 1395.57,-103.704"/>
+<text text-anchor="middle" x="1067.96" y="-184.09" font-family="sans bold" font-size="12.00">5.55+/&#45;0.84</text>
+</g>
+<!-- SM18_micro056&#45;&gt;SM18_micro026 -->
+<g id="edge51" class="edge"><title>SM18_micro056&#45;&gt;SM18_micro026</title>
+<path fill="none" stroke="black" d="M3711.34,-257.878C3584.18,-218.433 3376.46,-154.001 3251.19,-115.142"/>
+<polygon fill="black" stroke="black" points="3241.57,-112.158 3252.45,-110.822 3246.34,-113.639 3251.12,-115.12 3251.12,-115.12 3251.12,-115.12 3246.34,-113.639 3249.79,-119.418 3241.57,-112.158 3241.57,-112.158"/>
+<text text-anchor="middle" x="3541.96" y="-184.09" font-family="sans bold" font-size="12.00">3.09+/&#45;0.63</text>
+</g>
+<!-- SM18_micro063&#45;&gt;SM18_micro026 -->
+<g id="edge52" class="edge"><title>SM18_micro063&#45;&gt;SM18_micro026</title>
+<path fill="none" stroke="black" d="M3268.75,-221.336C3249.5,-199.639 3228.31,-175.752 3209.01,-153.993"/>
+<polygon fill="black" stroke="black" points="3202.27,-146.392 3212.27,-150.887 3205.59,-150.132 3208.91,-153.873 3208.91,-153.873 3208.91,-153.873 3205.59,-150.132 3205.54,-156.859 3202.27,-146.392 3202.27,-146.392"/>
+<text text-anchor="middle" x="3281.96" y="-184.09" font-family="sans bold" font-size="12.00">2.17+/&#45;1.89</text>
+</g>
 <!-- SM18_micro005 -->
-<g id="node25" class="node"><title>SM18_micro005</title>
+<g id="node36" class="node"><title>SM18_micro005</title>
 <defs>
 <radialGradient id="r_38" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -727,7 +781,7 @@
 <text text-anchor="middle" x="2729.96" y="-607.471" font-family="sans bold" font-size="12.00">8.34+/&#45;0.86</text>
 </g>
 <!-- SM18_micro020 -->
-<g id="node26" class="node"><title>SM18_micro020</title>
+<g id="node37" class="node"><title>SM18_micro020</title>
 <defs>
 <radialGradient id="r_39" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -756,7 +810,7 @@
 <text text-anchor="middle" x="3935.46" y="-607.471" font-family="sans bold" font-size="12.00">18.88+/&#45;0.83</text>
 </g>
 <!-- SM18_micro071 -->
-<g id="node27" class="node"><title>SM18_micro071</title>
+<g id="node38" class="node"><title>SM18_micro071</title>
 <defs>
 <radialGradient id="r_40" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -803,7 +857,7 @@
 <text text-anchor="middle" x="2818.46" y="-607.471" font-family="sans bold" font-size="12.00">11.39+/&#45;0.58</text>
 </g>
 <!-- SM18_micro048 -->
-<g id="node28" class="node"><title>SM18_micro048</title>
+<g id="node39" class="node"><title>SM18_micro048</title>
 <defs>
 <radialGradient id="r_41" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -832,7 +886,7 @@
 <text text-anchor="middle" x="3641.46" y="-607.471" font-family="sans bold" font-size="12.00">21.91+/&#45;0.83</text>
 </g>
 <!-- SM18_micro070 -->
-<g id="node29" class="node"><title>SM18_micro070</title>
+<g id="node40" class="node"><title>SM18_micro070</title>
 <defs>
 <radialGradient id="r_42" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -867,7 +921,7 @@
 <text text-anchor="middle" x="4880.96" y="-607.471" font-family="sans bold" font-size="12.00">5.9+/&#45;0.69</text>
 </g>
 <!-- SM18_micro011 -->
-<g id="node30" class="node"><title>SM18_micro011</title>
+<g id="node41" class="node"><title>SM18_micro011</title>
 <defs>
 <radialGradient id="r_43" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -902,7 +956,7 @@
 <text text-anchor="middle" x="529.96" y="-607.471" font-family="sans bold" font-size="12.00">9.74+/&#45;2.08</text>
 </g>
 <!-- SM18_micro065 -->
-<g id="node31" class="node"><title>SM18_micro065</title>
+<g id="node42" class="node"><title>SM18_micro065</title>
 <defs>
 <radialGradient id="r_44" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -943,7 +997,7 @@
 <text text-anchor="middle" x="4239.96" y="-607.471" font-family="sans bold" font-size="12.00">6.12+/&#45;2.46</text>
 </g>
 <!-- SM18_micro075 -->
-<g id="node32" class="node"><title>SM18_micro075</title>
+<g id="node43" class="node"><title>SM18_micro075</title>
 <defs>
 <radialGradient id="r_45" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -966,7 +1020,7 @@
 <text text-anchor="middle" x="1747.46" y="-607.471" font-family="sans bold" font-size="12.00">17.47+/&#45;2.27</text>
 </g>
 <!-- SM18_micro032 -->
-<g id="node33" class="node"><title>SM18_micro032</title>
+<g id="node44" class="node"><title>SM18_micro032</title>
 <defs>
 <radialGradient id="r_46" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1007,7 +1061,7 @@
 <text text-anchor="middle" x="1551.96" y="-607.471" font-family="sans bold" font-size="12.00">9.04+/&#45;0.64</text>
 </g>
 <!-- SM18_micro033 -->
-<g id="node34" class="node"><title>SM18_micro033</title>
+<g id="node45" class="node"><title>SM18_micro033</title>
 <defs>
 <radialGradient id="r_47" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1030,7 +1084,7 @@
 <text text-anchor="middle" x="859.96" y="-607.471" font-family="sans bold" font-size="12.00">7.72+/&#45;2.26</text>
 </g>
 <!-- SM18_micro062 -->
-<g id="node35" class="node"><title>SM18_micro062</title>
+<g id="node46" class="node"><title>SM18_micro062</title>
 <defs>
 <radialGradient id="r_48" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1059,7 +1113,7 @@
 <text text-anchor="middle" x="4121.96" y="-607.471" font-family="sans bold" font-size="12.00">19.5+/&#45;1.46</text>
 </g>
 <!-- SM18_micro049 -->
-<g id="node36" class="node"><title>SM18_micro049</title>
+<g id="node50" class="node"><title>SM18_micro049</title>
 <defs>
 <radialGradient id="r_49" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1106,7 +1160,7 @@
 <text text-anchor="middle" x="1520.96" y="-819.161" font-family="sans bold" font-size="12.00">7.75+/&#45;0.64</text>
 </g>
 <!-- SM18_micro045 -->
-<g id="node37" class="node"><title>SM18_micro045</title>
+<g id="node51" class="node"><title>SM18_micro045</title>
 <defs>
 <radialGradient id="r_50" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1135,7 +1189,7 @@
 <text text-anchor="middle" x="4191.46" y="-819.161" font-family="sans bold" font-size="12.00">13.66+/&#45;0.58</text>
 </g>
 <!-- SM18_micro064 -->
-<g id="node38" class="node"><title>SM18_micro064</title>
+<g id="node52" class="node"><title>SM18_micro064</title>
 <defs>
 <radialGradient id="r_51" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1170,7 +1224,7 @@
 <text text-anchor="middle" x="3521.46" y="-819.161" font-family="sans bold" font-size="12.00">18.87+/&#45;0.57</text>
 </g>
 <!-- SM18_micro052 -->
-<g id="node39" class="node"><title>SM18_micro052</title>
+<g id="node53" class="node"><title>SM18_micro052</title>
 <defs>
 <radialGradient id="r_52" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -1197,60 +1251,6 @@
 <path fill="none" stroke="black" d="M4039.46,-846.634C4039.46,-833.967 4039.46,-820.797 4039.46,-807.921"/>
 <polygon fill="black" stroke="black" points="4039.46,-797.673 4043.96,-807.673 4039.46,-802.673 4039.46,-807.673 4039.46,-807.673 4039.46,-807.673 4039.46,-802.673 4034.96,-807.673 4039.46,-797.673 4039.46,-797.673"/>
 <text text-anchor="middle" x="4080.46" y="-819.161" font-family="sans bold" font-size="12.00">15.48+/&#45;2.26</text>
-</g>
-<!-- SM18_micro001&#45;&gt;SM18_micro029 -->
-<g id="edge44" class="edge"><title>SM18_micro001&#45;&gt;SM18_micro029</title>
-<path fill="none" stroke="black" d="M1497.46,-211.563C1497.46,-198.896 1497.46,-185.726 1497.46,-172.85"/>
-<polygon fill="black" stroke="black" points="1497.46,-162.602 1501.96,-172.602 1497.46,-167.602 1497.46,-172.602 1497.46,-172.602 1497.46,-172.602 1497.46,-167.602 1492.96,-172.602 1497.46,-162.602 1497.46,-162.602"/>
-<text text-anchor="middle" x="1534.96" y="-184.09" font-family="sans bold" font-size="12.00">1.51+/&#45;0.63</text>
-</g>
-<!-- SM18_micro004&#45;&gt;SM18_micro026 -->
-<g id="edge45" class="edge"><title>SM18_micro004&#45;&gt;SM18_micro026</title>
-<path fill="none" stroke="black" d="M2663.33,-253.697C2771.3,-215.323 2936.23,-156.706 3042.45,-118.955"/>
-<polygon fill="black" stroke="black" points="3051.91,-115.595 3043.99,-123.184 3047.19,-117.27 3042.48,-118.944 3042.48,-118.944 3042.48,-118.944 3047.19,-117.27 3040.98,-114.704 3051.91,-115.595 3051.91,-115.595"/>
-<text text-anchor="middle" x="2905.96" y="-184.09" font-family="sans bold" font-size="12.00">7.73+/&#45;0.84</text>
-</g>
-<!-- SM18_micro004&#45;&gt;SM18_micro076 -->
-<g id="edge46" class="edge"><title>SM18_micro004&#45;&gt;SM18_micro076</title>
-<path fill="none" stroke="black" d="M2484.66,-224.245C2459.64,-200.285 2431.52,-173.363 2406.55,-149.46"/>
-<polygon fill="black" stroke="black" points="2399.26,-142.476 2409.59,-146.141 2402.87,-145.934 2406.48,-149.392 2406.48,-149.392 2406.48,-149.392 2402.87,-145.934 2403.37,-152.642 2399.26,-142.476 2399.26,-142.476"/>
-<text text-anchor="middle" x="2490.96" y="-184.09" font-family="sans bold" font-size="12.00">3.51+/&#45;0.64</text>
-</g>
-<!-- SM18_micro031&#45;&gt;SM18_micro076 -->
-<g id="edge47" class="edge"><title>SM18_micro031&#45;&gt;SM18_micro076</title>
-<path fill="none" stroke="black" d="M1891.59,-234.285C1911.3,-221.511 1926.46,-211.69 1926.46,-211.69 1926.46,-211.69 2109.64,-153.9 2231.12,-115.577"/>
-<polygon fill="black" stroke="black" points="2240.85,-112.508 2232.67,-119.808 2236.08,-114.012 2231.31,-115.516 2231.31,-115.516 2231.31,-115.516 2236.08,-114.012 2229.96,-111.225 2240.85,-112.508 2240.85,-112.508"/>
-<text text-anchor="middle" x="2059.96" y="-184.09" font-family="sans bold" font-size="12.00">2.2+/&#45;0.66</text>
-</g>
-<!-- SM18_micro034&#45;&gt;SM18_micro029 -->
-<g id="edge48" class="edge"><title>SM18_micro034&#45;&gt;SM18_micro029</title>
-<path fill="none" stroke="black" d="M2849.01,-260.281C2770.18,-237.823 2678.46,-211.69 2678.46,-211.69 2678.46,-211.69 1902.46,-193.69 1902.46,-193.69 1902.46,-193.69 1725.45,-145.026 1605.48,-112.042"/>
-<polygon fill="black" stroke="black" points="1595.5,-109.299 1606.33,-107.611 1600.32,-110.624 1605.14,-111.95 1605.14,-111.95 1605.14,-111.95 1600.32,-110.624 1603.95,-116.289 1595.5,-109.299 1595.5,-109.299"/>
-<text text-anchor="middle" x="1942.46" y="-184.09" font-family="sans bold" font-size="12.00">&#45;4.56+/&#45;2.26</text>
-</g>
-<!-- SM18_micro034&#45;&gt;SM18_micro026 -->
-<g id="edge49" class="edge"><title>SM18_micro034&#45;&gt;SM18_micro026</title>
-<path fill="none" stroke="black" d="M3022.83,-221.336C3041.98,-199.639 3063.05,-175.752 3082.25,-153.993"/>
-<polygon fill="black" stroke="black" points="3088.95,-146.392 3085.71,-156.868 3085.65,-150.141 3082.34,-153.891 3082.34,-153.891 3082.34,-153.891 3085.65,-150.141 3078.96,-150.914 3088.95,-146.392 3088.95,-146.392"/>
-<text text-anchor="middle" x="3092.96" y="-184.09" font-family="sans bold" font-size="12.00">2.2+/&#45;0.66</text>
-</g>
-<!-- SM18_micro037&#45;&gt;SM18_micro029 -->
-<g id="edge50" class="edge"><title>SM18_micro037&#45;&gt;SM18_micro029</title>
-<path fill="none" stroke="black" d="M750.469,-255.39C813.503,-234.199 880.46,-211.69 880.46,-211.69 880.46,-211.69 1207.83,-143.061 1385.65,-105.784"/>
-<polygon fill="black" stroke="black" points="1395.57,-103.704 1386.71,-110.16 1390.68,-104.73 1385.79,-105.756 1385.79,-105.756 1385.79,-105.756 1390.68,-104.73 1384.86,-101.351 1395.57,-103.704 1395.57,-103.704"/>
-<text text-anchor="middle" x="1067.96" y="-184.09" font-family="sans bold" font-size="12.00">5.55+/&#45;0.84</text>
-</g>
-<!-- SM18_micro056&#45;&gt;SM18_micro026 -->
-<g id="edge51" class="edge"><title>SM18_micro056&#45;&gt;SM18_micro026</title>
-<path fill="none" stroke="black" d="M3711.34,-257.878C3584.18,-218.433 3376.46,-154.001 3251.19,-115.142"/>
-<polygon fill="black" stroke="black" points="3241.57,-112.158 3252.45,-110.822 3246.34,-113.639 3251.12,-115.12 3251.12,-115.12 3251.12,-115.12 3246.34,-113.639 3249.79,-119.418 3241.57,-112.158 3241.57,-112.158"/>
-<text text-anchor="middle" x="3541.96" y="-184.09" font-family="sans bold" font-size="12.00">3.09+/&#45;0.63</text>
-</g>
-<!-- SM18_micro063&#45;&gt;SM18_micro026 -->
-<g id="edge52" class="edge"><title>SM18_micro063&#45;&gt;SM18_micro026</title>
-<path fill="none" stroke="black" d="M3268.75,-221.336C3249.5,-199.639 3228.31,-175.752 3209.01,-153.993"/>
-<polygon fill="black" stroke="black" points="3202.27,-146.392 3212.27,-150.887 3205.59,-150.132 3208.91,-153.873 3208.91,-153.873 3208.91,-153.873 3205.59,-150.132 3205.54,-156.859 3202.27,-146.392 3202.27,-146.392"/>
-<text text-anchor="middle" x="3281.96" y="-184.09" font-family="sans bold" font-size="12.00">2.17+/&#45;1.89</text>
 </g>
 </g>
 </svg>
