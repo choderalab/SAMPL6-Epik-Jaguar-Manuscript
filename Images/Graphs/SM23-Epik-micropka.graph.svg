@@ -21,7 +21,7 @@
 <image xlink:href="Images\Microstates\SM23_micro005.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="1144.96" y="-368.535"/>
 </g>
 <!-- SM23_micro025 -->
-<g id="node9" class="node"><title>SM23_micro025</title>
+<g id="node11" class="node"><title>SM23_micro025</title>
 <defs>
 <radialGradient id="r_1" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -49,7 +49,7 @@
 <image xlink:href="Images\Microstates\SM23_micro011.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="897.96" y="-368.535"/>
 </g>
 <!-- SM23_micro007 -->
-<g id="node6" class="node"><title>SM23_micro007</title>
+<g id="node8" class="node"><title>SM23_micro007</title>
 <defs>
 <radialGradient id="r_3" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -83,7 +83,7 @@
 <text text-anchor="middle" x="474.96" y="-184.09" font-family="sans bold" font-size="12.00">5.99+/&#45;0.75</text>
 </g>
 <!-- SM23_micro021 -->
-<g id="node7" class="node"><title>SM23_micro021</title>
+<g id="node9" class="node"><title>SM23_micro021</title>
 <defs>
 <radialGradient id="r_5" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -100,7 +100,7 @@
 <text text-anchor="middle" x="600.46" y="-184.09" font-family="sans bold" font-size="12.00">&#45;2.88+/&#45;0.92</text>
 </g>
 <!-- SM23_micro024 -->
-<g id="node8" class="node"><title>SM23_micro024</title>
+<g id="node10" class="node"><title>SM23_micro024</title>
 <defs>
 <radialGradient id="r_6" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -157,7 +157,7 @@
 <text text-anchor="middle" x="850.96" y="-184.09" font-family="sans bold" font-size="12.00">8.48+/&#45;2.0</text>
 </g>
 <!-- SM23_micro034 -->
-<g id="node10" class="node"><title>SM23_micro034</title>
+<g id="node6" class="node"><title>SM23_micro034</title>
 <defs>
 <radialGradient id="r_9" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -186,7 +186,7 @@
 <text text-anchor="middle" x="785.46" y="-395.781" font-family="sans bold" font-size="12.00">13.34+/&#45;0.73</text>
 </g>
 <!-- SM23_micro035 -->
-<g id="node11" class="node"><title>SM23_micro035</title>
+<g id="node7" class="node"><title>SM23_micro035</title>
 <defs>
 <radialGradient id="r_10" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>

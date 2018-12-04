@@ -21,7 +21,7 @@
 <image xlink:href="Images\Microstates\SM01_micro005.svg" width="201px" height="151px" preserveAspectRatio="xMinYMin meet" x="260.96" y="-368.535"/>
 </g>
 <!-- SM01_micro001 -->
-<g id="node7" class="node"><title>SM01_micro001</title>
+<g id="node6" class="node"><title>SM01_micro001</title>
 <defs>
 <radialGradient id="r_1" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -38,7 +38,7 @@
 <text text-anchor="middle" x="335.96" y="-184.09" font-family="sans bold" font-size="12.00">&#45;0.5+/&#45;0.58</text>
 </g>
 <!-- SM01_micro009 -->
-<g id="node8" class="node"><title>SM01_micro009</title>
+<g id="node7" class="node"><title>SM01_micro009</title>
 <defs>
 <radialGradient id="r_2" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
@@ -135,7 +135,7 @@
 <text text-anchor="middle" x="228.46" y="-395.781" font-family="sans bold" font-size="12.00">15.98+/&#45;0.94</text>
 </g>
 <!-- SM01_micro002 -->
-<g id="node6" class="node"><title>SM01_micro002</title>
+<g id="node8" class="node"><title>SM01_micro002</title>
 <defs>
 <radialGradient id="r_7" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
 <stop offset="0" style="stop-color:#ffffff;stop-opacity:1.;"/>
